@@ -1,7 +1,7 @@
 @charset "UTF-8";
 body {
   background-color: black;
-  font-family: 'Roboto Mono', monospace;
+  font-fambuily: 'Roboto Mono', monospace;
   margin: 0;
   padding: 0; }
 
@@ -98,6 +98,13 @@ p {
 
 .show {
   display: block; }
+
+button {
+  background-color: white;
+  color: black;
+  font-size: 10px;
+  padding: 5px;
+  border: 1px solid #555555; }
 
 button.choice, button.next, button.nextSlide {
   position: absolute;
