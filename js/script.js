@@ -31,6 +31,8 @@ var cards1 = $(".card.block1");
 setSize(cards1);
 var cards2 = $(".card.block2");
 setSize(cards2);
+var cards3 = $(".card.block3");
+setSize(cards3);
 
 window.addEventListener("resize", function() {
     cardbox = $('.card')[0].getBoundingClientRect();
@@ -82,16 +84,41 @@ $('.choice').on("click", function(){
 
 });
 
+
+//Перехід між блоками
 $(".next").on("click", function(){
     var containerForRemove = $(this)
         .parent()
         .parent()
         .parent()
         .parent();
-    containerForRemove.remove();
+    containerForRemove.remove();//видаляємо картку, яка вже непотрібна
+
+
 
     if($(this).parents(".last").length){
-        $(".card.block2").css("display","block"); //TODO переробити так, аби выдкривався наступний блок
+        var currentDiv = $(this).closest(".card"); //знаходимо найближчу картку
+        var sections = $('.section');
+        var currentIndex;
+
+        //костиль
+        if(currentDiv.hasClass('block1') === true){
+            currentIndex = 0
+        }
+        if(currentDiv.hasClass('block2') === true){
+            currentIndex = 1
+        }
+        if(currentDiv.hasClass('block3') === true){
+            currentIndex = 2
+        }
+        sectionIndex = currentIndex + 1;
+        $(sections[sectionIndex]).find(".card").css("display","block");
+
+        var headings = $(".head");
+        $(".head").removeClass("whiteColor");
+        $(headings[sectionIndex-1]).addClass("greyColor");
+        $(headings[sectionIndex]).removeClass('greyColor').addClass("whiteColor");
+        // $(".card.block2").css("display","block"); 
     }
 
 });

@@ -5,6 +5,16 @@ body {
   margin: 0;
   padding: 0; }
 
+.greyColor {
+  color: grey; }
+
+.whiteColor {
+  color: white; }
+
+.head {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800; }
+
 h1, h3 {
   -webkit-margin-before: 0;
   -webkit-margin-after: 0; }
@@ -124,7 +134,7 @@ button.choice, button.next, button.nextSlide {
   text-align: center;
   color: white; }
 
-.block2 {
+.block2, .block3 {
   display: none; }
 
 button.answerYes, button.answerNo {
