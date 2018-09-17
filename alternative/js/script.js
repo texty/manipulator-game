@@ -5,6 +5,7 @@ var width = cardbox.width,
     height = cardbox.height;
 var media;
 
+//визначаємо кількість карток в блоці, щоб розтавити один на одного
 var setSize = function(blockNumber) {
     for (var i = 0; i <= blockNumber.length + 1; i++) {
         var position = i * 20;
@@ -42,9 +43,9 @@ window.addEventListener("resize", function() {
 
 });
 
-
+//визначаємо кількість варіантів у слайді
 var sliderFunction = function(elem) {
-    var currentList = $(elem).parent();
+    var currentList = $(elem).closest(".variant");
     var classString = currentList.attr('class'); // "blog button main"
     var theClass = classString.split(' ')[0];
     var listArray = document.getElementsByClassName(theClass);
@@ -66,14 +67,15 @@ var sliderFunction = function(elem) {
 //кнопка далі і додавання балів
 $('.choice').on("click", function(){
     var card = $(this).closest(".card");
-    // card.css("transform", "rotateY(180deg)");
-
+    $(".card").not(card).find(".side").removeClass("show").addClass("hide");
+    card.css("transform", "rotateY(180deg)");
     $(this).parent().find("p.additionalInfo").css("display", "block");
     $(this).parent().find("p.mainInfo").css("display", "none");
     var points = $(this).parent().attr("value");
     media = $(this).parent().find("p").find("b.media").html();
     $('h3 b#myMedia').html(media);
     $(this).removeClass("show").addClass("hide");
+    $(this).parent().find(".noThanks").removeClass("show").addClass("hide");
     $(this).parent().find(".next").removeClass("hide").addClass("show");
     $(this).parent().find(".arrowRight").remove();
 
@@ -90,15 +92,9 @@ $('.choice').on("click", function(){
 
 //Перехід між блоками
 $(".next").on("click", function(){
-
-    var containerForRemove = $(this)
-        .parent()
-        .parent()
-        .parent()
-        .parent();
-    containerForRemove.remove();//видаляємо картку, яка вже непотрібна
-
-
+        $(".card").find(".side").removeClass("hide").addClass("show");
+        var containerForRemove = $(this).closest(".card");
+        containerForRemove.remove();//видаляємо картку, яка вже непотрібна.remove();
 
     if($(this).parents(".last").length){
         var currentDiv = $(this).closest(".card"); //знаходимо найближчу картку
@@ -131,8 +127,9 @@ $(".next").on("click", function(){
 //кнопки Так чи Ні
 
 $(".answer").on("click", function() {
-    // var card = $(this).closest(".card");
-    // card.css("transform", "rotateY(180deg)");
+    var card = $(this).closest(".card");
+    $(".card").not(card).find(".side").removeClass("show").addClass("hide");
+    card.css("transform", "rotateY(180deg)");
     var answerPoints = $(this).attr("value");
     $(this).parent().attr("value", answerPoints);
     var current = $("#currentPoints").html();
@@ -149,8 +146,7 @@ $(".answer").on("click", function() {
 
 
 
-
-$(".arrowRight").on("click", function() {
+$(".noThanks").on("click", function() {
     var elem = this;
     sliderFunction(elem);
 
@@ -160,25 +156,44 @@ $("button.answer").on("click", function() {
     var elem = this;
     // sliderFunction(elem);
     $(elem).parent().find(".nextSlide").removeClass("hide").addClass("show");
-    $(this).parent().find("p.mainInfo").css("display", "none");
-
+    // $(this).parent().find("p.mainInfo").css("display", "none");
+    var backInfo;
     if($(this).hasClass("answerYes")){
-        $(this).parent().find("p.additionalInfoYes").css("display", "block");
+        backInfo = $(this).parent().find("p.additionalInfoYes").html();
     }
 
     if($(this).hasClass("answerNo")){
-        $(this).parent().find("p.additionalInfoNo").css("display", "block");
+        backInfo = $(this).parent().find("p.additionalInfoNo").html();
     }
+
+    $(this).closest(".variant").find(".side.back > p").html(backInfo);
     $(elem).parent().find(".answer").remove();
 
 });
 
 
 $(".nextSlide").on("click", function() {
+    var card = $(this).parent().closest(".card");
+    card.css("transform", "rotateY(0deg)");
     var elem = this;
-    sliderFunction(elem);
+    setTimeout(function(){
+        sliderFunction(elem);
+    }, 500);
+
+
+
 
 });
 
+
+$('.choice').on("click", function(){
+    var card = $(this).closest(".card");
+    card.css("transform", "rotateY(180deg)");
+});
+
+// $('.side.back').on("click", function(){
+//     var card = $(this).closest(".card");
+//     card.css("transform", "rotateY(90deg)");
+// });
 
 

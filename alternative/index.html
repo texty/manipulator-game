@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Style and Fonts Links -->
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,300i,400,400i,500,500i,700,700i&amp;subset=cyrillic,cyrillic-ext"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/application.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+
+</head>
+<body>
+<div id="mygrid">
+    <div id="blockList">
+        <div class="head whiteColor">Блок 1</div>
+        <div class="head greyColor">Блок 2</div>
+        <div class="head greyColor">Блок 3</div>
+        <div class="head greyColor">Блок 4</div>
+        <div class="head greyColor">Блок 5</div>
+        <div class="head greyColor">Блок 6</div>
+    </div>
+
+    <div id="rightSide">
+        <div id="content">
+            <div class="points"><h3> Бали </h3></div>
+            <div id="chart">
+                <div id="circleSlider"></div>
+            </div>
+            <div class="points"><h1 id="currentPoints"> 0 </h1></div>
+        </div>
+    </div>
+
+    <div id="cards">
+        <!--секція 1-->
+        <div class="section">
+            <!--Картка 3-->
+            <div class="card block1 last">
+                <!--варіант 1-->
+                <div class="b1Q3 variant">
+                    <div class="side">
+                        <h3>Тепер оберіть вашу редакційну концепцію для найкращого просування ваших ідей та росту вашої популярності:</h3>
+                        <!--варіант 1-->
+                        <li id="b1Q3V1" class="show" value="15000">
+                            <p>Критичні новини, адже все навкруги нас розчаровує.
+                            </p>
+                            <!--<img class="arrowRight" src="img/arrow.png"/>-->
+                            <button class="choice">Обрати</button>
+                            <button class="noThanks">Гортати</button>
+                        </li>
+                    </div>
+                    <div class="side back">
+                        <p><b>+15 000 аудиторії.</b> Реформи провалились, всі крадуть, свята скасовують, в дитсадках голодують діти. Ви також знаєте все про політичні змови, а якщо не знаєте, то відчуваєте. Інформація від анонімних джерел та негатив - ваш шлях до довіри! </p>
+                        <button class="next">Далі</button>
+                    </div>
+                </div>
+
+                <!--варіант 2-->
+                <div class="b1Q3 variant hide">
+                    <div class="side">
+                        <h3>Тепер оберіть вашу редакційну концепцію для найкращого просування ваших ідей та росту вашої популярності:</h3>
+                        <!--варіант 1-->
+                        <li id="b1Q3V2" class="show" value="12000">
+                            <p>Розслідування! Хабарі і корупція - найбільш гарячі теми.
+                            </p>
+                            <!--<img class="arrowRight" src="img/arrow.png"/>-->
+                            <button class="choice">Обрати</button>
+                            <button class="noThanks">Гортати</button>
+                        </li>
+                    </div>
+                    <div class="side back">
+                        <p><b>+12 000 аудиторії.</b> Розслідування і активізм не тільки змінять світ, але й зроблять вас популярними. Необов'язково доводити розслідування до кінця, чи взагалі їх проводити. Достатньо показати пару фактів і завершити риторичними запитаннями на кшталт “Звідки він взяв на це гроші? Нехай люди здогадаються самі!”</p>
+                        <button class="next">Далі</button>
+                    </div>
+                </div>
+
+
+                <!--варіант 3-->
+                <div class="b1Q3 variant hide">
+                    <div class="side">
+                        <h3>Тепер оберіть вашу редакційну концепцію для найкращого просування ваших ідей та росту вашої популярності:</h3>
+                        <!--варіант 1-->
+                        <li id="b1Q3V3" class="show" value="10000">
+                            <p>Новини, які цікаві простим людям: гороскопи, рецепти, кросворди, корисні поради.</p>
+                            <!--<img class="arrowRight" src="img/arrow.png"/>-->
+                            <button class="choice">Обрати</button>
+                            <button class="noThanks">Гортати</button>
+                        </li>
+                    </div>
+                    <div class="side back">
+                        <p><b>+10 000 аудиторії.</b>До Землі наближається астероїд, а в центрі Запоріжжя відкрився вхід в пекло. Уряд мовчить про це, бо сам хоче знищити українців через програми щеплень. Відома співачка Дурачкова роздяглась і сіла на шпагат.
+                        </p>
+                        <button class="next">Далі</button>
+                    </div>
+                </div>
+
+
+                <!--варіант 4-->
+                <div class="b1Q3 variant hide">
+                    <div class="side">
+                        <h3>Тепер оберіть вашу редакційну концепцію для найкращого просування ваших ідей та росту вашої популярності:</h3>
+                        <!--варіант 1-->
+                        <li id="b1Q3V4" class="show" value="20000">
+                            <p>Новини про все підряд, основна фішка - зашкварні заголовки, багато репостів з соцмереж, спорту, сексу, міжнародки і політики.</p>
+                            <!--<img class="arrowRight" src="img/arrow.png"/>-->
+                            <button class="choice">Обрати</button>
+                            <button class="noThanks">Гортати</button>
+                        </li>
+                    </div>
+                    <div class="side back">
+                        <p><b>+20 000 аудиторії.</b>У вас буде спеціальний відділ, який буде вигадувати найбільш екстремальні заголовки, щоб  у читачів ставало волосся дибки, а тремтяча рука сама тягнулася клікнути і прочитати.</p>
+                        <button class="next">Далі</button>
+                    </div>
+                </div>
+            </div><!--card3 end -->
+
+            <!--Картка 2-->
+            <div class="card block1">
+
+                <!--варіант 1-->
+                <div class="b1Q2 variant">
+                    <div class="side">
+                        <h3>Якою буде ваша посада у виданні <b id="myMedia"></b></h3>
+                        <!--варіант 1-->
+                        <li id="b1Q2V1" class="show" value="5040">
+                            <p>Головред, він же власник. Гроші на створення ЗМІ позичив. На сайті про це не вказано, але ми написали про це прес-реліз і розіслали.
+                            </p>
+                            <!--<img class="arrowRight" src="img/arrow.png"/>-->
+                            <button class="choice">Обрати</button>
+                            <button class="noThanks">Гортати</button>
+                        </li>
+                    </div>
+                    <div class="side back">
+                        <p><b>+ 5040 аудиторії.</b> Періодично вас буде “кошмарити” податкова, але ви зможете все “порішати”
+                        </p>
+                        <button class="next">Далі</button>
+                    </div>
+                </div>
+
+                <!--варіант 2-->
+                <div class="b1Q2 variant hide">
+                    <div class="side">
+                        <h3>Якою буде ваша посада у виданні <b id="myMedia"></b></h3>
+                        <!--варіант 1-->
+                        <li id="b1Q2V2" value="2014">
+                            <p>Власник, не приховую цього і пишаюсь в ЗМІ. На сайті про це не вказано, про всяк випадок.
+                            </p>
+                            <!--<img class="arrowRight" src="img/arrow.png"/>-->
+                            <button class="choice">Обрати</button>
+                            <button class="noThanks">Гортати</button>
+                        </li>
+                    </div>
+                    <div class="side back">
+                        <p><b>+ 2014 аудиторії.</b> Оскільки всім буде достеменно відомо, що ви власник, не буде інтриги. Мало того, після того, як ви затримали на три місяці виплату зарплат в конвертах своїм співробітникам, про вас погано написали інші ЗМІ.
+
+                        </p>
+                        <button class="next">Далі</button>
+                    </div>
+                </div>
+
+                <!--варіант 3-->
+                <div class="b1Q2 variant hide">
+                    <div class="side">
+                        <h3>Якою буде ваша посада у виданні <b id="myMedia"></b></h3>
+                        <!--варіант 1-->
+                        <li id="b1Q2V3" value="10344">
+                            <p>Сайт належить вашій бабці /вашому адвокату/ про вас нічого не буде відомо офіційно. Будуть ходити чутки.</p>
+                            <!--<img class="arrowRight" src="img/arrow.png"/>-->
+                            <button class="choice">Обрати</button>
+                            <button class="noThanks">Гортати</button>
+                        </li>
+                    </div>
+                    <div class="side back">
+                        <p><b>+ 10344 аудиторії.</b> Вітаємо, найкращий варіант! З одного боку, це легально, і на вас нічого не “навісять”, ха-ха. І відхреститися завжди можна, в разі чого.</p>
+                        <button class="next">Далі</button>
+                    </div>
+                </div>
+
+                <!--варіант 4-->
+                <div class="b1Q2 variant hide">
+                    <div class="side">
+                        <h3>Якою буде ваша посада у виданні <b id="myMedia"></b></h3>
+                        <!--варіант 1-->
+                        <li id="b1Q2V4" value="2002">
+                            <p>Ніде не буде жодної інформації про те, кому належить ваш сайт, хто головред, і хто робить новини. Нехай ламають голову.</p>
+                            <!--<img class="arrowRight" src="img/arrow.png"/>-->
+                            <button class="choice">Обрати</button>
+                            <button class="noThanks">Гортати</button>
+                        </li>
+                    </div>
+                    <div class="side back">
+                        <p><b>+ 2002 аудиторії.</b> Не дуже добрий варіант, це підозріло. Лишіть хоч якусь ТОВку і контакти для найбільш допитливих з аудиторії.
+                        </p>
+                        <button class="next">Далі</button>
+                    </div>
+                </div>
+
+
+
+
+            </div> <!--card2 end -->
+
+            <!--Картка 1-->
+            <div class="card block1">
+                <div class="b1Q1 variant">
+                    <div class="side">
+                        <h3>Оберіть назву свого сайту із запропонованих:</h3>
+                        <!--варіант 1-->
+                        <li id="b1Q1V1" class="show" value="1500">
+                            <p><b class="media">Хана.ua</b></p>
+                            <!--<img class="arrowRight" src="img/arrow.png"/>-->
+                            <button class="choice">Обрати</button>
+                            <button class="noThanks">Гортати</button>
+                        </li>
+                    </div>
+                    <div class="side back">
+                        <p><b>+1500 аудиторії.</b> Звучить, як удар батога. Це приверне увагу, крім того, народ любить коли його лякають, тож це хороший вибір</p>
+                        <button class="next">Далі</button>
+                    </div>
+                </div>
+
+                <div class="b1Q1 variant hide">
+                    <div class="side">
+                        <h3>Оберіть назву свого сайту із запропонованих:</h3>
+                        <!--варіант 1-->
+                        <li id="b1Q1V2" value="1000">
+                            <p><b class="media">Стопхабар</b></p>
+                            <!--<img class="arrowRight" src="img/arrow.png"/>-->
+                            <button class="choice">Обрати</button>
+                            <button class="noThanks">Гортати</button>
+                        </li>
+                    </div>
+                    <div class="side back">
+                        <p><b>+1000 аудиторії.</b> Непогано, антикорупційна риторика все ще працює
+                        </p>
+                        <button class="next">Далі</button>
+                    </div>
+                </div>
+
+
+
+
+                <div class="b1Q1 variant hide">
+                    <div class="side">
+                        <h3>Оберіть назву свого сайту із запропонованих:</h3>
+                        <!--варіант 1-->
+                        <li id="b1Q1V3" value="500">
+                            <p><b class="media">Повір</b></p>
+                            <!--<img class="arrowRight" src="img/arrow.png"/>-->
+                            <button class="choice">Обрати</button>
+                            <button class="noThanks">Гортати</button>
+                        </li>
+                    </div>
+                    <div class="side back">
+                        <p><b>+500 аудиторії.</b> Нейтральна назва.
+                        </p>
+                        <button class="next">Далі</button>
+                    </div>
+                </div>
+
+
+                <div class="b1Q1 variant hide">
+                    <div class="side">
+                        <h3>Оберіть назву свого сайту із запропонованих:</h3>
+                        <!--варіант 1-->
+                        <li id="b1Q1V4" value="1000">
+                            <p><b class="media">Паровоз</b></p>
+                            <!--<img class="arrowRight" src="img/arrow.png"/>-->
+                            <button class="choice">Обрати</button>
+                            <button class="noThanks">Гортати</button>
+                        </li>
+                    </div>
+                    <div class="side back">
+                        <p><b>+1000 аудиторії.</b> Непогано, дивні назви привертають увагу.</p>
+                        <button class="next">Далі</button>
+                    </div>
+                </div>
+
+
+
+            </div> <!--card end -->
+
+            <!--Блок 1. Титул-->
+            <div class="card block1">
+                <div class="b1Q0 variant">
+                    <div class="side">
+                        <h3><b>БЛОК 1. <br> Підготовка</b></h3>
+                        <!--варіант 1-->
+                        <li id="b1Q0V1" class="show" value="0">
+                            <p> Гра складається з 40-50 кроків. Учасник – політик, який запустив інтернет-медіа і намагається наростити його (і свою) популярність і впливовість.</p>
+                            <!--<img class="arrowRight" src="img/arrow.png"/>-->
+                            <button class="next">Lets go!</button>
+                        </li>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!--section 1 end -->
+
+        <div class="section">
+
+            <!--Блок 2. Питання 3-->
+            <div class="card block2"></div>
+
+            <!--Блок 2. Питання 2-->
+            <div class="card block2">
+                <div class="b2Q2 variant">
+                    <div class="side">
+                        <h3><b style="text-transform: uppercase">Працюємо з експертами-1</b></h3>
+                        <!--варіант 1-->
+                        <li id="b2Q2V1" class="show" value="">
+                            <p class="mainInfo">Беремо коментарі у пересічних громадян, реально існуючих, даємо їхні повні імена. Питаємо їх про війну, про курс гривні,  про дитячих лікарів, про реформи й політику.</p>
+                            <p class="additionalInfo additionalInfoYes"><b>+ 1089 аудиторії.</b> Чудове рішення! Ви на шляху до успіху. Саме реальні люди, наші громадяни, знають всю правду, вони говорять тими словами, що й уся Україна, а не оцим мудрованим потоком термінів, який нікому не потрібен. Плюс, їх же можна підібрати під нашу точку зору, а з фахівцями це не вдасться!</p>
+                            <p class="additionalInfo additionalInfoNo"><b>Ви втратили 178 читачів.</b> Без думки баби Галі з Козятина ваші новини не такі цікаві та клікабельні, читачі втекли до тих, хто знаходить цікаві думки з народу!</p>
+                            <button class="answer answerYes show" value="1089">Так</button>
+                            <button class="answer answerNo show" value="-178">Ні</button>
+                            <!--<button class="nextSlide hide">Хм...</button>-->
+                        </li>
+                    </div>
+                    <div class="side back">
+                        <p></p>
+                        <button class="nextSlide">Зрозуміло</button>
+                    </div>
+                </div>
+
+
+                <div class="b2Q2 variant hide">
+                    <div class="side">
+                        <h3><b style="text-transform: uppercase">Працюємо з експертами-2</b></h3>
+                        <!--варіант 1-->
+                        <li id="b2Q2V2" class="show" value="">
+                            <p class="mainInfo">Підписуємо фахівців коротко і зрозуміло, наприклад, «експерт з міжнародних відносин».
+                            </p>
+                            <p class="additionalInfo additionalInfoYes"><b>+ 1023 аудиторії.</b> Непогане рішення! Не варто вказувати посади експертів та писати їхній бекграунд! Достатньо - «Василь Довгобазарченко, політолог”. Ніхто не гуглитиме, аби дізнатися, що Василь – на зарплаті в партії, яку хвалить, і потрапив у базу фальшивих соціологів http://texty.org.ua/d/socio/. Інші семеро експертів вигадані, але ж про це ніхто не дізнається! Не забудьте додати одного відомого журналіста! Це плюсик до достовірності тез вигаданих експертів.
+                            </p>
+                            <p class="additionalInfo additionalInfoNo"><b>+7 читачів.</b> Поки ви три дні чекали відповіді від Петра Розумахіна, який розбирається в біологічному розмаїтті азово-чорноморського екологічного коридору, ваші конкуренти опублікували експертну думку баби Валі з ринку та істеричного депутата. Читачі повірили їм.</p>
+                            <button class="answer answerYes show" value="1023">Так</button>
+                            <button class="answer answerNo show" value="7">Ні</button>
+                            <!--<button class="nextSlide hide">Хм...</button>-->
+                        </li>
+                    </div>
+                    <div class="side back">
+                        <p></p>
+                        <button class="nextSlide">Зрозуміло</button>
+                    </div>
+                </div>
+
+
+                <div class="b2Q2 variant hide">
+                    <div class="side">
+                        <h3><b style="text-transform: uppercase">Працюємо з експертами-3</b></h3>
+                        <!--варіант 1-->
+                        <li id="b2Q2V3" class="show" value="">
+                            <p class="mainInfo">Нехай експерти пишуть нам блоги, а ми будемо їх ставити в стрічку новин. Або ще простіше – будемо брати коментарі по темі з соцмереж, і ставити в стрічку новин! Дешево і сердито!</p>
+                            <p class="additionalInfo additionalInfoYes"><b>+ 510 аудиторії.</b> Хороше рішення. Можна обирати тільки ті коментарі, які вам підходять ідеологічно. Або тільки ті, які вам подобаються. А розміщуючи їх серед новин, ви додаєте драйву вашій стрічці. Як вам заголовок: «Експерт Голопупенко: вкрали і брешуть!!!» (насправді, Голопупенко – кухар ресторану «Хата Пузатим», але пише в соцмережах багато і дуже агресивно).
+                            </p>
+                            <p class="additionalInfo additionalInfoNo"><b>- 53 читачf.</b>Та у вашій стрічці новин зовсім нема чого читати! Де ж ці поради Комаровського, як налагодити мир в Україні, чи думка Рабіновича, як правильно лікувати рак? Аудиторія почала потроху тікати…. Не кажучи про те, що вам доведеться розширювати штат, ваші два журналісти і один редактор не встигають брати реальні коментарі у експертів.</p>
+                            <button class="answer answerYes show" value="510">Так</button>
+                            <button class="answer answerNo show" value="-53">Ні</button>
+                            <!--<button class="nextSlide hide">Хм...</button>-->
+                        </li>
+                    </div>
+                    <div class="side back">
+                        <p></p>
+                        <button class="next">Зрозуміло</button>
+                    </div>
+                </div>
+
+
+
+
+
+
+                </div>
+
+            <!--Блок 2. Питання 1-->
+            <div class="card block2">
+                <div class="b2Q1 variant">
+                    <div class="side">
+                        <h3><b style="text-transform: uppercase">Працюємо з джерелами-1</b></h3>
+                        <!--варіант 1-->
+                        <li id="b2Q1V1" class="show" value="">
+                            <p class="mainInfo">Викриваємо щось з посиланням на конкретні, а не анонімні джерела
+                            </p>
+                            <p class="additionalInfo additionalInfoYes"><b>+ 530 аудиторії.</b> Ви потрудились, але з’ясувалося, що викриття не дуже серйозне. Конкуренти написало матеріал на цю саму тему, додавши «смажених фактів» без джерел і процитувавши анонімів. Ваш матеріал пройшов непоміченим </p>
+                            <p class="additionalInfo additionalInfoNo"><b>+ 1011 аудиторії.</b> Анонімні джерела - чудовий вибір, щоб прикрити недостатні докази, нехай спростовують. Конкуренти написали матеріал на цю ж тему, але з конкретними джерелами, що тільки додало вам довіри. </p>
+                            <button class="answer answerYes show" value="530">Так</button>
+                            <button class="answer answerNo show" value="1011">Ні</button>
+                            <!--<button class="nextSlide hide">Хм...</button>-->
+                        </li>
+                    </div>
+                    <div class="side back">
+                        <p></p>
+                        <button class="nextSlide">Хм...</button>
+                    </div>
+                </div>
+
+
+
+                <div class="b2Q1 variant hide">
+                    <div class="side">
+                        <h3><b style="text-transform: uppercase">Працюємо з джерелами-2</b></h3>
+                        <!--варіант 1-->
+                        <li id="b2Q1V2" class="show" value="">
+                            <p class="mainInfo">Постійно публікуємо інфу, яку нам зливають, і стаємо єдиним джерелом інформації. Ексклюзив сприяє не тільки довірі, а й цитованості.</p>
+                            <p class="additionalInfo additionalInfoYes"><b>+ 1023 читача.</b>Чудова стратегія, зливи завжди посилюють конспірологію, та й інформацію можна не перевіряти, навіщо. Однак, ви стали жертвою маніпуляцій провладної партії, яка використала вас, щоб замочити опонентів</p>
+                            <p class="additionalInfo additionalInfoNo"><b>+ 510 читачів.</b> Невже ви хочете, як те BBC, перевіряти кожне джерело, аби вам дійсно довіряла аудиторія? Похвальна амбіція, але ж ми в Україні, а не в Британії. А от ваші конкуренти не такі етичні, і поки ви перевіряли інформацію, вони її опублікували й так. </p>
+                            <button class="answer answerYes show" value="1023">Так</button>
+                            <button class="answer answerNo show" value="510">Ні</button>
+                            <!--<button class="nextSlide hide">Що далі?</button>-->
+                        </li>
+                    </div>
+                    <div class="side back">
+                        <p></p>
+                        <button class="nextSlide">Далі</button>
+                    </div>
+                </div>
+
+
+                <div class="b2Q1 variant hide">
+                    <div class="side">
+                        <h3><b style="text-transform: uppercase">Працюємо з джерелами-3</b></h3>
+                        <!--варіант 1-->
+                        <li id="b2Q1V3" class="show" value="">
+                            <p class="mainInfo">Пишемо історії про людей, адже це ближче і зрозуміліше нашій цільовій аудиторії. Підписуємо «Вася П.», «Катерина І.», наші герої - банкіри, ветеринари, співробітники супермаркету, домогосподарки, столяри і лікарі.
+                            </p>
+                            <p class="additionalInfo additionalInfoYes"><b>+ 1009 читача.</b>Найкраща стратегія. Прості людські історії йдуть на ура! Їм довіряють, навіть якщо це репости з соцмереж про Марію П., яка поїхала в Туреччину відпочивати і цілу ніч не відповідала на дзвінки. ЇЇ чоловік написав про це пост. Саме це і є справжня соціальна журналістика - репостити соцмережі.</p>
+                            <p class="additionalInfo additionalInfoNo"><b>+ 206 читачів.</b> Ой. Ви що, хочете шукати справжніх героїв і записувати з їхніх слів? Та у вас всього п’ять журналістів, схаменіться! Та й у соцмережах же не роботи пишуть, а реальні люди. Тому репости – це цілком виправдано. Поки ви шукали справжніх героїв, ваші конкуренти репостили соцмережі, вигадували героїв, і аудиторія перебігла до них.</p>
+                            <button class="answer answerYes show" value="1009">Так</button>
+                            <button class="answer answerNo show" value="206">Ні</button>
+                            <!--<button class="nextSlide hide">Що далі?</button>-->
+                        </li>
+                    </div>
+                    <div class="side back">
+                        <p></p>
+                        <button class="next">Що далі?</button>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+
+            <!--Блок 2. Титул-->
+            <div class="card block2">
+                <div class="b2Q0 variant">
+                    <div class="side">
+                        <h3><b>БЛОК 2.<br> НАРОЩУЄМО ДОВІРУ.</b></h3>
+                        <!--варіант 1-->
+                        <li id="b2Q0V1" class="show" value="0">
+                            <p>Ух-ти, обрана вами назва та стратегія принесла вам багато читачів! Але тепер треба наростити довіру до новин. Що зробите для цього?
+                            </p>
+                            <!--<img class="arrowRight" src="img/arrow.png"/>-->
+                            <button class="next">Є одна ідея!</button>
+                        </li>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+    </div> <!-- end of #cards -->
+</div> <!-- end of #mygrid -->
+
+
+<script src="lib/jquery-2.1.4.min.js"></script>
+<script src="lib/d3.min.js"></script>
+<script src='lib/share-behavior.js'></script>
+<script src="js/slider.js"></script>
+<script src="js/lazy-loader.js"></script>
+<script src="js/script.js"></script>
+<script src="js/spiral.js"></script>
+
+
+<script>
+
+    $('#roll').on("click", function () {
+        var newHeight;
+        $('#paper').css("height", function () {
+            var currentHeight = $('#paper').css("height");
+            currentHeight = currentHeight.replace("px", "");
+            currentHeight = +currentHeight;
+            newHeight = currentHeight + 300 + "px";
+            $('#paper').animate({height: newHeight}, 1000);
+            $('section.active').animate({height: "300px"}, 800);
+            $('section').attr("class", 'old')
+
+        });
+
+
+        $('#cut').css("animation", "circle 2s");
+        $('#inner-cut').css("animation", "inner-circle 2s");
+
+        setTimeout(function () {
+            $('#cut').css("animation", "");
+            $('#inner-cut').css("animation", "");
+
+            $("div#paper").prepend('<section class="active"></section>');
+
+        }, 700);
+
+        setTimeout(function () {
+
+        }, 200);
+
+
+    });
+
+
+</script>
+<script>
+
+    <!--Анімація цифр-->
+    function animateValue(id, start, end, duration) {
+
+        var obj = document.getElementById(id);
+        var range = end - start;
+        var minTimer = 50;
+        var stepTime = Math.abs(Math.floor(duration / range));
+        stepTime = Math.max(stepTime, minTimer);
+        var startTime = new Date().getTime();
+        var endTime = startTime + duration;
+        var timer;
+
+        function run() {
+            var now = new Date().getTime();
+            var remaining = Math.max((endTime - now) / duration, 0);
+            var value = Math.round(end - (remaining * range));
+            obj.innerHTML = value;
+            if (value == end) {
+                clearInterval(timer);
+            }
+        }
+
+        timer = setInterval(run, stepTime);
+        run();
+    }
+
+</script>
+
+
+<!-- Footer-->
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-18136548-1']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+</div>
+
+</body>
+</html>

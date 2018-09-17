@@ -66,7 +66,10 @@ li.pseudo {
   min-height: 0; }
 
 p {
-  width: 100%; }
+  font-size: 13px;
+  width: 100%;
+  line-height: 1.6;
+  text-align: left; }
 
 .card {
   width: calc(100vw/2.5);
@@ -74,7 +77,25 @@ p {
   position: absolute;
   background: white;
   border: 3px solid blue;
-  border-left: 0; }
+  border-left: 0;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease-out; }
+
+.card .side {
+  backface-visibility: hidden;
+  margin: 20px 60px 20px 30px;
+  position: absolute; }
+
+.card .back {
+  width: calc(100% - 60px);
+  position: absolute;
+  min-height: 150px;
+  color: #0087cc;
+  line-height: 150px;
+  transform: rotateY(180deg); }
+
+.hide {
+  display: none; }
 
 .card:before {
   content: "";
@@ -109,15 +130,12 @@ p {
 .arrowRight {
   width: 30px;
   transform: rotate(180deg);
-  position: absolute;
-  top: 45%;
-  right: -30%; }
+  position: absolute; }
 
 .arrowRight:hover {
   cursor: pointer; }
 
 .variant {
-  width: 100%;
   display: grid;
   grid-template-columns: 100% 20%; }
 
@@ -134,12 +152,6 @@ button {
   font-size: 12px;
   padding: 5px;
   border: 1px solid #555555; }
-
-button.choice, button.next, button.nextSlide {
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  z-index: 100000; }
 
 .additionalInfo {
   display: none;
@@ -173,15 +185,15 @@ button.choice, button.next, button.nextSlide {
 .block2, .block3 {
   display: none; }
 
-button.answerYes, button.answerNo {
+button.answerYes, button.choice, button.next, button.nextSlide, button.answerNo, button.noThanks {
   position: absolute;
-  bottom: -10px;
+  bottom: -20px;
   z-index: 100000; }
 
-button.answerYes {
+button.answerYes, button.choice, button.next, button.nextSlide {
   left: 0; }
 
-button.answerNo {
+button.answerNo, button.noThanks {
   right: 0; }
 
 /*# sourceMappingURL=application.css.map */
