@@ -49,6 +49,8 @@ var cards4 = $(".card.block4");
 setSize(cards4);
 var cards5 = $(".card.block5");
 setSize(cards5);
+var cards6 = $(".card.block6");
+setSize(cards6);
 
 window.addEventListener("resize", function() {
     cardbox = $('.card')[0].getBoundingClientRect();
@@ -247,7 +249,7 @@ $(".step").on("click", function() {
 
     // $(".hiddenCard").not(targetCard).remove();
     $("#replacement").remove();
-    $(targetCard).css('display', "block")
+    $(targetCard).addClass("last").css('display', "block")
 });
 
 

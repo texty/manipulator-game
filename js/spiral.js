@@ -32,12 +32,12 @@ var width = 120,
         .append("g")
         .attr("transform", "translate(" + width / 2 + "," + (height / 2 - 20) + ")");
 
-    var pieces = d3.range(start, end + 0.005, (end - start) / 500);
+    var pieces = d3.range(start, end, (end - start) / 500);
     var currentTotalPoints = 128;
-    var toDraw = 0.00007 * currentTotalPoints;
+    var toDraw = 0.000054545 * currentTotalPoints;
 
 
-    var pieces2 = d3.range(start, toDraw + 0.005, (end - start) / 500);
+    var pieces2 = d3.range(start, toDraw, (toDraw - start) / 500);
 
     var spiral = d3.svg.line.radial()
         .interpolate("linear")
@@ -79,12 +79,12 @@ var t = d3.transition()
 
 
 var spiralDraw = function(plus, current) {
-    var pieces = d3.range(start, end + 0.005, (end - start) / 500);
+    var pieces = d3.range(start, end, (end - start) / 500);
     var currentTotalPoints = plus + current;
-    var toDraw = 0.00007 * currentTotalPoints;
+    var toDraw = 0.000054545 * currentTotalPoints;
 
 
-    pieces2 = d3.range(start, toDraw + 0.005, (end - start) / 500);
+    pieces2 = d3.range(start, toDraw, (toDraw - start) / 500);
 
     d3.select(".spiral2")
         .data([pieces2])
