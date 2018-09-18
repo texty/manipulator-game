@@ -45,6 +45,10 @@ var cards2 = $(".card.block2");
 setSize(cards2);
 var cards3 = $(".card.block3");
 setSize(cards3);
+var cards4 = $(".card.block4");
+setSize(cards4);
+var cards5 = $(".card.block5");
+setSize(cards5);
 
 window.addEventListener("resize", function() {
     cardbox = $('.card')[0].getBoundingClientRect();
@@ -128,6 +132,12 @@ $(".next").on("click", function(){
         if(currentDiv.hasClass('block3') === true){
             currentIndex = 2
         }
+        if(currentDiv.hasClass('block4') === true){
+            currentIndex = 3
+        }
+        if(currentDiv.hasClass('block5') === true){
+            currentIndex = 4
+        }
         sectionIndex = currentIndex + 1;
         $(sections[sectionIndex]).find(".card").css("display","block");
 
@@ -159,28 +169,16 @@ $(".answer").on("click", function() {
     var plus = answerPoints;
     current = +current;
     plus = +plus;
-    
     spiralDraw(plus, current);
-   
-
     $(this).parent().find(".next").removeClass("hide").addClass("show");
-
 });
 
-
-
-//
-// $(".arrowRight").on("click", function() {
-//     var elem = this;
-//     sliderFunction(elem);
-//
-// });
 
 $(".noThanks").on("click", function() {
     var elem = this;
     sliderFunction(elem);
-
 });
+
 
 $("button.answer").on("click", function() {
     var elem = this;
@@ -212,7 +210,32 @@ $(".nextSlide").on("click", function() {
 
 });
 
+$(".error").on("click", function() {
+    var messengerInfo = $(this).parent().find(".additionalInfo").html();
+    var oldMessages = $("#messenger p").css("color", "grey");
+    newMessage(messengerInfo);
+});
 
+
+$(".dependb4Q1").on("click", function() {
+    var choiceDepend = $(this).closest("li").find("div#textForChoiceDepend").html();
+    $("#b4Q3V1").find("#choiceDepend").html(choiceDepend);
+    var choiceDependAdditional = $(this).closest("li").find("div#textForChoiceDependAdditional").html();
+    $("#b4Q3V1").find("#choiceDependAdditional").html(choiceDependAdditional);
+    var currentValue = $(this).closest("li").find("div#textForChoiceDepend").attr("value");
+    $("#b4Q3V1").attr("value", currentValue);
+});
+
+
+$(".myHint").on("click", function() {
+    newMessage("<b style='color:red;'>Підказка: краще атакувати загальну структуру, організацію, уряд, і не привязуватися до конкретних імен, які можуть дати відповідь, а то й піти до суду</b>");
+
+    var allHints = $("button.myHint").addClass("hide");
+    $(this).closest(".card").find(".choice").removeClass("hide");
+    
+
+
+});
 
 
 

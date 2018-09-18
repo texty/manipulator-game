@@ -197,15 +197,15 @@ button {
   vertical-align: middle;
   color: white; }
 
-.block2, .block3 {
+.block2, .block3, .block4, .block5, .block6 {
   display: none; }
 
-button.answerYes, button.choice, button.next, button.answerNo, button.noThanks {
+button.answerYes, button.choice, button.next, button.error, button.myHint, button.answerNo, button.noThanks {
   position: absolute;
   bottom: -20px;
   z-index: 100000; }
 
-button.answerYes, button.choice, button.next {
+button.answerYes, button.choice, button.next, button.error, button.myHint {
   left: 0; }
 
 button.answerNo, button.noThanks {
