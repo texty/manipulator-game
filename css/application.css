@@ -3,7 +3,8 @@ body {
   background-color: black;
   font-family: 'Roboto Mono', monospace;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  overflow-x: hidden; }
 
 .greyColor {
   color: grey; }
@@ -34,9 +35,39 @@ h1, h3 {
   position: relative; }
 
 #rightSide {
+  height: 100vh;
   grid-column: 2/3;
   grid-row: 1/3;
+  display: grid;
+  grid-template-rows: 10vh 70vh auto; }
+
+#mediaLogo {
+  width: 100%;
+  grid-column: 1/-1;
+  grid-row: 1/2;
   background-color: blue; }
+
+#messenger {
+  width: 100%;
+  grid-column: 1/-1;
+  grid-row: 2/3;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: black;
+  border: 2px solid blue; }
+
+#messenger > p {
+  font-size: 14px;
+  color: white;
+  padding: 10px; }
+
+#spiral {
+  width: 100%;
+  grid-column: 1/-1;
+  grid-row: 3/4;
+  background-color: blue;
+  display: grid;
+  grid-template-columns: 40% 60%; }
 
 #blockList {
   width: 70%;
@@ -69,8 +100,9 @@ p {
   width: 100%; }
 
 .card {
-  width: calc(100vw/2.5);
-  height: calc(100vh/2);
+  height: 350px;
+  min-width: 500px;
+  max-width: 600px;
   position: absolute;
   background: white;
   border: 3px solid blue;
@@ -135,12 +167,6 @@ button {
   padding: 5px;
   border: 1px solid #555555; }
 
-button.choice, button.next, button.nextSlide {
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  z-index: 100000; }
-
 .additionalInfo {
   display: none;
   font-style: italic;
@@ -168,20 +194,21 @@ button.choice, button.next, button.nextSlide {
   width: 100%;
   margin: 0 auto;
   text-align: center;
+  vertical-align: middle;
   color: white; }
 
 .block2, .block3 {
   display: none; }
 
-button.answerYes, button.answerNo {
+button.answerYes, button.choice, button.next, button.answerNo, button.noThanks {
   position: absolute;
-  bottom: -10px;
+  bottom: -20px;
   z-index: 100000; }
 
-button.answerYes {
+button.answerYes, button.choice, button.next {
   left: 0; }
 
-button.answerNo {
+button.answerNo, button.noThanks {
   right: 0; }
 
 /*# sourceMappingURL=application.css.map */

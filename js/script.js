@@ -5,6 +5,18 @@ var width = cardbox.width,
     height = cardbox.height;
 var media;
 
+//додаємо текст в месенджер
+var newMessage = function(text) {
+    var messenger = document.getElementById("messenger");
+    var isScrolledToBottom = messenger.scrollHeight - messenger.clientHeight <= messenger.scrollTop + 1;
+    var newElement = document.createElement("p");
+    newElement.innerHTML = text;
+    messenger.appendChild(newElement);
+    if(isScrolledToBottom)
+        messenger.scrollTop = messenger.scrollHeight - messenger.clientHeight;
+};
+
+
 var setSize = function(blockNumber) {
     for (var i = 0; i <= blockNumber.length + 1; i++) {
         var position = i * 20;
@@ -44,7 +56,7 @@ window.addEventListener("resize", function() {
 
 
 var sliderFunction = function(elem) {
-    var currentList = $(elem).parent();
+    var currentList = $(elem).closest(".parentForSlider");
     var classString = currentList.attr('class'); // "blog button main"
     var theClass = classString.split(' ')[0];
     var listArray = document.getElementsByClassName(theClass);
@@ -67,8 +79,9 @@ var sliderFunction = function(elem) {
 $('.choice').on("click", function(){
     var card = $(this).closest(".card");
     // card.css("transform", "rotateY(180deg)");
-
-    $(this).parent().find("p.additionalInfo").css("display", "block");
+    var messengerInfo = $(this).parent().find(".additionalInfo").html();
+    var oldMessages = $("#messenger p").css("color", "grey");
+    newMessage(messengerInfo);
     $(this).parent().find("p.mainInfo").css("display", "none");
     var points = $(this).parent().attr("value");
     media = $(this).parent().find("p").find("b.media").html();
@@ -128,6 +141,13 @@ $(".next").on("click", function(){
 });
 
 
+$(".nextQuestion").on("click", function() {
+    var containerForRemove = $(this).closest(".card");
+    containerForRemove.remove();//видаляємо картку, яка вже непотрібна
+
+});
+
+
 //кнопки Так чи Ні
 
 $(".answer").on("click", function() {
@@ -149,8 +169,14 @@ $(".answer").on("click", function() {
 
 
 
+//
+// $(".arrowRight").on("click", function() {
+//     var elem = this;
+//     sliderFunction(elem);
+//
+// });
 
-$(".arrowRight").on("click", function() {
+$(".noThanks").on("click", function() {
     var elem = this;
     sliderFunction(elem);
 
@@ -161,14 +187,20 @@ $("button.answer").on("click", function() {
     // sliderFunction(elem);
     $(elem).parent().find(".nextSlide").removeClass("hide").addClass("show");
     $(this).parent().find("p.mainInfo").css("display", "none");
-
+    var messengerInfo;
     if($(this).hasClass("answerYes")){
-        $(this).parent().find("p.additionalInfoYes").css("display", "block");
+        messengerInfo = $(this).parent().find("p.additionalInfoYes").html();
+        $("#messenger p").css("color", "grey");
+        newMessage(messengerInfo);
     }
 
     if($(this).hasClass("answerNo")){
-        $(this).parent().find("p.additionalInfoNo").css("display", "block");
+        messengerInfo = $(this).parent().find("p.additionalInfoNo").html();
+        $("#messenger p").css("color", "grey");
+        newMessage(messengerInfo);
     }
+
+    sliderFunction(elem);
     $(elem).parent().find(".answer").remove();
 
 });
@@ -179,6 +211,11 @@ $(".nextSlide").on("click", function() {
     sliderFunction(elem);
 
 });
+
+
+
+
+
 
 
 

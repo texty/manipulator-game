@@ -1,5 +1,5 @@
-var width = 150,
-    height = 150,
+var width = 120,
+    height = 120,
     num_axes = 4,
     tick_axis = 1,
     start = 0,
@@ -30,7 +30,7 @@ var width = 150,
         .attr("width", width)
         .attr("height", height)
         .append("g")
-        .attr("transform", "translate(" + width / 2 + "," + (height / 2 + 8) + ")");
+        .attr("transform", "translate(" + width / 2 + "," + (height / 2 - 20) + ")");
 
     var pieces = d3.range(start, end + 0.005, (end - start) / 500);
     var currentTotalPoints = 128;
