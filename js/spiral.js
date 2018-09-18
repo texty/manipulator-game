@@ -97,7 +97,8 @@ var spiralDraw = function(plus, current) {
             return "rotate(" + 90 + ")"
         });
 
-        animateValue("currentPoints", current, currentTotalPoints, 1000);
-
-
+        animateValue("currentPoints", current, currentTotalPoints, 1);
 };
+
+
+

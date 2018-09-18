@@ -257,3 +257,45 @@ $(".step").on("click", function() {
 
 
 
+//рахуємо максимально і мінімально можливу кільксть балів, а також інтервали для кожного результату
+
+function onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
+}
+
+var allClassList = $(".parentForSlider").map(function(){return $(this).attr("class").split(' ')[0];}).get();
+allClassList = allClassList.filter(onlyUnique);
+listOfMinValues = [];
+listOfMaxValues = [];
+for(var i = 0; i < allClassList.length;i++){
+    var valueArray = $("."+allClassList[i]).map(function(){return $(this).attr("value");}).get();
+    valueArray = valueArray.map(Number);
+    var minValue = Math.min.apply(Math, valueArray);
+    listOfMinValues.push(minValue);
+    var maxValue = Math.max.apply(Math, valueArray);
+    listOfMaxValues.push(maxValue);
+}
+
+var sumOfMin = listOfMinValues.reduce(function(a, b) { return a + b; }, 0);
+var sumOfMax = listOfMaxValues.reduce(function(a, b) { return a + b; }, 0);
+
+var resultInterval = (sumOfMax - sumOfMin) / 5;
+
+
+var mainDezinformer  = sumOfMax - resultInterval;
+console.log(mainDezinformer);
+var vandal  = sumOfMax - (resultInterval * 2);
+console.log(vandal);
+var paidJournalist =  sumOfMin + (resultInterval * 3);
+console.log(paidJournalist);
+var trashAggregator =  sumOfMin + (resultInterval * 2);
+console.log(trashAggregator);
+var sissy = sumOfMin +  resultInterval;
+console.log(sissy);
+
+
+//закриваємо модальне вікно
+$("button#play").on("click", function() {
+    $("#myModal").remove();
+
+});
