@@ -59,7 +59,7 @@ h1, h3 {
 #messenger > p {
   font-size: 14px;
   color: white;
-  padding: 10px; }
+  padding: 10px 20px 0 10px; }
 
 #spiral {
   width: 100%;
@@ -101,8 +101,7 @@ p {
 
 .card {
   height: 350px;
-  min-width: 500px;
-  max-width: 600px;
+  width: 500px;
   position: absolute;
   background: white;
   border: 3px solid blue;
@@ -133,10 +132,11 @@ p {
   border-style: solid; }
 
 .cardContainer {
-  position: absolute;
-  top: 40%;
-  left: 35%;
-  transform: translate(-35%, -40%); }
+  position: relative;
+  margin-right: 20%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
 
 .arrowRight {
   width: 30px;
@@ -197,7 +197,7 @@ button {
   vertical-align: middle;
   color: white; }
 
-.block2, .block3, .block4, .block5, .block6 {
+.block2, .block3, .block4, .block5, .block6, .hiddenCard {
   display: none; }
 
 button.answerYes, button.choice, button.next, button.error, button.myHint, button.answerNo, button.noThanks {

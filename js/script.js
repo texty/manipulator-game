@@ -113,7 +113,7 @@ $(".next").on("click", function(){
         .parent()
         .parent()
         .parent();
-    containerForRemove.remove();//видаляємо картку, яка вже непотрібна
+    containerForRemove.css("display", "none");//видаляємо картку, яка вже непотрібна
 
 
 
@@ -139,7 +139,7 @@ $(".next").on("click", function(){
             currentIndex = 4
         }
         sectionIndex = currentIndex + 1;
-        $(sections[sectionIndex]).find(".card").css("display","block");
+        $(sections[sectionIndex]).find(".card").not(".hiddenCard").css("display","block");
 
         var headings = $(".head");
         $(".head").removeClass("whiteColor");
@@ -229,12 +229,25 @@ $(".dependb4Q1").on("click", function() {
 
 $(".myHint").on("click", function() {
     newMessage("<b style='color:red;'>Підказка: краще атакувати загальну структуру, організацію, уряд, і не привязуватися до конкретних імен, які можуть дати відповідь, а то й піти до суду</b>");
-
     var allHints = $("button.myHint").addClass("hide");
-    $(this).closest(".card").find(".choice").removeClass("hide");
-    
+    $(this).closest(".card").find(".choice").removeClass("hide"); 
+});
 
 
+$(".step").on("click", function() {    
+    var cardClass = $(this).attr("value");
+    var allHidden = $(".hiddenCard");
+    var targetCard;
+        for (var i = 0; i< allHidden.length; i++ ){
+           if($(allHidden[i]).hasClass(cardClass)){
+               targetCard = allHidden[i];
+
+           }
+        }
+
+    // $(".hiddenCard").not(targetCard).remove();
+    $("#replacement").remove();
+    $(targetCard).css('display', "block")
 });
 
 
