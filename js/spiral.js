@@ -97,8 +97,9 @@ var spiralDraw = function(plus, current) {
             return "rotate(" + 90 + ")"
         });
 
-        animateValue("currentPoints", current, currentTotalPoints, 500);
+        animateValue("currentPoints", current, currentTotalPoints, 1000);
 };
 
 
 
+//рахуємо максимально

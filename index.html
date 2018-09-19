@@ -6,16 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Style and Fonts Links -->
-    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,300i,400,400i,500,500i,700,700i&amp;subset=cyrillic,cyrillic-ext"
-          rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
-          rel="stylesheet">
-    <link rel="stylesheet" href="css/application.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">-->
+    <!--<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,300i,400,400i,500,500i,700,700i&amp;subset=cyrillic,cyrillic-ext"-->
+          <!--rel="stylesheet">-->
+    <!--<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"-->
+          <!--rel="stylesheet">-->
+    <link id="myStyle" rel="stylesheet" href="css/application.css">
+    <!--<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">-->
 
 
 </head>
+<style>
+
+
+</style>
 <body>
 
 <div id="myModal">
@@ -33,6 +37,8 @@
 
 </div>
 <div id="mygrid">
+    <div id="logomob"></div>
+    <div id="spiralmob"></div>
     <div id="blockList">
         <div class="head whiteColor">Блок 1</div>
         <div class="head greyColor">Блок 2</div>
@@ -44,7 +50,7 @@
 
     <div id="rightSide">
         <div id="mediaLogo">
-            <p>Лого ЗМІ</p>
+            <img src="" />
         </div>
 
         <div id="messenger">
@@ -56,7 +62,6 @@
             <div id="chart">
                 <div id="circleSlider"></div>
             </div>
-
         </div>
     </div>
 
@@ -203,11 +208,12 @@
                     </h3>
                     <div class="variant">
                         <!--варіант 1-->
-                        <li id="b1Q1V1" class="b1Q1 parentForSlider show" value="1500"><p><b class="media">Хана.ua</b></p>
+                        <li id="b1Q1V1" class="b1Q1 parentForSlider show" value="1500">
+                            <img class="media" src="img/hana.png" alt="Хана.ua" name="#7c1f2d"/>
                             <p class="additionalInfo"><b>+1500 аудиторії.</b> Звучить, як удар батога. Це приверне увагу, крім того, народ любить коли його лякають, тож це хороший вибір</p>
                             <!--<img class="arrowRight" src="img/arrow.png"/>-->
 
-                            <button class="choice next">Обрати</button>
+                            <button class="choice next selectMedia">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -216,10 +222,10 @@
                     <!--варіант 2 -->
                     <div class="variant">
                         <li id="b1Q1V2" class="b1Q1 parentForSlider hide" value="1000">
-                            <p class="mainInfo"><b class="media">Стопхабар</b></p>
+                            <img class="media" src="img/stop.png" alt="Стопхабар" name="#f13c39"/>
                             <p class="additionalInfo"><b>+1000 аудиторії.</b> Непогано, антикорупційна риторика все ще працює</p>
                             <!--<img class="arrowRight" src="img/arrow.png"/>-->
-                            <button class="choice next">Обрати</button>
+                            <button class="choice next selectMedia">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
 
@@ -228,10 +234,11 @@
 
                     <div class="variant">
                         <!--варіант 1-->
-                        <li id="b1Q1V3" class="b1Q1  parentForSlider hide" value="500"><p><b class="media">Повір</b></p>
+                        <li id="b1Q1V3" class="b1Q1  parentForSlider hide" value="500">
+                            <img class="media" src="img/povir.png" alt="Повір" name="#1cbaf8"/>
                             <p class="additionalInfo"><b>+500 аудиторії.</b> Нейтральна назва.</p>
                             <!--<img class="arrowRight" src="img/arrow.png"/>-->
-                            <button class="choice next">Обрати</button>
+                            <button class="choice next selectMedia">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -239,10 +246,11 @@
 
                     <div class="variant">
                         <!--варіант 1-->
-                        <li id="b1Q1V4" class="b1Q1 parentForSlider hide" value="1000"><p><b class="media">Паровоз</b></p>
+                        <li id="b1Q1V4" class="b1Q1 parentForSlider hide" value="1000">
+                            <img class="media" src="img/paro.png" alt="Паровоз" name="#005f92"/>
                             <p class="additionalInfo"><b>+1000 аудиторії.</b> Непогано, дивні назви привертають увагу.</p>
                             <!--<img class="arrowRight" src="img/arrow.png"/>-->
-                            <button class="choice next">Обрати</button>
+                            <button class="choice next selectMedia">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -1744,14 +1752,16 @@
     </div> <!-- end of #cards -->
 </div> <!-- end of #mygrid -->
 
-
 <script src="lib/jquery-2.1.4.min.js"></script>
 <script src="lib/d3.min.js"></script>
 <script src='lib/share-behavior.js'></script>
 <script src="js/slider.js"></script>
 <script src="js/lazy-loader.js"></script>
+
 <script src="js/script.js"></script>
 <script src="js/spiral.js"></script>
+<script src="js/spiralMob.js"></script>
+
 
 
 <script>
@@ -1791,6 +1801,8 @@
 
 </script>
 <script>
+
+
 
     <!--Анімація цифр-->
     function animateValue(id, start, end, duration) {
