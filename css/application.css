@@ -4,7 +4,8 @@ body {
   font-family: 'Roboto Mono', monospace;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  overflow-y: hidden; }
 
 .greyColor {
   color: grey; }
@@ -24,15 +25,27 @@ h1, h3 {
   display: grid;
   grid-template-columns: 80% 20%;
   grid-template-rows: 10vh 90vh; }
+  @media (max-width: 800px) {
+    #mygrid {
+      grid-template-columns: 100%;
+      grid-template-rows: 10vh 50vh 35vh 5vh; } }
 
 #blockList {
   grid-column: 1/2;
   grid-row: 1/2; }
+  @media (max-width: 800px) {
+    #blockList {
+      grid-column: 1/-1;
+      grid-row: 1/2; } }
 
 #cards {
   grid-column: 1/2;
   grid-row: 2/3;
   position: relative; }
+  @media (max-width: 800px) {
+    #cards {
+      grid-column: 1/-1;
+      grid-row: 2/3; } }
 
 #rightSide {
   height: 100vh;
@@ -40,12 +53,21 @@ h1, h3 {
   grid-row: 1/3;
   display: grid;
   grid-template-rows: 10vh 70vh auto; }
+  @media (max-width: 800px) {
+    #rightSide {
+      height: 100%;
+      grid-column: 1/-1;
+      grid-row: 3/4;
+      grid-template-rows: 100%; } }
 
 #mediaLogo {
   width: 100%;
   grid-column: 1/-1;
   grid-row: 1/2;
   background-color: blue; }
+  @media (max-width: 800px) {
+    #mediaLogo {
+      display: none; } }
 
 #messenger {
   width: 100%;
@@ -55,6 +77,10 @@ h1, h3 {
   overflow-x: hidden;
   background-color: black;
   border: 2px solid blue; }
+  @media (max-width: 800px) {
+    #messenger {
+      margin-top: 20px;
+      grid-row: 1/-1; } }
 
 #messenger > p {
   width: 90%;
@@ -69,6 +95,9 @@ h1, h3 {
   background-color: blue;
   display: grid;
   grid-template-columns: 40% 60%; }
+  @media (max-width: 800px) {
+    #spiral {
+      display: none; } }
 
 #blockList {
   width: 70%;
@@ -84,15 +113,19 @@ h1, h3 {
 
 h3 {
   width: 100%;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 400;
   margin-bottom: 20px; }
+  @media (max-width: 800px) {
+    h3 {
+      font-size: 15px; } }
 
 li {
-  font-size: 13px;
-  min-height: 150px;
-  height: auto;
+  font-size: 16px;
   list-style-type: none; }
+  @media (max-width: 800px) {
+    li {
+      font-size: 13px; } }
 
 li.pseudo {
   min-height: 0; }
@@ -134,10 +167,15 @@ p {
 
 .cardContainer {
   position: relative;
+  height: 280px;
   margin-right: 20%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
+  top: 50px;
+  left: 10%; }
+  @media (max-width: 800px) {
+    .cardContainer {
+      margin-right: 10%;
+      top: 10%;
+      left: 0; } }
 
 .arrowRight {
   width: 30px;
@@ -203,8 +241,11 @@ button {
 
 button.answerYes, button.choice, button.next, button.error, button.myHint, button.answerNo, button.noThanks {
   position: absolute;
-  bottom: -20px;
-  z-index: 100000; }
+  bottom: 0; }
+  @media (max-width: 800px) {
+    button.answerYes, button.choice, button.next, button.error, button.myHint, button.answerNo, button.noThanks {
+      position: absolute;
+      bottom: 0; } }
 
 button.answerYes, button.choice, button.next, button.error, button.myHint {
   left: 0; }

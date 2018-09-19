@@ -1,5 +1,5 @@
-//розташування карток одна під одною
 
+//розташування карток одна під одною
 var cardbox = $('.card')[0].getBoundingClientRect();
 var width = cardbox.width,
     height = cardbox.height;
@@ -39,18 +39,32 @@ var setSize = function(blockNumber) {
     }
 };
 
+
+var setSizeMob = function() {
+    $(".card").css("width", "85vw").css("margin-left", "10vw").css("height", "50vh");
+    $("#blockList").css("display", "none")
+};
 var cards1 = $(".card.block1");
-setSize(cards1);
 var cards2 = $(".card.block2");
-setSize(cards2);
 var cards3 = $(".card.block3");
-setSize(cards3);
 var cards4 = $(".card.block4");
-setSize(cards4);
 var cards5 = $(".card.block5");
-setSize(cards5);
 var cards6 = $(".card.block6");
-setSize(cards6);
+
+
+if (window.innerWidth >= 800) {
+    setSize(cards1);
+    setSize(cards2);
+    setSize(cards3);
+    setSize(cards4);
+    setSize(cards5);
+    setSize(cards6);
+}
+
+if (window.innerWidth < 800) {
+    setSizeMob()
+
+}
 
 window.addEventListener("resize", function() {
     cardbox = $('.card')[0].getBoundingClientRect();
@@ -134,7 +148,7 @@ $(".next").on("click", function(){
         if(currentDiv.hasClass('block3') === true){
             currentIndex = 2
         }
-        if(currentDiv.hasClass('block4') === true){
+        if(currentDiv.hasClass("block4") === true){
             currentIndex = 3
         }
         if(currentDiv.hasClass('block5') === true){
@@ -142,12 +156,19 @@ $(".next").on("click", function(){
         }
         sectionIndex = currentIndex + 1;
         $(sections[sectionIndex]).find(".card").not(".hiddenCard").css("display","block");
+            buttonPosition(cards2);
+            buttonPosition(cards3);
+            buttonPosition(cards4);
+            buttonPosition(cards5);
+            buttonPosition(cards6);
+
+
 
         var headings = $(".head");
         $(".head").removeClass("whiteColor");
         $(headings[sectionIndex-1]).addClass("greyColor");
         $(headings[sectionIndex]).removeClass('greyColor').addClass("whiteColor");
-        // $(".card.block2").css("display","block"); 
+        // $(".card.block2").css("display","block");
     }
 
 });
@@ -230,13 +251,13 @@ $(".dependb4Q1").on("click", function() {
 
 
 $(".myHint").on("click", function() {
-    newMessage("<b style='color:red;'>Підказка: краще атакувати загальну структуру, організацію, уряд, і не привязуватися до конкретних імен, які можуть дати відповідь, а то й піти до суду</b>");
+    newMessage("<b style='color:blue;'>Підказка: краще атакувати загальну структуру, організацію, уряд, і не привязуватися до конкретних імен, які можуть дати відповідь, а то й піти до суду</b>");
     var allHints = $("button.myHint").addClass("hide");
     $(this).closest(".card").find(".choice").removeClass("hide"); 
 });
 
 
-$(".step").on("click", function() {    
+$(".step").on("click", function() {
     var cardClass = $(this).attr("value");
     var allHidden = $(".hiddenCard");
     var targetCard;
@@ -247,8 +268,8 @@ $(".step").on("click", function() {
            }
         }
 
-    // $(".hiddenCard").not(targetCard).remove();
     $("#replacement").remove();
+    $(targetCard).find("li").css("height", "200px");
     $(targetCard).addClass("last").css('display', "block")
 });
 
@@ -283,19 +304,39 @@ var resultInterval = (sumOfMax - sumOfMin) / 5;
 
 
 var mainDezinformer  = sumOfMax - resultInterval;
-console.log(mainDezinformer);
+// console.log(mainDezinformer);
 var vandal  = sumOfMax - (resultInterval * 2);
-console.log(vandal);
+// console.log(vandal);
 var paidJournalist =  sumOfMin + (resultInterval * 3);
-console.log(paidJournalist);
+// console.log(paidJournalist);
 var trashAggregator =  sumOfMin + (resultInterval * 2);
-console.log(trashAggregator);
+// console.log(trashAggregator);
 var sissy = sumOfMin +  resultInterval;
-console.log(sissy);
+// console.log(sissy);
 
 
 //закриваємо модальне вікно
 $("button#play").on("click", function() {
     $("#myModal").remove();
+    buttonPosition(cards1);
 
 });
+
+
+//вираховуємо li.height для кожної картки
+var buttonPosition = function(blockNumber) {
+    for (var i = 0; i < blockNumber.length; i++) {
+        var h3Title = $(blockNumber[i]).find("h3")[0].getBoundingClientRect();
+        var h3Height = h3Title.height + 20;
+        var containerHeight = $(blockNumber[i])[0].getBoundingClientRect();
+        containerHeight = containerHeight.height;
+        var liHeight = containerHeight - h3Height - 50 - 25;
+        console.log(liHeight);
+        var allListsInCard = $(blockNumber[i]).find("li");
+        for(var n = 0; n < allListsInCard.length; n++){
+            $(allListsInCard[n]).css("height", liHeight)
+        }
+    }
+};
+
+// buttonPosition(cards1);
