@@ -1,9 +1,9 @@
 //розташування карток одна під одною
 $(".card").css("border-color", "#6e9ae2");
 
-var cardbox = $('.card')[0].getBoundingClientRect();
-var width = cardbox.width,
-    height = cardbox.height;
+// var cardbox = $('.card')[0].getBoundingClientRect();
+// var width = cardbox.width,
+//     height = cardbox.height;
 var media;
 var mediaImgSource;
 var hex;
@@ -22,6 +22,10 @@ var newMessage = function (text) {
 
 
 var setSize = function (blockNumber) {
+    $(".card").css("width", "500px").css("height", "350px");
+    // var cardbox = $('.card')[0].getBoundingClientRect();
+    var width = 500,
+        height = 350;
     for (var i = 0; i <= blockNumber.length + 1; i++) {
         var position = i * 20;
         var containerBox = $('#cards')[0].getBoundingClientRect();
@@ -34,6 +38,7 @@ var setSize = function (blockNumber) {
             })
             .css("margin-top", function () {
                 var h = ((window.innerHeight * 0.9) - height - position) / 2;
+                // var h = height/2;
                 return h + position + "px";
             })
 
@@ -45,9 +50,10 @@ var setSize = function (blockNumber) {
 
 
 var setSizeMob = function () {
-    $(".card").css("width", "85vw").css("margin-left", "10vw").css("height", "50vh");
+    $(".card").css("width", "85vw").css("margin-left", "10vw").css("height", "50vh").css("margin-top", "0");
     $("#blockList").css("display", "none")
 };
+
 var cards1 = $(".card.block1");
 var cards2 = $(".card.block2");
 var cards3 = $(".card.block3");
@@ -71,10 +77,18 @@ if (window.innerWidth < 800) {
 }
 
 window.addEventListener("resize", function () {
-    cardbox = $('.card')[0].getBoundingClientRect();
-    width = cardbox.width,
-        height = cardbox.height;
-    setSize()
+    if (window.innerWidth >= 800) {
+        setSize(cards1);
+        setSize(cards2);
+        setSize(cards3);
+        setSize(cards4);
+        setSize(cards5);
+        setSize(cards6);
+    }
+    if(window.innerWidth < 800){
+        setSizeMob()
+    }
+
 
 });
 
@@ -125,8 +139,14 @@ $('.choice').on("click", function () {
 $(".selectMedia").on("click", function () {
     media = $(this).parent().find("img").attr("alt");
     $(this).parent().find("img").attr("id", "logoId");
-    // func ("#mediaLogo");
-    func("#logomob");
+    if(window.innerWidth > 800){
+        func ("#mediaLogo");
+    }
+    if(window.innerWidth <= 800){
+        func("#logomob");
+    }
+
+
     mediaImgSource = $(this).parent().find("img").attr("src");
     $("#logomob").html("<img id='logoIdMob' src="+mediaImgSource+"/>");
     hex = $(this).parent().find("img").attr("name");

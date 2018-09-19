@@ -69,13 +69,13 @@ var width = 120,
         .attr("fill", "none")
         .attr("stroke", "white")
         .attr("stroke-width", "7px")
-        .attr("d", spiral)
+        .attr("d", spiral2)
         .attr("transform", function (d) {
             return "rotate(" + 90 + ")"
         });
 
 var t = d3.transition()
-    .duration(5000000);
+    .duration(0);
 
 
 var spiralDraw = function(plus, current) {

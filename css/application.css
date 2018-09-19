@@ -115,7 +115,9 @@ h1, h3 {
   @media (max-width: 800px) {
     #messenger {
       margin-top: 20px;
-      grid-row: 1/-1; } }
+      grid-row: 1/-1;
+      width: 90vw;
+      margin-left: 5vw; } }
 
 #messenger > p {
   width: 90%;
@@ -208,6 +210,10 @@ p {
   margin-right: 20%;
   top: 50px;
   left: 10%; }
+  @supports (-moz-transform: translate(0, 0)) {
+    .cardContainer {
+      height: 270px;
+      top: 30px; } }
   @media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
     .cardContainer {
       height: 240px; } }
