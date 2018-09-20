@@ -77,10 +77,10 @@ var width = 120,
 var t = d3.transition()
     .duration(0);
 
-
+var currentTotalPoints;
 var spiralDraw = function(plus, current) {
     var pieces = d3.range(start, end, (end - start) / 500);
-    var currentTotalPoints = plus + current;
+    currentTotalPoints = plus + current;
     var toDraw = 0.000054545 * currentTotalPoints;
 
 
@@ -96,7 +96,7 @@ var spiralDraw = function(plus, current) {
         .attr("transform", function (d) {
             return "rotate(" + 90 + ")"
         });
-
+        
         animateValue("currentPoints", current, currentTotalPoints, 1000);
 };
 

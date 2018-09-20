@@ -411,4 +411,46 @@ h4 {
   font-size: 11px;
   background-color: yellow; }
 
+.result {
+  display: none;
+  height: 70%;
+  width: 500px;
+  margin-left: calc((80% - 500px)/2);
+  margin-top: 10%;
+  position: absolute;
+  background: black;
+  border-width: 3px;
+  border-style: solid;
+  border-color: white;
+  border-left: 0; }
+  @media (max-width: 800px) {
+    .result {
+      width: 85%;
+      margin-left: 10%;
+      height: 70vh; } }
+
+.result:before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: -3px;
+  border-width: 15px;
+  border-style: solid;
+  border-color: white;
+  border-left-color: transparent;
+  border-top-color: transparent; }
+
+.result:after {
+  content: '';
+  background: black;
+  position: absolute;
+  box-sizing: border-box;
+  width: 30px;
+  right: 100%;
+  bottom: -3px;
+  top: 27px;
+  border-width: 0 0 3px 3px;
+  border-color: white;
+  border-style: solid; }
+
 /*# sourceMappingURL=application.css.map */
