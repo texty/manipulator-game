@@ -141,7 +141,7 @@ $(".selectMedia").on("click", function () {
         func("#logomob");
     }
     mediaImgSource = $(this).parent().find("img").attr("src");
-    $("#logomob").html("<img id='logoIdMob' src="+mediaImgSource+"/>");
+    $("#logomob").html("<img id='logoIdMob' src='"+mediaImgSource+"'/>");
     hex = $(this).parent().find("img").attr("name");
     swapStyleSheet();
     $('h3 b#myMedia').html(media);
