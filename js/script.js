@@ -12,6 +12,74 @@ var cards5 = $(".card.block5");
 var cards6 = $(".card.block6");
 
 
+
+
+Array.prototype.remByVal = function(val) {
+    for (var i = 0; i < this.length; i++) {
+        if (this[i] === val) {
+            this.splice(i, 1);
+            i--;
+        }
+    }
+    return this;
+};
+
+Array.prototype.remByValTwo = function(val1, val2) {
+    for (var i = 0; i < this.length; i++) {
+        if (this[i] === val1 && this[i] === val2) {
+            this.splice(i, 1);
+            i--;
+        }
+    }
+    return this;
+};
+
+
+//малюємо квадрати в жовтому полі
+var drawSquares = function () {
+    var yellowBox = $("#rightSideBefore")[0].getBoundingClientRect();
+    var sqaureW = yellowBox.width / 5;
+    var sqaureRows = Math.floor(yellowBox.height / sqaureW);
+    var sqaureH = yellowBox.height / sqaureRows;
+    var divsInBox = sqaureRows * 10;
+    for (var t = 0; t < divsInBox; t++) {
+        $("#rightSideBefore")
+            .append('<div id="r' + t + '" class="square"></div>')
+    }
+    var rects = $(".square");
+    var colors = ['rgb(124, 31, 45)', 'rgb(255, 255, 0)', "rgb(28, 186, 248)", "rgb(0, 95, 146)", "rgb(255, 0, 0)", "rgb(255, 255, 255)", "rgb(128, 128, 128)"];
+
+
+    for(var r = 0; r < rects.length; r++){
+        var random_color = colors[Math.floor(Math.random() * colors.length)];
+
+        if(r < 1){
+            $(rects[r]).css("background-color", random_color);
+        }
+        if(r > 0 && r <= 4){
+            var minus1 = $(rects[r - 1]).css("background-color");
+            var colorsMinusOne = colors
+                .filter(function(e) {
+                    return e != minus1
+                });
+            var random1 = colorsMinusOne[Math.floor(Math.random() * colorsMinusOne.length)];
+            $(rects[r]).css("background-color", random1);
+        }
+        if(r > 4) {
+            var minus1 = $(rects[r - 1]).css("background-color");
+            var minus5 = $(rects[r - 5]).css("background-color");
+            var colorsMinusTwo = colors
+                .filter(function(e) {
+                    return e != minus1 && e != minus5 });
+            var random2 = colorsMinusTwo[Math.floor(Math.random() * colorsMinusTwo.length)];
+            $(rects[r]).css("background-color", random2);
+        }
+    }
+        $(".square").css("width", sqaureW).css("height", sqaureH);
+
+};
+
+drawSquares();
 //додаємо текст в месенджер
 var newMessage = function (text) {
     var messenger = document.getElementById("messenger");
@@ -86,6 +154,7 @@ window.addEventListener("resize", function () {
         setSizeMob()
     }
 
+    drawSquares();
 
 });
 
@@ -149,6 +218,7 @@ $(".selectMedia").on("click", function () {
     hex = $(this).parent().find("img").attr("name");
     swapStyleSheet();
     $('h3 b#myMedia').html(media);
+    $("#rightSideBefore").remove();
 });
 
 
@@ -495,3 +565,21 @@ $(".toResult").on("click", function() {
     }
     $(".result").css("display", "block");
 });
+
+
+function shuffle(a) {
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+    return a;
+}
+
+
+
+
+
+
