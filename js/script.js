@@ -51,6 +51,10 @@ var setSize = function (blockNumber) {
 //розташування для моб еканів
 var setSizeMob = function () {
     $(".card").css("width", "calc(100% - 60px)").css("margin-left", "45px").css("height", "50vh").css("margin-top", "0");
+
+    var mobCardHeight = $(cards1)[0].getBoundingClientRect();
+    mobCardHeight =mobCardHeight.height;
+    $(".cardContainer").css("height", mobCardHeight - 50);
     $("#blockList").css("display", "none")
 };
 
