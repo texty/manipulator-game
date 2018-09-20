@@ -29,6 +29,10 @@ h1, h3 {
     #mygrid {
       grid-template-columns: 50% 50%;
       grid-template-rows: 20vh 50vh 25vh 5vh; } }
+  @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+    #mygrid {
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 15vh 40vh 35vh 5vh; } }
 
 #logomob {
   grid-column: 1/2;
@@ -116,8 +120,9 @@ h1, h3 {
     #messenger {
       margin-top: 20px;
       grid-row: 1/-1;
-      width: 90vw;
-      margin-left: 5vw; } }
+      width: calc(100% - 30px);
+      margin-left: 15px;
+      margin-right: 0; } }
 
 #messenger > p {
   width: 90%;
@@ -179,6 +184,9 @@ p {
   border-style: solid;
   border-color: #6e9ae2;
   border-left: 0; }
+  @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+    .card {
+      height: 40vh !important; } }
 
 .card:before {
   content: "";
