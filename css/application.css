@@ -374,14 +374,13 @@ button.answerNo, button.noThanks {
   height: 100vh;
   background-color: black;
   z-index: 2000; }
-  @media (max-width: 600px) and (orientation: landscape) {
+  @media (max-width: 900px) and (orientation: landscape) {
     #myModal2 {
       display: grid; } }
 
 #warning {
   justify-self: center;
   width: calc(100% - 20px);
-  margin-left: 20px;
   grid-column: 2/3;
   grid-row: 3/4;
   position: absolute;
@@ -403,12 +402,18 @@ button#play {
       font-size: 40px; } }
 
 #gameTitle, #gameTitle2 {
-  display: flex;
-  justify-items: center;
-  height: 100px;
+  width: 40%;
+  color: white;
+  height: auto;
   grid-column: 2/3;
   grid-row: 2/3;
-  z-index: 1001; }
+  z-index: 1001;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 30px;
+  justify-self: center;
+  margin-left: -15px; }
 
 .rect1 {
   width: 100%;
@@ -438,7 +443,6 @@ h2 {
 #playDiv {
   justify-self: center;
   align-self: center;
-  height: 100%;
   width: calc(100% - 20px);
   margin-left: 20px;
   grid-column: 2/3;
@@ -449,7 +453,7 @@ h2 {
   border-left: 0; }
   @media (min-width: 2000px) {
     #playDiv {
-      border: 2px solid white; } }
+      border: 3px solid white; } }
 
 @media (max-width: 1000px) and (orientation: landscape) {
   #playDiv > h4 {
@@ -468,6 +472,9 @@ h2 {
   border-left-color: transparent;
   border-top-color: transparent;
   z-index: 1001; }
+  @media (min-width: 2000px) {
+    #playDiv:before {
+      top: -3px; } }
 
 #playDiv:after {
   grid-column: 2/3;
@@ -486,14 +493,18 @@ h2 {
   z-index: 1001; }
   @media (min-width: 2000px) {
     #playDiv:after {
-      border-width: 0 0 2px 2px; } }
+      bottom: -3px;
+      top: 17px;
+      border-width: 0 0 3px 3px; } }
 
 h4 {
   font-size: 20px;
   color: white;
   text-align: center;
   font-weight: 400;
-  line-height: 1.6; }
+  line-height: 1.6;
+  -webkit-margin-before: 0.33em;
+  -webkit-margin-after: 0.33em; }
   @media (min-width: 2000px) {
     h4 {
       font-size: 40px !important; } }
@@ -524,7 +535,7 @@ h4 {
   border-left: 0; }
   @media (min-width: 2000px) {
     .result {
-      height: 500px;
+      height: 60%;
       width: 700px; } }
   @media (max-width: 800px) {
     .result {
@@ -555,5 +566,35 @@ h4 {
   border-width: 0 0 3px 3px;
   border-color: white;
   border-style: solid; }
+
+#theResult {
+  text-align: center;
+  color: white;
+  width: 70%;
+  margin-left: calc(15% - 20px);
+  margin-top: 3%;
+  line-height: 1.6; }
+
+#rank {
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 0.5em;
+  font-size: 22px;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  color: yellow;
+  text-transform: uppercase;
+  margin-left: -20px; }
+
+#inlineSpiral > img, #inlineSpiral2 > img {
+  display: none; }
+
+.gameTitleLetters {
+  display: flex;
+  justify-content: space-between;
+  font-size: 36px;
+  color: yellow; }
+  @media (min-width: 2000px) {
+    .gameTitleLetters {
+      font-size: 70px; } }
 
 /*# sourceMappingURL=application.css.map */

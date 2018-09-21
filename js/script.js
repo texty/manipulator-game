@@ -561,6 +561,25 @@ $(".toResult").on("click", function() {
 
 
 
+var p = document.querySelector('#letterH');
+var p2 = document.querySelector('#letterH2');
+
+function findHeight(element) {
+    return element.clientHeight;
+}
+
+var picSpiralHeight = findHeight(p);
+
+$("#inlineSpiral > img")
+    .css("height", picSpiralHeight)
+    .css("width", picSpiralHeight)
+    .css("display", "inline-block");
+
+$("#inlineSpiral2 > img")
+    .css("height", picSpiralHeight)
+    .css("width", picSpiralHeight)
+    .css("display", "inline-block");
+
 
 
 
