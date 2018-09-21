@@ -79,7 +79,7 @@ var drawSquares = function () {
 
 };
 
-drawSquares();
+
 //додаємо текст в месенджер
 var newMessage = function (text) {
     var messenger = document.getElementById("messenger");
@@ -134,6 +134,7 @@ if (window.innerWidth >= 800) {
     setSize(cards4);
     setSize(cards5);
     setSize(cards6);
+    drawSquares();
 }
 
 if (window.innerWidth < 800) {
@@ -149,12 +150,14 @@ window.addEventListener("resize", function () {
         setSize(cards4);
         setSize(cards5);
         setSize(cards6);
+        drawSquares();
     }
     if(window.innerWidth < 800){
         setSizeMob()
+        $(".square").remove();
     }
 
-    drawSquares();
+    // drawSquares();
 
 });
 

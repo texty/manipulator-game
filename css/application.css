@@ -320,7 +320,7 @@ button.answerNo, button.noThanks {
 
 #myModal {
   position: absolute;
-  display: none;
+  display: grid;
   grid-template-columns: 1fr 300px 1fr;
   grid-template-rows: 15% 1fr 200px 1fr;
   top: 0;
