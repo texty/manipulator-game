@@ -1,4 +1,7 @@
 //перекрашуємо картки в той самий колір через баг inherit
+
+
+
 $(".card").css("border-color", "#6e9ae2");
 var containerBox = $('#cards')[0].getBoundingClientRect();
 var media;
@@ -93,14 +96,24 @@ var newMessage = function (text) {
 
 //розташування карток одна під одною
 var setSize = function (blockNumber) {
-    $(".card").css("width", "500px").css("height", "350px");//повертаємо дескотопний розмір, якщо до цього була мобілка
-    // var cardbox = $('.card')[0].getBoundingClientRect();
-    var width = 500,
+    $("#blockList").css("display", "block");
+    var width,
+        height;
+    
+    if (window.innerWidth >= 2000){
+        width = 1000;
+        height = 600;
+        $(".card").css("width", "1000px").css("height", "600px");//повертаємо дескотопний розмір, якщо до цього була мобілка
+
+    }
+    else {
+        width = 500;
         height = 350;
+        $(".card").css("width", "500px").css("height", "350px");//повертаємо дескотопний розмір, якщо до цього була мобілка
+    }
     for (var i = 0; i <= blockNumber.length + 1; i++) {
         var position = i * 20;
         var containerBox = $('#cards')[0].getBoundingClientRect();
-
 
         $(blockNumber[i])
             .css("margin-left", function () {
@@ -112,17 +125,31 @@ var setSize = function (blockNumber) {
                 // var h = height/2;
                 return h + position + "px";
             })
-
     }
 };
 
 //розташування для моб еканів
 var setSizeMob = function () {
-    $(".card").css("width", "calc(100% - 60px)").css("margin-left", "45px").css("height", "50vh").css("margin-top", "0");
+    var mobCardHeight;
+    if(window.innerWidth === 768 && window.innerHeight === 1024){
+        $(".card").css("width", "calc(80% - 60px)").css("margin-left", "calc(10% + 45px").css("height", "40vh").css("margin-top", "0");
+        $("#messenger").css("width", "calc(80% - 30px)").css("margin-left", "calc(10% + 15px");
+        mobCardHeight = $(cards1)[0].getBoundingClientRect();
+        $("#logomob").css("margin-left", mobCardHeight.left-30);
+        $("#spiralmob").css("margin-right", mobCardHeight.left - 30);
+        mobCardHeight = mobCardHeight.height;
+        $(".cardContainer").css("height", mobCardHeight - 80);
 
-    var mobCardHeight = $(cards1)[0].getBoundingClientRect();
-    mobCardHeight =mobCardHeight.height;
-    $(".cardContainer").css("height", mobCardHeight - 50);
+    }
+    else {
+        $(".card").css("width", "calc(100% - 60px)").css("margin-left", "45px").css("height", "50vh").css("margin-top", "0");
+        mobCardHeight = $(cards1)[0].getBoundingClientRect();
+        $("#logomob").css("margin-left", mobCardHeight.left-30);
+        mobCardHeight =mobCardHeight.height;
+        $(".cardContainer").css("height", mobCardHeight - 50);
+
+
+    }
     $("#blockList").css("display", "none")
 };
 
@@ -137,7 +164,7 @@ if (window.innerWidth >= 800) {
     drawSquares();
 }
 
-if (window.innerWidth < 800) {
+if (window.innerWidth < 800 ) {
     setSizeMob()
 
 }
@@ -152,8 +179,8 @@ window.addEventListener("resize", function () {
         setSize(cards6);
         drawSquares();
     }
-    if(window.innerWidth < 800){
-        setSizeMob()
+    if(window.innerWidth < 800 && window.innerWidth < window.innerHeight){
+        setSizeMob();
         $(".square").remove();
     }
 

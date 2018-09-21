@@ -67,7 +67,8 @@ h1, h3 {
       grid-row: 2/3; } }
 
 #logoId {
-  animation: adjust 1s forwards; }
+  animation: adjust 1s forwards;
+  max-height: 100%; }
 
 #logoIdMob {
   display: block;
@@ -76,6 +77,10 @@ h1, h3 {
   margin-right: auto;
   animation: adjust 1s forwards;
   width: 80%; }
+  @media (max-width: 800px) {
+    #logoIdMob {
+      margin-left: 0;
+      max-height: 80%; } }
 
 @keyframes adjust {
   to {
@@ -196,6 +201,10 @@ p {
   border-style: solid;
   border-color: #6e9ae2;
   border-left: 0; }
+  @media only screen and (min-height: 2000px) {
+    .card {
+      height: 600px;
+      width: 1000px; } }
   @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
     .card {
       height: 40vh !important; } }
@@ -291,8 +300,11 @@ button {
   margin-top: 50vh; }
 
 #chart {
-  margin: 0 auto 0 auto;
+  margin: 10px auto 0 auto;
   height: auto; }
+  @media (max-width: 800px) {
+    #chart {
+      margin: 10px 0 0 auto; } }
 
 .points {
   width: 100%;
@@ -330,6 +342,30 @@ button.answerNo, button.noThanks {
   background-color: black;
   z-index: 1000; }
 
+#myModal2 {
+  position: absolute;
+  display: none;
+  grid-template-columns: 1fr 300px 1fr;
+  grid-template-rows: 15% 1fr 200px 1fr;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 2000; }
+  @media (max-width: 900px) and (orientation: landscape) {
+    #myModal2 {
+      display: grid; } }
+
+#warning {
+  justify-self: center;
+  width: calc(100% - 20px);
+  margin-left: 20px;
+  grid-column: 2/3;
+  grid-row: 3/4;
+  position: absolute;
+  background: black; }
+
 button#play {
   position: relative;
   font-size: 16px;
@@ -342,7 +378,7 @@ button#play {
   color: white;
   letter-spacing: 2px; }
 
-#gameTitle {
+#gameTitle, #gameTitle2 {
   display: flex;
   justify-items: center;
   height: 100px;
@@ -383,6 +419,14 @@ h2 {
   background: black;
   border: 1px solid white;
   border-left: 0; }
+  @media (max-width: 1000px) and (orientation: landscape) {
+    #playDiv {
+      border: 0;
+      height: auto; } }
+
+@media (max-width: 1000px) and (orientation: landscape) {
+  #playDiv > h4 {
+    display: none; } }
 
 #playDiv:before {
   grid-column: 2/3;
@@ -397,6 +441,9 @@ h2 {
   border-left-color: transparent;
   border-top-color: transparent;
   z-index: 1001; }
+  @media (max-width: 1000px) and (orientation: landscape) {
+    #playDiv:before {
+      border: 0; } }
 
 #playDiv:after {
   grid-column: 2/3;
@@ -413,6 +460,9 @@ h2 {
   border-color: white;
   border-style: solid;
   z-index: 1001; }
+  @media (max-width: 1000px) and (orientation: landscape) {
+    #playDiv:after {
+      border: 0; } }
 
 h4 {
   font-size: 20px;
@@ -422,14 +472,13 @@ h4 {
   line-height: 1.6; }
 
 .note {
-  width: 30%;
   text-align: center;
-  margin-left: 35%;
+  margin: 0 auto;
   position: absolute;
   bottom: 10%;
   color: black;
   font-size: 11px;
-  background-color: yellow; }
+  z-index: 1002; }
 
 .result {
   display: none;
