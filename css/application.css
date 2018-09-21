@@ -146,6 +146,10 @@ h1, h3 {
   font-size: 14px;
   color: white;
   margin-left: 5%; }
+  @media (min-width: 2000px) {
+    #messenger > p {
+      font-size: 18px;
+      line-height: 1.6; } }
 
 #spiral {
   width: 100%;
@@ -169,6 +173,10 @@ h1, h3 {
   font-family: Arial, serif;
   font-size: 12px;
   font-weight: 800; }
+  @media (min-width: 2000px) {
+    #blockList {
+      margin: 30px auto;
+      font-size: 25px; } }
 
 h3 {
   width: 100%;
@@ -178,6 +186,9 @@ h3 {
   @media (max-width: 800px) {
     h3 {
       font-size: 15px; } }
+  @media (min-width: 2000px) {
+    h3 {
+      font-size: 25px; } }
 
 li {
   font-size: 16px;
@@ -185,6 +196,9 @@ li {
   @media (max-width: 800px) {
     li {
       font-size: 13px; } }
+  @media (min-width: 2000px) {
+    li {
+      font-size: 20px; } }
 
 li.pseudo {
   min-height: 0; }
@@ -276,6 +290,10 @@ button {
   font-size: 12px;
   padding: 5px;
   border: 1px solid #555555; }
+  @media (min-width: 2000px) {
+    button {
+      font-size: 20px;
+      padding: 5px; } }
 
 .additionalInfo {
   display: none;
@@ -304,10 +322,13 @@ button {
 
 .points {
   width: 100%;
-  margin: 0 auto;
+  margin: auto auto;
   text-align: center;
-  vertical-align: middle;
+  align-items: center;
   color: white; }
+  @media (min-width: 2000px) {
+    .points {
+      font-size: 30px; } }
 
 .block2, .block3, .block4, .block5, .block6, .hiddenCard {
   display: none; }
@@ -337,6 +358,10 @@ button.answerNo, button.noThanks {
   height: 100vh;
   background-color: black;
   z-index: 1000; }
+  @media (min-width: 2000px) {
+    #myModal {
+      grid-template-columns: 1fr 600px 1fr;
+      grid-template-rows: 15% 1fr 350px 1fr; } }
 
 #myModal2 {
   position: absolute;
@@ -349,7 +374,7 @@ button.answerNo, button.noThanks {
   height: 100vh;
   background-color: black;
   z-index: 2000; }
-  @media (max-width: 900px) and (orientation: landscape) {
+  @media (max-width: 600px) and (orientation: landscape) {
     #myModal2 {
       display: grid; } }
 
@@ -373,6 +398,9 @@ button#play {
   padding: 2px;
   color: white;
   letter-spacing: 2px; }
+  @media (min-width: 2000px) {
+    button#play {
+      font-size: 40px; } }
 
 #gameTitle, #gameTitle2 {
   display: flex;
@@ -403,10 +431,14 @@ h2 {
   font-size: 30px;
   line-height: 1.2;
   letter-spacing: 4px; }
+  @media (min-width: 2000px) {
+    h2 {
+      font-size: 70px !important; } }
 
 #playDiv {
   justify-self: center;
   align-self: center;
+  height: 100%;
   width: calc(100% - 20px);
   margin-left: 20px;
   grid-column: 2/3;
@@ -415,10 +447,9 @@ h2 {
   background: black;
   border: 1px solid white;
   border-left: 0; }
-  @media (max-width: 1000px) and (orientation: landscape) {
+  @media (min-width: 2000px) {
     #playDiv {
-      border: 0;
-      height: auto; } }
+      border: 2px solid white; } }
 
 @media (max-width: 1000px) and (orientation: landscape) {
   #playDiv > h4 {
@@ -437,9 +468,6 @@ h2 {
   border-left-color: transparent;
   border-top-color: transparent;
   z-index: 1001; }
-  @media (max-width: 1000px) and (orientation: landscape) {
-    #playDiv:before {
-      border: 0; } }
 
 #playDiv:after {
   grid-column: 2/3;
@@ -456,9 +484,9 @@ h2 {
   border-color: white;
   border-style: solid;
   z-index: 1001; }
-  @media (max-width: 1000px) and (orientation: landscape) {
+  @media (min-width: 2000px) {
     #playDiv:after {
-      border: 0; } }
+      border-width: 0 0 2px 2px; } }
 
 h4 {
   font-size: 20px;
@@ -466,6 +494,9 @@ h4 {
   text-align: center;
   font-weight: 400;
   line-height: 1.6; }
+  @media (min-width: 2000px) {
+    h4 {
+      font-size: 40px !important; } }
 
 .note {
   text-align: center;
@@ -475,6 +506,9 @@ h4 {
   color: black;
   font-size: 11px;
   z-index: 1002; }
+  @media (min-width: 2000px) {
+    .note {
+      font-size: 22px; } }
 
 .result {
   display: none;
@@ -488,6 +522,10 @@ h4 {
   border-style: solid;
   border-color: white;
   border-left: 0; }
+  @media (min-width: 2000px) {
+    .result {
+      height: 500px;
+      width: 700px; } }
   @media (max-width: 800px) {
     .result {
       width: 85%;

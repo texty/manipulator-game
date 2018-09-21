@@ -1,11 +1,21 @@
-var width = 120,
-    height = 120,
-    num_axes = 4,
+var  width;
+var  height;
+var num_axes = 4,
     tick_axis = 1,
     start = 0,
     end = 3,
     testValue = 2;
 
+if (window.innerWidth >= 2000){
+    width = 200;
+    height = 200;
+
+}
+else {
+    width = 120;
+    height = 120;
+       
+}
 
     var theta = function (r) {
         return -2 * Math.PI * r;
