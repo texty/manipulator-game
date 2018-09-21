@@ -287,11 +287,11 @@ $(".next").on("click", function () {
         $(sections[sectionIndex]).find(".card").not(".hiddenCard").css("display", "block");
 
         //розташування кнопок на одному рівні
-        buttonPosition(cards2);
-        buttonPosition(cards3);
-        buttonPosition(cards4);
-        buttonPosition(cards5);
-        buttonPosition(cards6);
+        // buttonPosition(cards2);
+        // buttonPosition(cards3);
+        // buttonPosition(cards4);
+        // buttonPosition(cards5);
+        // buttonPosition(cards6);
 
         //переключаємо колір меню зверху
         var headings = $(".head");
@@ -409,32 +409,32 @@ $(".step").on("click", function () {
 //закриваємо модальне вікно
 $("button#play").on("click", function () {
     $("#myModal").remove();
-    buttonPosition(cards1);
+    // buttonPosition(cards1);
 
 });
 
 
 //вираховуємо li.height для кожної картки
-var buttonPosition = function (blockNumber) {
-    for (var i = 0; i < blockNumber.length; i++) {
-        var h3Title = $(blockNumber[i]).find("h3")[0].getBoundingClientRect();
-        var h3Height = h3Title.height + 20;
-        var containerHeight = $(blockNumber[i])[0].getBoundingClientRect();
-        containerHeight = containerHeight.height;
-        var liHeight;
-        if(window.innerWidth < 380){
-            liHeight = containerHeight - h3Height - 50 - 100;
-        }
-        else {
-            liHeight = containerHeight - h3Height - 50 - 25;
-        }
-
-        var allListsInCard = $(blockNumber[i]).find("li");
-        for (var n = 0; n < allListsInCard.length; n++) {
-            $(allListsInCard[n]).css("height", liHeight)
-        }
-    }
-};
+// var buttonPosition = function (blockNumber) {
+//     for (var i = 0; i < blockNumber.length; i++) {
+//         var h3Title = $(blockNumber[i]).find("h3")[0].getBoundingClientRect();
+//         var h3Height = h3Title.height + 20;
+//         var containerHeight = $(blockNumber[i])[0].getBoundingClientRect();
+//         containerHeight = containerHeight.height;
+//         var liHeight;
+//         if(window.innerWidth < 380){
+//             liHeight = containerHeight - h3Height - 50 - 100;
+//         }
+//         else {
+//             liHeight = containerHeight - h3Height - 50 - 25;
+//         }
+//
+//         var allListsInCard = $(blockNumber[i]).find("li");
+//         for (var n = 0; n < allListsInCard.length; n++) {
+//             $(allListsInCard[n]).css("height", liHeight)
+//         }
+//     }
+// };
 
 function swapStyleSheet() {
     $("#mediaLogo").css("background-color", hex);

@@ -189,6 +189,9 @@ h3 {
   @media (min-width: 2000px) {
     h3 {
       font-size: 25px; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    h3 {
+      font-size: 22px; } }
 
 li {
   font-size: 16px;
@@ -199,6 +202,10 @@ li {
   @media (min-width: 2000px) {
     li {
       font-size: 20px; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    li {
+      font-size: 18px;
+      line-height: 1.6; } }
 
 li.pseudo {
   min-height: 0; }
@@ -245,7 +252,6 @@ p {
 
 .cardContainer {
   position: relative;
-  height: 280px;
   margin-right: 20%;
   top: 50px;
   left: 10%; }
@@ -294,6 +300,10 @@ button {
     button {
       font-size: 20px;
       padding: 5px; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    button {
+      font-size: 18px;
+      line-height: 1.6; } }
 
 .additionalInfo {
   display: none;
@@ -455,10 +465,6 @@ h2 {
     #playDiv {
       border: 3px solid white; } }
 
-@media (max-width: 1000px) and (orientation: landscape) {
-  #playDiv > h4 {
-    display: none; } }
-
 #playDiv:before {
   grid-column: 2/3;
   grid-row: 3/4;
@@ -572,8 +578,10 @@ h4 {
   color: white;
   width: 70%;
   margin-left: calc(15% - 20px);
-  margin-top: 3%;
-  line-height: 1.6; }
+  margin-top: 3%; }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    #theResult {
+      font-size: 25px; } }
 
 #rank {
   -webkit-margin-before: 1em;
