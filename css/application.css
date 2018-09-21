@@ -201,10 +201,6 @@ p {
   border-style: solid;
   border-color: #6e9ae2;
   border-left: 0; }
-  @media only screen and (min-height: 2000px) {
-    .card {
-      height: 600px;
-      width: 1000px; } }
   @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
     .card {
       height: 40vh !important; } }

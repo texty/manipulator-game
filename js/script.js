@@ -98,17 +98,17 @@ var setSize = function (blockNumber) {
     var width,
         height;
     
-    if (window.innerWidth >= 2000){
-        width = 1000;
-        height = 600;
-        $(".card").css("width", "1000px").css("height", "600px");//повертаємо дескотопний розмір, якщо до цього була мобілка
-
-    }
-    else {
+    // if (window.innerWidth >= 2000){
+    //     width = 1000;
+    //     height = 600;
+    //     $(".card").css("width", "1000px").css("height", "600px");//повертаємо дескотопний розмір, якщо до цього була мобілка
+    //
+    // }
+    // else {
         width = 500;
         height = 350;
         $(".card").css("width", "500px").css("height", "350px");//повертаємо дескотопний розмір, якщо до цього була мобілка
-    }
+    // }
     for (var i = 0; i <= blockNumber.length + 1; i++) {
         var position = i * 20;
         var containerBox = $('#cards')[0].getBoundingClientRect();
