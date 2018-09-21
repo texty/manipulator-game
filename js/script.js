@@ -529,25 +529,59 @@ console.log(sissy);
 
 
 $(".toResult").on("click", function() {
-    if(currentTotalPoints > vandal &&currentTotalPoints <= sumOfMax) {
-        $("#rank").html("ГОЛОВНИЙ ДЕЗИНФОРМАТОР КРАЇНИ");
-        $("#face").attr("src", "img/dezinfo.png")
+
+        if(currentTotalPoints > vandal &&currentTotalPoints <= sumOfMax) {
+            $("#rank").html("ГОЛОВНИЙ ДЕЗИНФОРМАТОР КРАЇНИ");
+            $("#face").attr("src", "img/dezinfo.png");
+            $("#facebook")
+                .find("a.share-btn")
+                .attr("href", "https://www.facebook.com/sharer/sharer.php?u=http://texty.org.ua/d/manipulator-game/share/dezinfo.html");
+            $("#twitter")
+                .find("a.share-btn")
+                .attr("href", "https://twitter.com/intent/tweet?text=http://texty.org.ua/d/manipulator-game/share/dezinfo.html");
     }
     if(currentTotalPoints > paidJournalist && currentTotalPoints <= vandal) {
         $("#rank").html("ІНФОРМАЦІЙНИЙ ВАНДАЛ");
-        $("#face").attr("src", "img/vandal.png")
+        $("#face").attr("src", "img/vandal.png");
+        $("#facebook")
+            .find("a.share-btn")
+            .attr("href", "https://www.facebook.com/sharer/sharer.php?u=http://texty.org.ua/d/manipulator-game/share/vandal.html");
+        $("#twitter")
+            .find("a.share-btn")
+            .attr("href", "https://twitter.com/intent/tweet?text=http://texty.org.ua/d/manipulator-game/share/vandal.html");
     }
     if(currentTotalPoints > trashAggregator && currentTotalPoints <= paidJournalist) {
         $("#rank").html("УСПІШНИЙ ДЖИНСОВИК");
-        $("#face").attr("src", "img/jeans.png")
+        $("#face").attr("src", "img/jeans.png");
+        $("#facebook")
+            .find("a.share-btn")
+            .attr("href", "https://www.facebook.com/sharer/sharer.php?u=http://texty.org.ua/d/manipulator-game/share/jeans.html");
+        $("#twitter")
+            .find("a.share-btn")
+            .attr("href", "https://twitter.com/intent/tweet?text=http://texty.org.ua/d/manipulator-game/share/jeans.html");
+
     }
     if(currentTotalPoints > sissy && currentTotalPoints <= trashAggregator) {
         $("#rank").html("АГРЕГАТОР ТРЕШНЯКУ");
-        $("#face").attr("src", "img/agregator.png")
+        $("#face").attr("src", "img/agregator.png");
+        $("#facebook")
+            .find("a.share-btn")
+            .attr("href", "https://www.facebook.com/sharer/sharer.php?u=http://texty.org.ua/d/manipulator-game/share/trash.html");
+        $("#twitter")
+            .find("a.share-btn")
+            .attr("href", "https://twitter.com/intent/tweet?text=http://texty.org.ua/d/manipulator-game/share/trash.html");
+
     }
     if(currentTotalPoints <= sissy) {
         $("#rank").html("ЧИСТОПЛЮЙ");
         $("#face").attr("src", "img/chystoplju.png");
+        $("#facebook")
+            .find("a.share-btn")
+            .attr("href", "https://www.facebook.com/sharer/sharer.php?u=http://texty.org.ua/d/manipulator-game/share/chystopliui.html");
+        $("#twitter")
+            .find("a.share-btn")
+            .attr("href", "https://twitter.com/intent/tweet?text=http://texty.org.ua/d/manipulator-game/share/chystopliui.html");
+
         $("#theResult").text("Ваше сумління не дає вам працювати ефективно. Так ви довго не протягнете. Забудьте про стандарти журналістики, їх вже немає")
     }
 

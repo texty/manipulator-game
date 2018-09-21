@@ -606,4 +606,20 @@ h4 {
     .gameTitleLetters {
       font-size: 70px; } }
 
+.social-icons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto 0 -20px; }
+
+#facebook > a > svg {
+  fill: white;
+  width: 30px;
+  margin: 10px; }
+
+#twitter > a > svg {
+  fill: white;
+  width: 30px;
+  margin: 10px; }
+
 /*# sourceMappingURL=application.css.map */
