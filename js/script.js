@@ -96,7 +96,6 @@ var newMessage = function (text) {
 
 //розташування карток одна під одною
 var setSize = function (blockNumber) {
-    $("#blockList").css("display", "block");
     var width,
         height;
     
