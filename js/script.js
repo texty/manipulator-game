@@ -1,8 +1,7 @@
 //перекрашуємо картки в той самий колір через баг inherit
-
-
-
 $(".card").css("border-color", "#6e9ae2");
+
+//визначаємо змінні
 var containerBox = $('#cards')[0].getBoundingClientRect();
 var media;
 var mediaImgSource;
@@ -129,11 +128,12 @@ var setSize = function (blockNumber) {
 
 //розташування для моб еканів
 var setSizeMob = function () {
+    var openCards = $(".card");
     var mobCardHeight;
     if(window.innerWidth === 768 && window.innerHeight === 1024){
         $(".card").css("width", "calc(80% - 60px)").css("margin-left", "calc(10% + 45px").css("height", "40vh").css("margin-top", "0");
         $("#messenger").css("width", "calc(80% - 30px)").css("margin-left", "calc(10% + 15px");
-        mobCardHeight = $(cards1)[0].getBoundingClientRect();
+        mobCardHeight = $(openCards)[0].getBoundingClientRect();
         $("#logomob").css("margin-left", mobCardHeight.left-30);
         $("#spiralmob").css("margin-right", mobCardHeight.left - 30);
         mobCardHeight = mobCardHeight.height;
@@ -142,7 +142,7 @@ var setSizeMob = function () {
     }
     else {
         $(".card").css("width", "calc(100% - 60px)").css("margin-left", "45px").css("height", "50vh").css("margin-top", "0");
-        mobCardHeight = $(cards1)[0].getBoundingClientRect();
+        mobCardHeight = $(openCards)[0].getBoundingClientRect();
         $("#logomob").css("margin-left", mobCardHeight.left-30);
         mobCardHeight =mobCardHeight.height;
         $(".cardContainer").css("height", mobCardHeight - 50);
@@ -258,8 +258,8 @@ $(".next").on("click", function () {
         .parent()
         .parent()
         .parent();
-    containerForRemove.css("display", "none");//видаляємо картку, яка вже непотрібна
-
+    // containerForRemove.css("display", "none");//видаляємо картку, яка вже непотрібна
+    containerForRemove.remove();
 
     if ($(this).parents(".last").length) {
         var currentDiv = $(this).closest(".card"); //знаходимо найближчу картку
@@ -404,8 +404,6 @@ $(".step").on("click", function () {
 });
 
 
-
-
 //закриваємо модальне вікно
 $("button#play").on("click", function () {
     $("#myModal").remove();
@@ -440,45 +438,9 @@ function swapStyleSheet() {
     $("#mediaLogo").css("background-color", hex);
     $("#messenger").css("border-color", hex);
     $(".card").css("border-color", hex);
-    // $(".card").setPseudo(":before", "border-color", hex);
-    // $(".card").setPseudo(":after", "border-color", hex);
-
-
     $("#spiral").css("background-color", hex);
 }
 
-
-// (function ($) {
-//     jQuery.fn.extend({
-//         getPseudo: function (pseudo, prop) {
-//             var props = window.getComputedStyle(
-//                 $(this.selector).get(0), pseudo
-//             ).getPropertyValue(prop);
-//             return String(props);
-//         },
-//         setPseudo: function (_pseudo, _prop, newprop) {
-//             var elem = $(this);
-//             var s = $("style");
-//             var p = elem.getPseudo(_pseudo, _prop);
-//             console.log(p)
-//             var r = p !== "" ? new RegExp(p) : false;
-//             var selector = $.map(elem, function (val, key) {
-//                 return [val.tagName, val.id
-//                     ? "#" + val.id : null, val.className ? "." + val.className
-//                     : null]
-//             });
-//             var _setProp = "\n" + selector.join("")
-//                     .concat(_pseudo)
-//                     .concat("{")
-//                     .concat(_prop + ":")
-//                     .concat(newprop + "};");
-//             ((!!r ? r.test($(s).text()) : r) ? $(s).text(function (index, prop) {
-//                 return prop.replace(r, newprop)
-//             }) : $(s).append(_setProp));
-//             return this
-//         }
-//     })
-// })(jQuery);
 
 //функція переносить лого з картки вибору наверх над чатом з анімацією.
 function func (target) {
@@ -594,18 +556,6 @@ $(".toResult").on("click", function() {
     }
     $(".result").css("display", "block");
 });
-
-
-function shuffle(a) {
-    var j, x, i;
-    for (i = a.length - 1; i > 0; i--) {
-        j = Math.floor(Math.random() * (i + 1));
-        x = a[i];
-        a[i] = a[j];
-        a[j] = x;
-    }
-    return a;
-}
 
 
 
