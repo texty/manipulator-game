@@ -193,6 +193,9 @@ h3 {
   @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
     h3 {
       font-size: 22px; } }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+    h3 {
+      font-size: 13px; } }
 
 li {
   font-size: 14px;
@@ -208,6 +211,9 @@ li {
     li {
       font-size: 18px;
       line-height: 1.6; } }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+    li {
+      font-size: 11px; } }
 
 li.pseudo {
   min-height: 0; }
