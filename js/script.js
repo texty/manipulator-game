@@ -1,6 +1,7 @@
 //перекрашуємо картки в той самий колір через баг inherit
 $(".card").css("border-color", "#6e9ae2");
 
+
 //визначаємо змінні
 var containerBox = $('#cards')[0].getBoundingClientRect();
 var media;
@@ -164,6 +165,7 @@ if (window.innerWidth >= 800) {
     setSize(cards6);
     drawSquares();
 }
+
 
 if (window.innerWidth < 800 ) {
     setSizeMob()

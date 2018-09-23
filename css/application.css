@@ -392,7 +392,7 @@ button.answerNo, button.noThanks {
   height: 100vh;
   background-color: black;
   z-index: 2000; }
-  @media (max-width: 900px) and (orientation: landscape) {
+  @media (max-width: 830px) and (orientation: landscape) {
     #myModal2 {
       display: grid; } }
 
@@ -555,7 +555,10 @@ h4 {
     .result {
       width: 85%;
       margin-left: 10%;
-      height: 70vh; } }
+      height: 80vh; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .result {
+      height: 65vh; } }
 
 .result:before {
   content: "";
@@ -602,8 +605,8 @@ h4 {
   font-family: 'Open Sans', sans-serif;
   text-align: center;
   color: yellow;
-  text-transform: uppercase;
-  margin-left: -20px; }
+  width: 90%;
+  text-transform: uppercase; }
 
 #inlineSpiral > img, #inlineSpiral2 > img {
   display: none; }
