@@ -535,7 +535,7 @@ console.log(sissy);
 
 $(".toResult").on("click", function() {
 
-        if(currentTotalPoints > vandal &&currentTotalPoints <= sumOfMax) {
+        if(currentTotalPoints > vandal) {
             $("#rank").html("ГОЛОВНИЙ ДЕЗИНФОРМАТОР КРАЇНИ");
             $("#face").attr("src", "img/dezinfo.png");
             $("#facebook")
