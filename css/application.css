@@ -25,7 +25,7 @@ h1, h3 {
   display: grid;
   grid-template-columns: 80% 20%;
   grid-template-rows: 10vh 90vh; }
-  @media (max-width: 800px) {
+  @media (max-width: 825px) {
     #mygrid {
       grid-template-columns: 50% 50%;
       grid-template-rows: 20vh 50vh 25vh 5vh; } }
@@ -52,7 +52,7 @@ h1, h3 {
 #blockList {
   grid-column: 1/2;
   grid-row: 1/2; }
-  @media (max-width: 800px) {
+  @media (max-width: 825px) {
     #blockList {
       grid-column: 1/-1;
       grid-row: 1/2; } }
@@ -61,7 +61,7 @@ h1, h3 {
   grid-column: 1/2;
   grid-row: 2/3;
   position: relative; }
-  @media (max-width: 800px) {
+  @media (max-width: 825px) {
     #cards {
       grid-column: 1/-1;
       grid-row: 2/3; } }
@@ -77,7 +77,7 @@ h1, h3 {
   margin-right: auto;
   animation: adjust 1s forwards;
   width: 80%; }
-  @media (max-width: 800px) {
+  @media (max-width: 825px) {
     #logoIdMob {
       margin-left: 0;
       max-height: 80%; } }
@@ -91,7 +91,7 @@ h1, h3 {
   grid-row: 1/3;
   display: grid;
   grid-template-rows: 15vh 65vh auto; }
-  @media (max-width: 800px) {
+  @media (max-width: 825px) {
     #rightSide {
       height: 100%;
       grid-column: 1/-1;
@@ -104,7 +104,7 @@ h1, h3 {
   grid-row: 1/3;
   display: grid;
   grid-template-columns: auto auto auto auto auto; }
-  @media (max-width: 800px) {
+  @media (max-width: 825px) {
     #rightSideBefore {
       height: 100%;
       grid-column: 1/-1;
@@ -116,7 +116,7 @@ h1, h3 {
   grid-column: 1/-1;
   grid-row: 1/2;
   background-color: #6e9ae2; }
-  @media (max-width: 800px) {
+  @media (max-width: 825px) {
     #mediaLogo {
       display: none; } }
 
@@ -133,7 +133,7 @@ h1, h3 {
   overflow-x: hidden;
   background-color: black;
   border: 2px solid #6e9ae2; }
-  @media (max-width: 800px) {
+  @media (max-width: 825px) {
     #messenger {
       margin-top: 20px;
       grid-row: 1/-1;
@@ -158,7 +158,7 @@ h1, h3 {
   background-color: #6e9ae2;
   display: grid;
   grid-template-columns: 40% 60%; }
-  @media (max-width: 800px) {
+  @media (max-width: 825px) {
     #spiral {
       display: none; } }
 
@@ -184,7 +184,7 @@ h3 {
   line-height: 1.4;
   font-weight: 400;
   margin-bottom: 20px; }
-  @media (max-width: 800px) {
+  @media (max-width: 825px) {
     h3 {
       font-size: 15px; } }
   @media (min-width: 2000px) {
@@ -201,7 +201,7 @@ li {
   font-size: 14px;
   line-height: 1.5;
   list-style-type: none; }
-  @media (max-width: 800px) {
+  @media (max-width: 825px) {
     li {
       font-size: 13px; } }
   @media (min-width: 2000px) {
@@ -270,7 +270,7 @@ p {
   @media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
     .cardContainer {
       height: 240px; } }
-  @media (max-width: 800px) {
+  @media (max-width: 825px) {
     .cardContainer {
       margin-right: 10%;
       top: 10%;
@@ -334,7 +334,7 @@ button {
 #chart {
   margin: 10px auto 0 auto;
   height: auto; }
-  @media (max-width: 800px) {
+  @media (max-width: 825px) {
     #chart {
       margin: 10px 0 0 auto; } }
 
@@ -354,7 +354,7 @@ button {
 button.answerYes, button.choice, button.next, button.error, button.myHint, button.answerNo, button.noThanks {
   position: absolute;
   bottom: 0; }
-  @media (max-width: 800px) {
+  @media (max-width: 825px) {
     button.answerYes, button.choice, button.next, button.error, button.myHint, button.answerNo, button.noThanks {
       position: absolute;
       bottom: 0; } }
@@ -368,8 +368,8 @@ button.answerNo, button.noThanks {
 #myModal {
   position: absolute;
   display: grid;
-  grid-template-columns: 1fr 300px 1fr;
-  grid-template-rows: 15% 1fr 200px 1fr;
+  grid-template-columns: 1fr 0.5fr 300px 0.5fr 1fr;
+  grid-template-rows: 10% auto 0.5fr 1fr 0.5fr 10%;
   top: 0;
   left: 0;
   width: 100vw;
@@ -378,8 +378,14 @@ button.answerNo, button.noThanks {
   z-index: 1000; }
   @media (min-width: 2000px) {
     #myModal {
-      grid-template-columns: 1fr 600px 1fr;
-      grid-template-rows: 15% 1fr 350px 1fr; } }
+      grid-template-columns: 1fr 0.5fr 600px 0.5fr 1fr;
+      grid-template-rows: 10% auto 0.5fr 1fr 0.5fr 10%; } }
+  @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+    #myModal {
+      grid-template-rows: 30% auto 0.5fr 1fr 0.5fr 30%; } }
+  @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
+    #myModal {
+      grid-template-rows: 20% auto 0.5fr 1fr 0.5fr 20%; } }
 
 #myModal2 {
   position: absolute;
@@ -423,7 +429,6 @@ button#play {
   width: 40%;
   color: white;
   height: auto;
-  grid-column: 2/3;
   grid-row: 2/3;
   z-index: 1001;
   font-family: 'Open Sans', sans-serif;
@@ -432,6 +437,12 @@ button#play {
   font-size: 30px;
   justify-self: center;
   margin-left: -15px; }
+
+#gameTitle2 {
+  grid-column: 2/3; }
+
+#gameTitle {
+  grid-column: 3/4; }
 
 .rect1 {
   width: 100%;
@@ -463,8 +474,8 @@ h2 {
   align-self: center;
   width: calc(100% - 20px);
   margin-left: 20px;
-  grid-column: 2/3;
-  grid-row: 3/4;
+  grid-column: 3/4;
+  grid-row: 4/5;
   position: absolute;
   background: black;
   border: 1px solid white;
@@ -526,8 +537,8 @@ h4 {
 .note {
   text-align: center;
   margin: 0 auto;
-  position: absolute;
-  bottom: 10%;
+  grid-row: 6/7;
+  grid-column: 1/-1;
   color: black;
   font-size: 11px;
   z-index: 1002; }
@@ -551,7 +562,7 @@ h4 {
     .result {
       height: 60%;
       width: 700px; } }
-  @media (max-width: 800px) {
+  @media (max-width: 825px) {
     .result {
       width: 85%;
       margin-left: 10%;
@@ -643,5 +654,64 @@ h4 {
     #twitter > a > svg {
       margin-top: 30px !important;
       margin-bottom: 30px !important; } }
+
+#lotOfCardsBackground {
+  position: relative;
+  grid-column: 2/5;
+  grid-row: 3/6;
+  width: 100%;
+  height: 100%; }
+  @media (max-width: 825px) {
+    #lotOfCardsBackground {
+      display: none; } }
+
+.cardOnBackground {
+  background-color: black;
+  position: absolute;
+  width: 20%;
+  height: 30%;
+  border: 1px solid white;
+  border-left: 0; }
+  @media (min-width: 2000px) {
+    .cardOnBackground {
+      border: 3px solid white; } }
+
+.cardOnBackground:before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: -1px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: inherit;
+  border-left-color: transparent;
+  border-top-color: transparent; }
+  @media (max-width: 825px) {
+    .cardOnBackground:before {
+      display: none; } }
+  @media (min-width: 2000px) {
+    .cardOnBackground:before {
+      top: -3px; } }
+
+.cardOnBackground:after {
+  content: '';
+  background: black;
+  position: absolute;
+  box-sizing: border-box;
+  width: 20px;
+  right: 100%;
+  bottom: -1px;
+  top: 19px;
+  border-width: 0 0 1px 1px;
+  border-color: inherit;
+  border-style: solid; }
+  @media (max-width: 825px) {
+    .cardOnBackground:after {
+      display: none; } }
+  @media (min-width: 2000px) {
+    .cardOnBackground:after {
+      bottom: -3px;
+      top: 17px;
+      border-width: 0 0 3px 3px; } }
 
 /*# sourceMappingURL=application.css.map */

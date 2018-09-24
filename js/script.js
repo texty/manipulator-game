@@ -156,7 +156,7 @@ var setSizeMob = function () {
 };
 
 
-if (window.innerWidth >= 800) {
+if (window.innerWidth >= 825) {
     setSize(cards1);
     setSize(cards2);
     setSize(cards3);
@@ -167,13 +167,13 @@ if (window.innerWidth >= 800) {
 }
 
 
-if (window.innerWidth < 800 ) {
+if (window.innerWidth < 825 ) {
     setSizeMob()
 
 }
 
 window.addEventListener("resize", function () {
-    if (window.innerWidth >= 800) {
+    if (window.innerWidth >= 825) {
         setSize(cards1);
         setSize(cards2);
         setSize(cards3);
@@ -182,7 +182,7 @@ window.addEventListener("resize", function () {
         setSize(cards6);
         drawSquares();
     }
-    if(window.innerWidth < 800 && window.innerWidth < window.innerHeight){
+    if(window.innerWidth < 825 && window.innerWidth < window.innerHeight){
         setSizeMob();
         $(".square").remove();
     }
@@ -240,10 +240,10 @@ $('.choice').on("click", function () {
 $(".selectMedia").on("click", function () {
     media = $(this).parent().find("img").attr("alt");
     $(this).parent().find("img").attr("id", "logoId");
-    if(window.innerWidth > 800){
+    if(window.innerWidth > 825){
         func ("#mediaLogo");
     }
-    if(window.innerWidth <= 800){
+    if(window.innerWidth <= 825){
         func("#logomob");
     }
     mediaImgSource = $(this).parent().find("img").attr("src");
@@ -587,7 +587,7 @@ $(".toResult").on("click", function() {
         $("#theResult").text("Ваше сумління не дає вам працювати ефективно. Так ви довго не протягнете. Забудьте про стандарти журналістики, їх вже немає")
     }
 
-    if(window.innerWidth < 800) {
+    if(window.innerWidth < 825) {
         $("#logomob").remove();
         $("#spiralmob").remove();
         $("#messenger").remove();
@@ -618,4 +618,24 @@ $("#inlineSpiral2 > img")
 
 
 
+//     var thisArray = $('.cardOnBackground');
+//     for (var j = 0; j < thisArray.length; j++ ){
+//         $(thisArray[j]).css("height", function () {
+//             var jHeight = getRandomNumber(20, 40, 5);
+//             return jHeight + "%";
+//
+//         })
+//
+// }
+
+//генерує випадкове між двома числами
+function getRandomNumber(start, end, increments) {
+    var numbers = [];
+    for(var n = start; n <= end; n += increments) {
+        numbers.push(n);
+    }
+
+    var randomIndex = Math.floor(Math.random() * numbers.length);
+    return numbers[randomIndex];
+}
 
