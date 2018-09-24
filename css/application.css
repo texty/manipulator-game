@@ -153,11 +153,17 @@ h1, h3 {
 
 #spiral {
   width: 100%;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  align-items: center;
   grid-column: 1/-1;
   grid-row: 3/4;
   background-color: #6e9ae2;
-  display: grid;
-  grid-template-columns: 40% 60%; }
+  justify-content: center; }
   @media (max-width: 825px) {
     #spiral {
       display: none; } }
@@ -300,10 +306,10 @@ p {
 button {
   min-width: 50px;
   background-color: white;
-  color: black;
   font-size: 12px;
-  padding: 5px;
-  border: 1px solid #555555; }
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 5px; }
   @media (min-width: 2000px) {
     button {
       font-size: 20px;
@@ -332,17 +338,12 @@ button {
   margin-top: 50vh; }
 
 #chart {
-  margin: 10px auto 0 auto;
   height: auto; }
-  @media (max-width: 825px) {
-    #chart {
-      margin: 10px 0 0 auto; } }
 
 .points {
-  width: 100%;
-  margin: auto auto;
-  text-align: center;
-  align-items: center;
+  width: 40%;
+  text-align: right;
+  vertical-align: middle;
   color: white; }
   @media (min-width: 2000px) {
     .points {
@@ -360,10 +361,14 @@ button.answerYes, button.choice, button.next, button.error, button.myHint, butto
       bottom: 0; } }
 
 button.answerYes, button.choice, button.next, button.error, button.myHint {
-  left: 0; }
+  left: 0;
+  border: 2px solid #6e9ae2;
+  color: #6e9ae2; }
 
 button.answerNo, button.noThanks {
-  right: 0; }
+  right: 0;
+  border: 2px solid #6e9ae2;
+  color: #6e9ae2; }
 
 #myModal {
   position: absolute;
@@ -411,6 +416,7 @@ button.answerNo, button.noThanks {
   background: black; }
 
 button#play {
+  border: 0 !important;
   position: relative;
   font-size: 16px;
   font-weight: 800;
@@ -523,6 +529,7 @@ h2 {
       border-width: 0 0 3px 3px; } }
 
 h4 {
+  margin-left: -15px;
   font-size: 20px;
   color: white;
   text-align: center;
@@ -540,11 +547,11 @@ h4 {
   grid-row: 6/7;
   grid-column: 1/-1;
   color: black;
-  font-size: 11px;
+  font-size: 13px;
   z-index: 1002; }
   @media (min-width: 2000px) {
     .note {
-      font-size: 22px; } }
+      font-size: 25px; } }
 
 .result {
   display: none;

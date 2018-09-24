@@ -443,6 +443,9 @@ function swapStyleSheet() {
     $("#messenger").css("border-color", hex);
     $(".card").css("border-color", hex);
     $("#spiral").css("background-color", hex);
+    $("button.answerYes, button.choice, button.next, button.error, button.myHint, button.answerNo, button.noThanks").css("border-color", hex);
+    $("button.answerYes, button.choice, button.next, button.error, button.myHint, button.answerNo, button.noThanks").css("color", hex);
+
 }
 
 
