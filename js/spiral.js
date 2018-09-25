@@ -11,6 +11,10 @@ if (window.innerWidth >= 2000){
     height = 200;
 
 }
+if(window.innerWidth === 768 && window.innerHeight === 1024){
+    width = 140;
+    height = 140;
+}
 else {
     width = 120;
     height = 120;
