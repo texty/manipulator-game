@@ -84,15 +84,53 @@ var drawSquares = function () {
 
 
 //додаємо текст в месенджер
-var newMessage = function (text) {
+var newMessage = function (text, result) {
     var messenger = document.getElementById("messenger");
-    var isScrolledToBottom = messenger.scrollHeight - messenger.clientHeight <= messenger.scrollTop + 1;
+    var isScrolledToBottom = messenger.scrollHeight - messenger.clientHeight - 300 <= messenger.scrollTop + 1;
     var newElement = document.createElement("p");
     newElement.innerHTML = text;
     messenger.appendChild(newElement);
+
+    //додаємо кнопку "показати результати і результати"
+    var myResultContainer = document.createElement("div");
+    $(myResultContainer).attr("class", "contentButton contentButtonHide");
+    messenger.appendChild(myResultContainer);
+    var showResultButton = document.createElement("button");
+    showResultButton.innerHTML = "показати обрану відповідь";
+    myResultContainer.appendChild(showResultButton);
+    $(showResultButton)
+        .attr("class", "showChoiceResult")
+        .css("color", function() {
+        if(hex) { return hex  }  else {  return "grey"  }
+    });
+
+    //по кліку на кнопку показуємо їх, по повторному ховаємо
+    $(showResultButton).on("click", function() {
+       $(this).closest(".contentButton").toggleClass("contentButtonHide");
+        var text = $(this).closest(".contentButton").find(".showChoiceResult").html();
+        if(text === "показати обрану відповідь"){
+            $(this).html("cховати обрану відповідь")
+        } else {
+            $(this).html("показати обрану відповідь")
+        }
+
+        if (isScrolledToBottom)
+            messenger.scrollTop = messenger.scrollHeight - messenger.clientHeight + 300;
+    });
+
+    //додаємо обраний варіант
+    var myResultText = document.createElement("p");
+    $(myResultText).css("color", function() {
+        if(hex) { return hex } else { return "grey" }
+    });
+    myResultText.innerHTML = result;
+    myResultContainer.appendChild(myResultText);
     if (isScrolledToBottom)
-        messenger.scrollTop = messenger.scrollHeight - messenger.clientHeight;
-};
+        messenger.scrollTop = messenger.scrollHeight - messenger.clientHeight + 300;
+    
+}; //кінець функції додавання повідомлення
+
+
 
 //розташування карток одна під одною
 var setSize = function (blockNumber) {
@@ -217,8 +255,9 @@ $('.choice').on("click", function () {
     var card = $(this).closest(".card");
     // card.css("transform", "rotateY(180deg)");
     var messengerInfo = $(this).parent().find(".additionalInfo").html();
-    var oldMessages = $("#messenger p").css("color", "grey");
-    newMessage(messengerInfo);
+    var choicenResult = $(this).parent().find(".mainInfo").html();
+    var oldMessages = $("#messenger p").not('.contentButton p').css("color", "grey");
+    newMessage(messengerInfo, choicenResult);
     $(this).parent().find("p.mainInfo").css("display", "none");
     var points = $(this).parent().attr("value");
     $(this).removeClass("show").addClass("hide");
@@ -340,16 +379,21 @@ $("button.answer").on("click", function () {
     $(elem).parent().find(".nextSlide").removeClass("hide").addClass("show");
     $(this).parent().find("p.mainInfo").css("display", "none");
     var messengerInfo;
+    var choicenResult;
     if ($(this).hasClass("answerYes")) {
         messengerInfo = $(this).parent().find("p.additionalInfoYes").html();
-        $("#messenger p").css("color", "grey");
-        newMessage(messengerInfo);
+        choicenResult = $(this).parent().find("p.mainInfo").html();
+        choicenResult = choicenResult + " (ТАК)";
+        $("#messenger p").not('.contentButton p').css("color", "grey");
+        newMessage(messengerInfo, choicenResult);
     }
 
     if ($(this).hasClass("answerNo")) {
         messengerInfo = $(this).parent().find("p.additionalInfoNo").html();
-        $("#messenger p").css("color", "grey");
-        newMessage(messengerInfo);
+        choicenResult = $(this).parent().find("p.mainInfo").html();
+        choicenResult = choicenResult + " (HI)";
+        $("#messenger p").not('.contentButton p').css("color", "grey");
+        newMessage(messengerInfo, choicenResult);
     }
 
     sliderFunction(elem);

@@ -149,11 +149,44 @@ h1, h3 {
   width: 90%;
   font-size: 14px;
   color: white;
-  margin-left: 5%; }
+  margin-left: 5%;
+  margin-top: 30px;
+  -webkit-margin-after: 0; }
   @media (min-width: 2000px) {
     #messenger > p {
       font-size: 18px;
       line-height: 1.6; } }
+
+.contentButton > p {
+  font-style: italic !important;
+  text-align: left;
+  width: 80%;
+  color: white;
+  font-size: 12px;
+  margin-left: 5%;
+  -webkit-margin-before: 0; }
+  @media (min-width: 2000px) {
+    .contentButton > p {
+      font-size: 16px;
+      line-height: 1.6; } }
+
+.contentButtonHide > p {
+  display: none; }
+
+button.showChoiceResult {
+  font-family: 'Roboto Mono', monospace;
+  background-color: #000;
+  text-transform: lowercase !important;
+  font-style: italic !important;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  text-align: right;
+  outline: none;
+  font-size: 12px;
+  pointer-events: all;
+  z-index: 50000;
+  -webkit-margin-after: 0; }
 
 #spiral {
   width: 100%;
