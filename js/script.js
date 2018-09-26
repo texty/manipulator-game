@@ -91,42 +91,56 @@ var newMessage = function (text, result) {
     newElement.innerHTML = text;
     messenger.appendChild(newElement);
 
-    //додаємо кнопку "показати результати і результати"
-    var myResultContainer = document.createElement("div");
-    $(myResultContainer).attr("class", "contentButton contentButtonHide");
-    messenger.appendChild(myResultContainer);
-    var showResultButton = document.createElement("button");
-    showResultButton.innerHTML = "показати обрану відповідь";
-    myResultContainer.appendChild(showResultButton);
-    $(showResultButton)
-        .attr("class", "showChoiceResult")
-        .css("color", function() {
-        if(hex) { return hex  }  else {  return "grey"  }
-    });
+    if(result) {
+        //додаємо кнопку "показати результати і результати"
+        var myResultContainer = document.createElement("div");
+        $(myResultContainer).attr("class", "contentButton contentButtonHide");
+        messenger.appendChild(myResultContainer);
+        var showResultButton = document.createElement("button");
+        showResultButton.innerHTML = "показати обрану відповідь";
+        myResultContainer.appendChild(showResultButton);
+        $(showResultButton)
+            .attr("class", "showChoiceResult")
+            .css("color", function () {
+                if (hex) {
+                    return hex
+                } else {
+                    return "grey"
+                }
+            });
 
-    //по кліку на кнопку показуємо їх, по повторному ховаємо
-    $(showResultButton).on("click", function() {
-       $(this).closest(".contentButton").toggleClass("contentButtonHide");
-        var text = $(this).closest(".contentButton").find(".showChoiceResult").html();
-        if(text === "показати обрану відповідь"){
-            $(this).html("cховати обрану відповідь")
-        } else {
-            $(this).html("показати обрану відповідь")
-        }
+        //по кліку на кнопку показуємо їх, по повторному ховаємо
+        $(showResultButton).on("click", function () {
+            $(this).closest(".contentButton").toggleClass("contentButtonHide");
+            var text = $(this).closest(".contentButton").find(".showChoiceResult").html();
+            if (text === "показати обрану відповідь") {
+                $(this).html("cховати обрану відповідь")
+            } else {
+                $(this).html("показати обрану відповідь")
+            }
 
+            if (isScrolledToBottom)
+                messenger.scrollTop = messenger.scrollHeight - messenger.clientHeight + 300;
+        });
+
+        //додаємо обраний варіант
+        var myResultText = document.createElement("p");
+        $(myResultText).css("color", function () {
+            if (hex) {
+                return hex
+            } else {
+                return "grey"
+            }
+        });
+        myResultText.innerHTML = result;
+        myResultContainer.appendChild(myResultText);
         if (isScrolledToBottom)
-            messenger.scrollTop = messenger.scrollHeight - messenger.clientHeight + 300;
-    });
-
-    //додаємо обраний варіант
-    var myResultText = document.createElement("p");
-    $(myResultText).css("color", function() {
-        if(hex) { return hex } else { return "grey" }
-    });
-    myResultText.innerHTML = result;
-    myResultContainer.appendChild(myResultText);
-    if (isScrolledToBottom)
-        messenger.scrollTop = messenger.scrollHeight - messenger.clientHeight + 300;
+            messenger.scrollTop = messenger.scrollHeight - messenger.clientHeight + 1;
+    }
+    else {
+        if (isScrolledToBottom)
+            messenger.scrollTop = messenger.scrollHeight - messenger.clientHeight + 1;
+    }
     
 }; //кінець функції додавання повідомлення
 
