@@ -572,7 +572,7 @@ console.log(resultInterval);
 
 //верхня межа mainDezinformer
 var mainDezinformer = sumOfMax;
-console.log(mainDezinformer);
+console.log("дезинформатор" + mainDezinformer);
 
 //верхня межа vandal
 var vandal = sumOfMin + (resultInterval * 4);
@@ -592,7 +592,6 @@ console.log(sissy);
 
 
 $(".toResult").on("click", function() {
-
         if(currentTotalPoints > vandal) {
             $("#rank").html("ГОЛОВНИЙ ДЕЗИНФОРМАТОР КРАЇНИ");
             $("#face").attr("src", "img/dezinfo.png");
@@ -653,6 +652,7 @@ $(".toResult").on("click", function() {
         $("#spiralmob").remove();
         $("#messenger").remove();
     }
+
     $(".result").css("display", "block");
 });
 
