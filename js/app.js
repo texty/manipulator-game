@@ -24,6 +24,9 @@ $("#showUserRate").on("click", function () {
             thead.append('tr').selectAll('th')
                 .data(["Ім'я", "Бали", "Результат"]).enter()
                 .append('th')
+                .style("color", "yellow")
+                .style("display", "sticky")
+                .style("top", "10px")
                 .text(function (d) {
                     return d;
                 });
