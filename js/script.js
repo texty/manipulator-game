@@ -118,9 +118,7 @@ var newMessage = function (text, result) {
             } else {
                 $(this).html("показати обрану відповідь")
             }
-
-            if (isScrolledToBottom)
-                messenger.scrollTop = messenger.scrollHeight - messenger.clientHeight + 300;
+            messenger.scrollTop = messenger.scrollHeight - 50;
         });
 
         //додаємо обраний варіант
