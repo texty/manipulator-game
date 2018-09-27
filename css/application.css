@@ -21,14 +21,16 @@ h1, h3 {
   -webkit-margin-before: 0;
   -webkit-margin-after: 0; }
 
+.hide {
+  display: none; }
+
+.show {
+  display: block; }
+
 #mygrid {
   display: grid;
   grid-template-columns: 80% 20%;
   grid-template-rows: 10vh 90vh; }
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-    #mygrid {
-      grid-template-columns: 50% 50%;
-      grid-template-rows: 20vh 45vh 30vh 5vh !important; } }
   @media (max-width: 825px) {
     #mygrid {
       grid-template-columns: 50% 50%;
@@ -38,57 +40,320 @@ h1, h3 {
       grid-template-columns: 50% 50%;
       grid-template-rows: 15vh 40vh 35vh 5vh; } }
 
-#logomob {
-  grid-column: 1/2;
-  grid-row: 1/2;
-  align-items: center; }
-  @media (min-width: 801px) {
-    #logomob {
-      display: none; } }
-
-#spiralmob {
-  grid-column: 2/3;
-  grid-row: 1/2; }
-  @media (min-width: 801px) {
-    #spiralmob {
-      display: none; } }
-
 #blockList {
   grid-column: 1/2;
-  grid-row: 1/2; }
+  grid-row: 1/2;
+  width: 70%;
+  text-transform: uppercase;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  justify-content: space-between;
+  font-family: Arial, serif;
+  font-size: 12px;
+  font-weight: 800; }
   @media (max-width: 825px) {
     #blockList {
       grid-column: 1/-1;
       grid-row: 1/2; } }
+  @media (min-width: 2000px) {
+    #blockList {
+      margin: 30px auto;
+      font-size: 25px; } }
 
-#cards {
-  grid-column: 1/2;
-  grid-row: 2/3;
-  position: relative; }
+#myModal {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 300px 0.5fr 1fr;
+  grid-template-rows: 10% 0.5fr auto 0.5fr 50px 5%;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 1000; }
+  @media (min-width: 2000px) {
+    #myModal {
+      grid-template-columns: 1fr 0.5fr 600px 0.5fr 1fr;
+      grid-template-rows: 5% 0.5fr auto 0.5fr 100px 10%; } }
   @media (max-width: 825px) {
-    #cards {
-      grid-column: 1/-1;
+    #myModal {
+      grid-template-columns: 1fr 0.5fr 300px 0.5fr 1fr;
+      grid-template-rows: 20% 0.5fr auto 0.5fr 100px 20%; } }
+  @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+    #myModal {
+      grid-template-rows: 30% 0.5fr 1fr 0.5fr 50px 30%; } }
+  @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
+    #myModal {
+      grid-template-rows: 20% 0.5fr 1fr 0.5fr 50px 20%; } }
+
+.gameTitleLetters {
+  display: flex;
+  justify-content: space-between;
+  font-size: 36px;
+  color: yellow; }
+  @media (min-width: 2000px) {
+    .gameTitleLetters {
+      font-size: 70px; } }
+
+#lotOfCardsBackground {
+  position: relative;
+  grid-column: 2/5;
+  grid-row: 2/5;
+  width: 100%;
+  height: 100%; }
+  @media (max-width: 825px) {
+    #lotOfCardsBackground {
+      display: none; } }
+
+.cardOnBackground {
+  background-color: black;
+  position: absolute;
+  width: 20%;
+  height: 30%;
+  border: 1px solid white;
+  border-left: 0; }
+  @media (min-width: 2000px) {
+    .cardOnBackground {
+      border: 3px solid white; } }
+
+.cardOnBackground:before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: -1px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: inherit;
+  border-left-color: transparent;
+  border-top-color: transparent; }
+  @media (min-width: 2000px) {
+    .cardOnBackground:before {
+      top: -3px; } }
+
+.cardOnBackground:after {
+  content: '';
+  background: black;
+  position: absolute;
+  box-sizing: border-box;
+  width: 20px;
+  right: 100%;
+  bottom: -1px;
+  top: 19px;
+  border-width: 0 0 1px 1px;
+  border-color: inherit;
+  border-style: solid; }
+  @media (min-width: 2000px) {
+    .cardOnBackground:after {
+      bottom: -3px;
+      top: 17px;
+      border-width: 0 0 3px 3px; } }
+
+@media (max-width: 825px) {
+  #lotOfCardsBackground {
+    display: none; } }
+
+@media (min-width: 826px) {
+  .mob {
+    display: none; } }
+
+button#play {
+  border: 0 !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  font-weight: 800;
+  width: 40%;
+  grid-row: 5/6;
+  grid-column: 3/4;
+  background-color: red;
+  text-transform: uppercase;
+  padding: 5px;
+  color: white;
+  letter-spacing: 2px; }
+  @media (min-width: 2000px) {
+    button#play {
+      font-size: 40px; } }
+
+#gameTitle {
+  width: 40%;
+  color: white;
+  height: auto;
+  z-index: 1001;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 30px;
+  margin-left: calc(30% - 15px);
+  margin-top: 40px;
+  margin-bottom: 40px;
+  justify-self: center; }
+
+#gameTitle {
+  grid-column: 3/4; }
+
+.mob {
+  margin-top: 20%;
+  grid-column: 3/4;
+  grid-row: 3/4;
+  position: absolute;
+  width: 100%;
+  height: auto; }
+
+.rect1 {
+  width: 100%;
+  height: 100%;
+  grid-column: 1/2; }
+
+.rect2 {
+  width: 100%;
+  height: 100%;
+  grid-column: 3/4; }
+
+h2 {
+  text-align: justify;
+  justify-self: center;
+  margin: 0 auto;
+  color: yellow;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: 4px; }
+  @media (min-width: 2000px) {
+    h2 {
+      font-size: 70px !important; } }
+
+#playDiv {
+  justify-self: center;
+  align-self: center;
+  width: calc(100% - 20px);
+  margin-left: 20px;
+  grid-column: 3/4;
+  grid-row: 3/4;
+  position: absolute;
+  background: black;
+  border: 1px solid white;
+  border-left: 0; }
+  @media (max-width: 825px) {
+    #playDiv {
       grid-row: 2/3; } }
+  @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+    #playDiv {
+      grid-row: 3/4; } }
+  @media (min-width: 2000px) {
+    #playDiv {
+      border: 3px solid white; } }
 
-#logoId {
-  animation: adjust 1s forwards;
-  max-height: 100%; }
+#playDiv:before {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: -1px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: white;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  z-index: 1001; }
+  @media (min-width: 2000px) {
+    #playDiv:before {
+      top: -3px; } }
 
-#logoIdMob {
-  display: block;
-  margin-top: 20px;
-  margin-left: 10%;
-  margin-right: auto;
-  animation: adjust 1s forwards;
-  width: 80%; }
-  @media (max-width: 825px) {
-    #logoIdMob {
-      margin-left: 0;
-      max-height: 80%; } }
+#playDiv:after {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  content: '';
+  background: black;
+  position: absolute;
+  box-sizing: border-box;
+  width: 20px;
+  right: 100%;
+  bottom: -1px;
+  top: 19px;
+  border-width: 0 0 1px 1px;
+  border-color: white;
+  border-style: solid;
+  z-index: 1001; }
+  @media (min-width: 2000px) {
+    #playDiv:after {
+      bottom: -3px;
+      top: 17px;
+      border-width: 0 0 3px 3px; } }
 
-@keyframes adjust {
-  to {
-    transform: translate(0px, 0px); } }
+h4 {
+  margin-left: -15px;
+  font-size: 20px;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-margin-before: 0.33em;
+  -webkit-margin-after: 0.33em; }
+  @media (min-width: 2000px) {
+    h4 {
+      font-size: 40px !important; } }
+
+.note {
+  text-align: center;
+  margin: 0 auto;
+  width: 90%;
+  grid-row: 6/7;
+  grid-column: 1/-1;
+  color: black;
+  font-size: 13px;
+  z-index: 1002; }
+  @media (min-width: 2000px) {
+    .note {
+      font-size: 25px; } }
+
+#myModal2 {
+  position: absolute;
+  display: none;
+  grid-template-columns: 1fr 300px 1fr;
+  grid-template-rows: 15% 2fr 1fr 1fr;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 2000; }
+  @media (max-width: 830px) and (orientation: landscape) {
+    #myModal2 {
+      display: grid; } }
+
+#warning {
+  width: 100%;
+  margin-left: 10px;
+  grid-column: 2/3;
+  grid-row: 3/4;
+  position: absolute;
+  background: black; }
+
+#gameTitle2 {
+  width: 40%;
+  color: white;
+  height: auto;
+  z-index: 1001;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  justify-self: center; }
+
+#gameTitle2 {
+  grid-column: 2/3; }
+
 #rightSide {
   height: 100vh;
   grid-column: 2/3;
@@ -205,64 +470,81 @@ button.showChoiceResult {
     #spiral {
       display: none; } }
 
-#blockList {
-  width: 70%;
-  text-transform: uppercase;
-  margin: 10px auto;
-  display: flex;
-  flex-direction: row;
-  color: white;
-  justify-content: space-between;
-  font-family: Arial, serif;
-  font-size: 12px;
-  font-weight: 800; }
-  @media (min-width: 2000px) {
-    #blockList {
-      margin: 30px auto;
-      font-size: 25px; } }
-
-h3 {
-  width: 100%;
-  font-size: 18px;
-  line-height: 1.4;
-  font-weight: 400;
-  margin-bottom: 20px; }
+#chart {
+  height: auto; }
   @media (max-width: 825px) {
-    h3 {
-      font-size: 15px; } }
-  @media (min-width: 2000px) {
-    h3 {
-      font-size: 25px; } }
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-    h3 {
-      font-size: 22px; } }
-  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-    h3 {
-      font-size: 13px; } }
+    #chart {
+      float: right; } }
 
-li {
-  font-size: 14px;
-  line-height: 1.5;
-  list-style-type: none; }
+.points {
+  width: 40%;
+  text-align: right;
+  vertical-align: middle;
+  color: white; }
+  @media (min-width: 2000px) {
+    .points {
+      font-size: 30px; } }
+
+#logomob {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  align-items: center; }
+  @media (min-width: 801px) {
+    #logomob {
+      display: none; } }
+
+#spiralmob {
+  grid-column: 2/3;
+  grid-row: 1/2; }
+  @media (min-width: 801px) {
+    #spiralmob {
+      display: none; } }
+
+#logoId {
+  animation: adjust 1s forwards;
+  max-height: 100%; }
+
+#logoIdMob {
+  display: block;
+  margin-top: 20px;
+  margin-left: 10%;
+  margin-right: auto;
+  animation: adjust 1s forwards;
+  width: 80%; }
   @media (max-width: 825px) {
-    li {
-      font-size: 13px; } }
-  @media (min-width: 2000px) {
-    li {
-      font-size: 20px; } }
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-    li {
-      font-size: 18px;
-      line-height: 1.6; } }
-  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-    li {
-      font-size: 11px; } }
+    #logoIdMob {
+      margin-left: 0;
+      max-height: 80%; } }
 
-li.pseudo {
-  min-height: 0; }
+@keyframes adjust {
+  to {
+    transform: translate(0px, 0px); } }
+#cards {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  position: relative; }
+  @media (max-width: 825px) {
+    #cards {
+      grid-column: 1/-1;
+      grid-row: 2/3; } }
 
-p {
-  width: 100%; }
+.cardContainer {
+  position: relative;
+  margin-right: 20%;
+  top: 50px;
+  left: 10%; }
+  @supports (-moz-transform: translate(0, 0)) {
+    .cardContainer {
+      height: 270px;
+      top: 30px; } }
+  @media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+    .cardContainer {
+      height: 240px; } }
+  @media (max-width: 825px) {
+    .cardContainer {
+      margin-right: 10%;
+      top: 10%;
+      left: 0; } }
 
 .card {
   height: 350px;
@@ -273,6 +555,10 @@ p {
   border-style: solid;
   border-color: #6e9ae2;
   border-left: 0; }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .card {
+      height: 500px;
+      width: 500px; } }
   @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
     .card {
       height: 40vh !important; } }
@@ -301,44 +587,49 @@ p {
   border-color: inherit;
   border-style: solid; }
 
-.cardContainer {
-  position: relative;
-  margin-right: 20%;
-  top: 50px;
-  left: 10%; }
-  @supports (-moz-transform: translate(0, 0)) {
-    .cardContainer {
-      height: 270px;
-      top: 30px; } }
-  @media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
-    .cardContainer {
-      height: 240px; } }
+.block2, .block3, .block4, .block5, .block6, .hiddenCard {
+  display: none; }
+
+h3 {
+  width: 100%;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 400;
+  margin-bottom: 20px; }
   @media (max-width: 825px) {
-    .cardContainer {
-      margin-right: 10%;
-      top: 10%;
-      left: 0; } }
-
-.arrowRight {
-  width: 30px;
-  transform: rotate(180deg);
-  position: absolute;
-  top: 45%;
-  right: -30%; }
-
-.arrowRight:hover {
-  cursor: pointer; }
+    h3 {
+      font-size: 15px; } }
+  @media (min-width: 2000px) {
+    h3 {
+      font-size: 25px; } }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+    h3 {
+      font-size: 17px; } }
 
 .variant {
   width: 100%;
   display: grid;
   grid-template-columns: 100% 20%; }
 
-.hide {
-  display: none; }
+li {
+  font-size: 14px;
+  line-height: 1.5;
+  list-style-type: none; }
+  @media (max-width: 825px) {
+    li {
+      font-size: 13px; } }
+  @media (min-width: 2000px) {
+    li {
+      font-size: 20px; } }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+    li {
+      font-size: 11px; } }
 
-.show {
-  display: block; }
+li.pseudo {
+  min-height: 0; }
+
+p {
+  width: 100%; }
 
 button {
   min-width: 50px;
@@ -351,10 +642,6 @@ button {
     button {
       font-size: 18px;
       padding: 5px; } }
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-    button {
-      font-size: 18px;
-      line-height: 1.6; } }
 
 .additionalInfo {
   display: none;
@@ -369,28 +656,6 @@ button {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%); }
-
-/*Спираль*/
-#content {
-  margin-top: 50vh; }
-
-#chart {
-  height: auto; }
-  @media (max-width: 825px) {
-    #chart {
-      float: right; } }
-
-.points {
-  width: 40%;
-  text-align: right;
-  vertical-align: middle;
-  color: white; }
-  @media (min-width: 2000px) {
-    .points {
-      font-size: 30px; } }
-
-.block2, .block3, .block4, .block5, .block6, .hiddenCard {
-  display: none; }
 
 button.answerYes, button.choice, button.next, button.error, button.myHint, button.answerNo, button.noThanks {
   position: absolute;
@@ -410,227 +675,6 @@ button.answerNo, button.noThanks {
   border: 2px solid #6e9ae2;
   color: #6e9ae2; }
 
-#myModal {
-  position: absolute;
-  display: grid;
-  grid-template-columns: 1fr 0.5fr 300px 0.5fr 1fr;
-  grid-template-rows: 10% 0.5fr auto 0.5fr 50px 5%;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
-  z-index: 1000; }
-  @media (min-width: 2000px) {
-    #myModal {
-      grid-template-columns: 1fr 0.5fr 600px 0.5fr 1fr;
-      grid-template-rows: 10% auto 0.5fr 1fr 0.5fr 10%; } }
-  @media (max-width: 825px) {
-    #myModal {
-      grid-template-columns: 1fr 0.5fr 300px 0.5fr 1fr;
-      grid-template-rows: 20% 0.5fr auto 0.5fr 100px 20%; } }
-  @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
-    #myModal {
-      grid-template-rows: 30% 0.5fr 1fr 0.5fr 50px 30%; } }
-  @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
-    #myModal {
-      grid-template-rows: 20% 0.5fr 1fr 0.5fr 50px 20%; } }
-
-#myModal2 {
-  position: absolute;
-  display: none;
-  grid-template-columns: 1fr 300px 1fr;
-  grid-template-rows: 15% 2fr 1fr 1fr;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
-  z-index: 2000; }
-  @media (max-width: 830px) and (orientation: landscape) {
-    #myModal2 {
-      display: grid; } }
-
-#warning {
-  width: 100%;
-  margin-left: 10px;
-  grid-column: 2/3;
-  grid-row: 3/4;
-  position: absolute;
-  background: black; }
-
-button#play {
-  border: 0 !important;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 16px;
-  font-weight: 800;
-  width: 40%;
-  grid-row: 5/6;
-  grid-column: 3/4;
-  background-color: red;
-  text-transform: uppercase;
-  padding: 5px;
-  color: white;
-  letter-spacing: 2px; }
-  @media (min-width: 2000px) {
-    button#play {
-      font-size: 40px; } }
-
-#gameTitle {
-  width: 40%;
-  color: white;
-  height: auto;
-  z-index: 1001;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: 30px;
-  margin-left: calc(30% - 15px);
-  margin-top: 40px;
-  margin-bottom: 40px;
-  justify-self: center; }
-
-#gameTitle2 {
-  width: 40%;
-  color: white;
-  height: auto;
-  z-index: 1001;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: 30px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  justify-self: center; }
-
-#gameTitle2 {
-  grid-column: 2/3; }
-
-#gameTitle {
-  grid-column: 3/4; }
-
-.mob {
-  margin-top: 20%;
-  grid-column: 3/4;
-  grid-row: 3/4;
-  position: absolute;
-  width: 100%;
-  height: auto; }
-
-.rect1 {
-  width: 100%;
-  height: 100%;
-  grid-column: 1/2; }
-
-.rect2 {
-  width: 100%;
-  height: 100%;
-  grid-column: 3/4; }
-
-h2 {
-  text-align: justify;
-  justify-self: center;
-  margin: 0 auto;
-  color: yellow;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: 30px;
-  line-height: 1.2;
-  letter-spacing: 4px; }
-  @media (min-width: 2000px) {
-    h2 {
-      font-size: 70px !important; } }
-
-#playDiv {
-  justify-self: center;
-  align-self: center;
-  width: calc(100% - 20px);
-  margin-left: 20px;
-  grid-column: 3/4;
-  grid-row: 3/4;
-  position: absolute;
-  background: black;
-  border: 1px solid white;
-  border-left: 0; }
-  @media (max-width: 825px) {
-    #playDiv {
-      grid-row: 2/3; } }
-  @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
-    #playDiv {
-      grid-row: 3/4; } }
-  @media (min-width: 2000px) {
-    #playDiv {
-      border: 3px solid white; } }
-
-#playDiv:before {
-  grid-column: 2/3;
-  grid-row: 3/4;
-  content: "";
-  position: absolute;
-  right: 100%;
-  top: -1px;
-  border-width: 10px;
-  border-style: solid;
-  border-color: white;
-  border-left-color: transparent;
-  border-top-color: transparent;
-  z-index: 1001; }
-  @media (min-width: 2000px) {
-    #playDiv:before {
-      top: -3px; } }
-
-#playDiv:after {
-  grid-column: 2/3;
-  grid-row: 3/4;
-  content: '';
-  background: black;
-  position: absolute;
-  box-sizing: border-box;
-  width: 20px;
-  right: 100%;
-  bottom: -1px;
-  top: 19px;
-  border-width: 0 0 1px 1px;
-  border-color: white;
-  border-style: solid;
-  z-index: 1001; }
-  @media (min-width: 2000px) {
-    #playDiv:after {
-      bottom: -3px;
-      top: 17px;
-      border-width: 0 0 3px 3px; } }
-
-h4 {
-  margin-left: -15px;
-  font-size: 20px;
-  color: white;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-align: center;
-  font-weight: 400;
-  line-height: 1.6;
-  -webkit-margin-before: 0.33em;
-  -webkit-margin-after: 0.33em; }
-  @media (min-width: 2000px) {
-    h4 {
-      font-size: 40px !important; } }
-
-.note {
-  text-align: center;
-  margin: 0 auto;
-  grid-row: 6/7;
-  grid-column: 1/-1;
-  color: black;
-  font-size: 13px;
-  z-index: 1002; }
-  @media (min-width: 2000px) {
-    .note {
-      font-size: 25px; } }
-
 .result {
   display: none;
   height: 70%;
@@ -649,14 +693,16 @@ h4 {
       width: 700px; } }
   @media (max-width: 825px) {
     .result {
+      margin-top: 20vh;
       width: 85%;
       margin-left: 10%;
-      height: 80vh; } }
+      height: 70vh; } }
   @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
     .result {
-      height: 65vh; } }
+      height: 45vh;
+      margin-top: 20vh; } }
 
-.result:before {
+.result:before, #usersRate:before {
   content: "";
   position: absolute;
   right: 100%;
@@ -667,7 +713,7 @@ h4 {
   border-left-color: transparent;
   border-top-color: transparent; }
 
-.result:after {
+.result:after, #usersRate:after {
   content: '';
   background: black;
   position: absolute;
@@ -707,15 +753,6 @@ h4 {
 #inlineSpiral > img, #inlineSpiral2 > img {
   display: none; }
 
-.gameTitleLetters {
-  display: flex;
-  justify-content: space-between;
-  font-size: 36px;
-  color: yellow; }
-  @media (min-width: 2000px) {
-    .gameTitleLetters {
-      font-size: 70px; } }
-
 .social-icons {
   display: flex;
   justify-content: center;
@@ -740,65 +777,87 @@ h4 {
       margin-top: 30px !important;
       margin-bottom: 30px !important; } }
 
-#lotOfCardsBackground {
-  position: relative;
-  grid-column: 2/5;
-  grid-row: 2/5;
-  width: 100%;
-  height: 100%; }
+@media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+  .note-end {
+    font-size: 10px; } }
+
+#uname {
+  margin-top: 20px; }
+
+#gameRate {
+  display: none;
+  margin-left: calc((80% - 500px)/2);
+  width: 500px;
+  color: white;
+  height: 50px;
+  position: absolute;
+  margin-top: 6%; }
   @media (max-width: 825px) {
-    #lotOfCardsBackground {
-      display: none; } }
+    #gameRate {
+      width: 80%;
+      margin-left: 10%; } }
 
-.cardOnBackground {
-  background-color: black;
+#returnToResult {
+  cursor: pointer;
+  display: none;
+  margin-left: calc((80% - 500px)/2);
+  width: auto;
+  height: auto;
   position: absolute;
-  width: 20%;
-  height: 30%;
+  margin-top: 6%; }
+  @media (max-width: 825px) {
+    #returnToResult {
+      width: auto;
+      margin-left: 10%; } }
+
+#showUserRate, #returnToResult {
+  background-color: transparent;
   border: 1px solid white;
-  border-left: 0; }
-  @media (min-width: 2000px) {
-    .cardOnBackground {
-      border: 3px solid white; } }
+  cursor: pointer;
+  color: white;
+  font-size: 12px;
+  padding: 5px; }
 
-.cardOnBackground:before {
-  content: "";
+#usersRate {
+  display: none;
+  overflow-y: scroll;
+  height: 70%;
+  width: 500px;
+  margin-left: calc((80% - 500px)/2);
+  margin-top: 10%;
   position: absolute;
-  right: 100%;
-  top: -1px;
-  border-width: 10px;
-  border-style: solid;
-  border-color: inherit;
-  border-left-color: transparent;
-  border-top-color: transparent; }
-  @media (min-width: 2000px) {
-    .cardOnBackground:before {
-      top: -3px; } }
-
-.cardOnBackground:after {
-  content: '';
   background: black;
-  position: absolute;
-  box-sizing: border-box;
-  width: 20px;
-  right: 100%;
-  bottom: -1px;
-  top: 19px;
-  border-width: 0 0 1px 1px;
-  border-color: inherit;
-  border-style: solid; }
+  border-width: 3px;
+  border-style: solid;
+  border-color: white; }
   @media (min-width: 2000px) {
-    .cardOnBackground:after {
-      bottom: -3px;
-      top: 17px;
-      border-width: 0 0 3px 3px; } }
+    #usersRate {
+      height: 60%;
+      width: 700px; } }
+  @media (max-width: 825px) {
+    #usersRate {
+      margin-top: 20vh;
+      width: 80%;
+      margin-left: 10%;
+      height: 70vh; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    #usersRate {
+      height: 65vh; } }
 
-@media (max-width: 825px) {
-  #lotOfCardsBackground {
-    display: none; } }
+/*Спираль*/
+#content {
+  margin-top: 50vh; }
 
-@media (min-width: 826px) {
-  .mob {
-    display: none; } }
+table {
+  width: 90%;
+  margin: 20px 5%;
+  color: white;
+  font-size: 12px; }
+
+thead > tr > th {
+  text-align: left; }
+
+th, td {
+  padding: 10px; }
 
 /*# sourceMappingURL=application.css.map */

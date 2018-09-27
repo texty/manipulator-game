@@ -156,6 +156,7 @@ var setSize = function (blockNumber) {
         height = 500;
         $(".card").css("width", "700px").css("height", "500px");//повертаємо дескотопний розмір, якщо до цього була мобілка
     }
+            
     else {
         width = 500;
         height = 350;
@@ -654,6 +655,8 @@ $(".toResult").on("click", function() {
     }
 
     $(".result").css("display", "block");
+    $("#gameRate").css("display", "inline");
+
 });
 
 
