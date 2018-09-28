@@ -133,6 +133,8 @@ $("#returnToResult").on("click", function() {
     $('.result').css("display", "block");
     $('#usersRate').css("display", "none");
     $('#returnToResult').css("display", "none");
+    $("div.username").css("display", "none");
+    $("#pleasePutYourName").html("Поділитись результатом в соціальних мережах");
     // $("#gameRate").find("input#uname").remove();
     // $("#gameRate").css("display", "inline");
 });

@@ -676,7 +676,7 @@ button.answerNo, button.noThanks {
   color: #6e9ae2; }
 
 #resultContainer {
-  display: block;
+  display: none;
   position: relative;
   width: 100%;
   grid-column: 1/2;
@@ -734,7 +734,7 @@ button.answerNo, button.noThanks {
   border-color: white;
   border-style: solid; }
 
-#theResult {
+#theResult, #pleasePutYourName {
   font-size: 14px;
   text-align: center;
   color: white;
@@ -742,10 +742,10 @@ button.answerNo, button.noThanks {
   margin-left: calc(10% - 20px);
   margin-top: 3%; }
   @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-    #theResult {
+    #theResult, #pleasePutYourName {
       font-size: 20px; } }
   @media (min-width: 2000px) {
-    #theResult {
+    #theResult, #pleasePutYourName {
       font-size: 20px;
       margin-top: 50px !important;
       margin-bottom: 20px !important; } }
