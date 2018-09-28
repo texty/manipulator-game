@@ -675,12 +675,23 @@ button.answerNo, button.noThanks {
   border: 2px solid #6e9ae2;
   color: #6e9ae2; }
 
+#resultContainer {
+  display: block;
+  position: relative;
+  width: 100%;
+  grid-column: 1/2;
+  grid-row: 2/3; }
+  @media (max-width: 825px) {
+    #resultContainer {
+      grid-column: 1/-1;
+      grid-row: 1/-1; } }
+
 .result {
-  display: none;
-  height: 70%;
+  height: auto;
   width: 500px;
-  margin-left: calc((80% - 500px)/2);
-  margin-top: 10%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   position: absolute;
   background: black;
   border-width: 3px;
@@ -689,18 +700,15 @@ button.answerNo, button.noThanks {
   border-left: 0; }
   @media (min-width: 2000px) {
     .result {
-      height: 60%;
+      height: auto;
       width: 700px; } }
   @media (max-width: 825px) {
     .result {
-      margin-top: 20vh;
       width: 85%;
-      margin-left: 10%;
-      height: 70vh; } }
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-    .result {
-      height: 45vh;
-      margin-top: 20vh; } }
+      top: 50%;
+      left: 54%;
+      transform: translate(-50%, -50%);
+      height: auto; } }
 
 .result:before, #usersRate:before {
   content: "";
@@ -727,28 +735,33 @@ button.answerNo, button.noThanks {
   border-style: solid; }
 
 #theResult {
+  font-size: 14px;
   text-align: center;
   color: white;
-  width: 70%;
-  margin-left: calc(15% - 20px);
+  width: 80%;
+  margin-left: calc(10% - 20px);
   margin-top: 3%; }
   @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
     #theResult {
-      font-size: 25px; } }
+      font-size: 20px; } }
   @media (min-width: 2000px) {
     #theResult {
+      font-size: 20px;
       margin-top: 50px !important;
-      margin-bottom: 50px !important; } }
+      margin-bottom: 20px !important; } }
 
 #rank {
-  -webkit-margin-before: 1em;
-  -webkit-margin-after: 0.5em;
+  -webkit-margin-before: 0.5em;
+  -webkit-margin-after: 1em;
   font-size: 22px;
   font-family: 'Open Sans', sans-serif;
   text-align: center;
   color: yellow;
   width: 90%;
   text-transform: uppercase; }
+  @media (min-width: 2000px) {
+    #rank {
+      margin-top: 50px; } }
 
 #inlineSpiral > img, #inlineSpiral2 > img {
   display: none; }
@@ -762,27 +775,41 @@ button.answerNo, button.noThanks {
 #facebook > a > svg {
   fill: white;
   width: 30px;
-  margin: 10px; }
+  margin: 5px; }
   @media (min-width: 2000px) {
     #facebook > a > svg {
-      margin-top: 30px !important;
-      margin-bottom: 30px !important; } }
+      margin-top: 20px !important;
+      margin-bottom: 20px !important; } }
 
 #twitter > a > svg {
   fill: white;
   width: 30px;
-  margin: 10px; }
+  margin: 5px; }
   @media (min-width: 2000px) {
     #twitter > a > svg {
-      margin-top: 30px !important;
-      margin-bottom: 30px !important; } }
+      margin-top: 20px !important;
+      margin-bottom: 20px !important; } }
 
-@media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
-  .note-end {
-    font-size: 10px; } }
+p.note-end {
+  -webkit-margin-before: 0.5em;
+  -webkit-margin-after: 2em; }
+  @media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+    p.note-end {
+      font-size: 10px; } }
+
+.username {
+  text-align: center;
+  width: auto;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+  @media (min-width: 2000px) {
+    .username {
+      margin-top: 30px;
+      margin-bottom: 30px; } }
 
 #uname {
-  margin-top: 20px; }
+  margin-top: 10px;
+  margin-bottom: 10px; }
 
 #gameRate {
   display: none;
@@ -817,6 +844,9 @@ button.answerNo, button.noThanks {
   color: white;
   font-size: 12px;
   padding: 5px; }
+  @media (min-width: 2000px) {
+    #showUserRate, #returnToResult {
+      font-size: 18px; } }
 
 #usersRate {
   display: none;

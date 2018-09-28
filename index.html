@@ -1850,12 +1850,20 @@
 
 
     </div> <!-- end of #cards -->
-
+<div id="resultContainer" >
     <div class="result">
         <h3 id="theResult">Вітаємо! Ви опанували мистецтво маніпулювання та дезінформації і зібрали віддану аудиторію, що налічує <span id="lastPoints">0</span> послідовників!
         </h3>
         <img id= "face" src="img/vandal.png" style="width:20%; display:block; margin-left: calc(40% - 20px); "/>
         <h5 id ="rank" style="">Інформаційний вандал</h5>
+        <h3 id="theResult">Введіть імʼя, аби подивитись Ваше місце в рейтингу гравців.
+        </h3>
+        <div class="username">
+            <input type="text" id="uname" name="uname"
+                   placeholder="Ваше імʼя" />
+            <span class="validity"></span>
+            <label id="showUserRate">Подивитись</label>
+        </div>
 
         <div class="social-icons">
             <div id="facebook">
@@ -1878,19 +1886,12 @@
         <p class="note-end" style="text-align: center; width: 80%; margin-left: calc(10% - 20px); bottom: 20px;  padding: 2px;">
             <span style="background-color: yellow;">Більше про дезінформацію читайте ТУТ</span></p>
     </div>
-
-
+</div>
 
     <!-- Форма, куди юзер вводить імʼя -->
-    <div id="gameRate">
-        <div class="username">
-            <label for="uname">Моє місце в рейтингу:</label>
-            <input type="text" id="uname" name="uname"
-                   placeholder="введіть імʼя" />
-            <span class="validity"></span>
-            <label id="showUserRate">Показати</label>
-        </div>
-    </div><!-- кінець форми -->
+    <!--<div id="gameRate">-->
+        <!---->
+    <!--</div>&lt;!&ndash; кінець форми &ndash;&gt;-->
 
     <label id="returnToResult"> Повернутись до результатів</label>
 

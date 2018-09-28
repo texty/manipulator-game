@@ -652,7 +652,7 @@ $(".toResult").on("click", function() {
         $("#messenger").remove();
     }
 
-    $(".result").css("display", "block");
+    $("#resultContainer").css("display", "block");
     $("#gameRate").css("display", "inline");
 
 });

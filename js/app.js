@@ -22,7 +22,7 @@ $("#showUserRate").on("click", function () {
 
             // append the header row
             thead.append('tr').selectAll('th')
-                .data(["Ім'я", "Бали", "Результат"]).enter()
+                .data(["Місце", "Ім'я", "Бали", "Результат"]).enter()
                 .append('th')
                 .style("color", "yellow")
                 .style("display", "sticky")
@@ -31,12 +31,26 @@ $("#showUserRate").on("click", function () {
                     return d;
                 });
 
-
             // create a row for each object in the data
             var rows = tbody.selectAll('tr')
                 .data(data)
                 .enter()
                 .append('tr');
+
+            rows.append('td')
+                .style("color", function (d) {
+                    var theTime = parseDate(d.time);
+                    if (theTime.getTime() === latestUser.getTime()) {
+                        return "red"
+                    }
+                    else {
+                        return "white"
+                    }
+
+                })
+                .text(function (d, i) {
+                    return i+1;
+                });
 
 
             rows.append('td')
