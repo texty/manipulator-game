@@ -5,7 +5,7 @@ $("#showUserRate").on("click", function () {
         $('.result').css("display", "none");
         $('#usersRate').css("display", "block");
 
-        d3.json('data/users.json', function (error, data) {
+        d3.json("http://api-x32.texty.org.ua/manipulator/api/rating?json={%22score%22:0,%20%22name%22:%20%22vasoyk%22}", function (error, data) {
 
             var table = d3.select('#usersRate').append('table');
             var thead = table.append('thead');
@@ -14,11 +14,12 @@ $("#showUserRate").on("click", function () {
             data = data.sort(function (a, b) {
                 return +b.score - +a.score;
             });
-            var timeArray = data.map(function (d) {
-                return parseDate(d.time)
+
+            var usersId = data.map(function (d) {
+                   return  d.id
             });
 
-            var latestUser = d3.max(d3.values(timeArray));
+            var lastUser = d3.max(d3.values(usersId));
 
             // append the header row
             thead.append('tr').selectAll('th')
@@ -39,14 +40,8 @@ $("#showUserRate").on("click", function () {
 
             rows.append('td')
                 .style("color", function (d) {
-                    var theTime = parseDate(d.time);
-                    if (theTime.getTime() === latestUser.getTime()) {
-                        return "red"
-                    }
-                    else {
-                        return "white"
-                    }
-
+                    if (d.id === lastUser) { return "red" }
+                    else { return "white" }
                 })
                 .text(function (d, i) {
                     return i+1;
@@ -55,14 +50,8 @@ $("#showUserRate").on("click", function () {
 
             rows.append('td')
                 .style("color", function (d) {
-                    var theTime = parseDate(d.time);
-                    if (theTime.getTime() === latestUser.getTime()) {
-                        return "red"
-                    }
-                    else {
-                        return "white"
-                    }
-
+                    if (d.id === lastUser) { return "red" }
+                    else { return "white" }
                 })
                 .text(function (d) {
                     return d.name;
@@ -71,48 +60,51 @@ $("#showUserRate").on("click", function () {
 
             rows.append('td')
                 .style("color", function (d) {
-                    var theTime = parseDate(d.time);
-                    if (theTime.getTime() === latestUser.getTime()) {
-                        return "red"
-                    }
-                    else {
-                        return "white"
-                    }
-
+                    if (d.id === lastUser) { return "red" }
+                    else { return "white" }
                 })
                 .text(function (d) {
                     return d.score;
                 });
 
-            //Add the spark chart.
+            // //Add the spark chart.
             rows.append('td')
                 .style("color", function (d) {
-                    var theTime = parseDate(d.time);
-                    if (theTime.getTime() === latestUser.getTime()) {
-                        return "red"
-                    }
-                    else {
-                        return "white"
-                    }
-
+                    if (d.id === lastUser) { return "red" }
+                    else { return "white" }
                 })
-                .attr("id", function (d) {
-                    var theTime = parseDate(d.time);
-                    if (theTime.getTime() === latestUser.getTime()) {
+                .attr("id", function(d){
+                    if (d.id === lastUser) {
                         rowID = d.id;
                     }
-                    return d.id
+                        return  d.id
+
                 })
                 .text(function (d) {
-                    return d.result;
-                })
+                    if (d.score > vandal) {
+                        return "Головний дезінформатор";
+                    }
+                    if (d.score > paidJournalist && d.score <= vandal) {
+                        return "Інформаційний вандал";
+                    }
+                    if (d.score > trashAggregator && d.score <= paidJournalist) {
+                        return "Успішний джинсовик";
+                    }
+                    if (d.score > sissy && d.score <= trashAggregator) {
+                        return "Агрегатор трешняку"
+                    }
+                    if (d.score <= sissy) {
+                        return "Чистоплюй"
+                    }
+                });
+
 
         });
 
 
         //cкролимо на червоний рядок
         if (rowID) {
-            var topPosition = document.getElementById('user15').offsetTop;
+            var topPosition = document.getElementById('lastUser').offsetTop;
             document.getElementById('usersRate').scrollTop = topPosition;
         }
         if (!rowID) {
