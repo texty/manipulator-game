@@ -2,12 +2,19 @@ var parseDate = d3.time.format("%Y-%m-%d %H:%M:%S").parse;
 var rowID;
 
 $("#showUserRate").on("click", function () {
+
+    var inputName = document.getElementById('uname').value;
+    if(inputName.length < 2) {
+        alert ("Мінімум два символи")
+    } else {
+
         $('.result').css("display", "none");
         $('#usersRate').css("display", "block");
 
+
         // Замість 7777 повинно бути число балів
-        api.submitAndGetUsers("Тут повинно бути ім'я гравця", 7777, function(data){
-    
+        api.submitAndGetUsers(inputName, currentTotalPoints, function (data) {
+
             var table = d3.select('#usersRate').append('table');
             var thead = table.append('thead');
             var tbody = table.append('tbody');
@@ -17,7 +24,7 @@ $("#showUserRate").on("click", function () {
             });
 
             var usersId = data.map(function (d) {
-                   return  d.id
+                return d.id
             });
 
             var lastUser = d3.max(d3.values(usersId));
@@ -41,18 +48,26 @@ $("#showUserRate").on("click", function () {
 
             rows.append('td')
                 .style("color", function (d) {
-                    if (d.id === lastUser) { return "red" }
-                    else { return "white" }
+                    if (d.id === lastUser) {
+                        return "red"
+                    }
+                    else {
+                        return "white"
+                    }
                 })
                 .text(function (d, i) {
-                    return i+1;
+                    return i + 1;
                 });
 
 
             rows.append('td')
                 .style("color", function (d) {
-                    if (d.id === lastUser) { return "red" }
-                    else { return "white" }
+                    if (d.id === lastUser) {
+                        return "red"
+                    }
+                    else {
+                        return "white"
+                    }
                 })
                 .text(function (d) {
                     return d.name;
@@ -61,8 +76,12 @@ $("#showUserRate").on("click", function () {
 
             rows.append('td')
                 .style("color", function (d) {
-                    if (d.id === lastUser) { return "red" }
-                    else { return "white" }
+                    if (d.id === lastUser) {
+                        return "red"
+                    }
+                    else {
+                        return "white"
+                    }
                 })
                 .text(function (d) {
                     return d.score;
@@ -71,14 +90,18 @@ $("#showUserRate").on("click", function () {
             // //Add the spark chart.
             rows.append('td')
                 .style("color", function (d) {
-                    if (d.id === lastUser) { return "red" }
-                    else { return "white" }
+                    if (d.id === lastUser) {
+                        return "red"
+                    }
+                    else {
+                        return "white"
+                    }
                 })
-                .attr("id", function(d){
+                .attr("id", function (d) {
                     if (d.id === lastUser) {
                         rowID = d.id;
                     }
-                        return  d.id
+                    return d.id
 
                 })
                 .text(function (d) {
@@ -112,11 +135,12 @@ $("#showUserRate").on("click", function () {
             setTimeout(function () {
                 var topPosition = document.getElementById(rowID).offsetTop;
                 document.getElementById('usersRate').scrollTop = topPosition;
-            }, 200)
+            }, 500)
         }
 
         $("#gameRate").css("display", "none");
         $("#returnToResult").css("display", "block")
+    }
 
 });
 
