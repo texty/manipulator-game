@@ -5,8 +5,9 @@ $("#showUserRate").on("click", function () {
         $('.result').css("display", "none");
         $('#usersRate').css("display", "block");
 
-        d3.json("http://api-x32.texty.org.ua/manipulator/api/rating?json={%22score%22:0,%20%22name%22:%20%22vasoyk%22}", function (error, data) {
-
+        // Замість 7777 повинно бути число балів
+        api.submitAndGetUsers("Тут повинно бути ім'я гравця", 7777, function(data){
+    
             var table = d3.select('#usersRate').append('table');
             var thead = table.append('thead');
             var tbody = table.append('tbody');
