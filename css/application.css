@@ -7,6 +7,12 @@ body {
   overflow-x: hidden;
   overflow-y: hidden; }
 
+#donors {
+  width: 450px; }
+  @media (max-width: 450px) {
+    #donors {
+      width: 100vw; } }
+
 .greyColor {
   color: grey; }
 
