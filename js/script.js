@@ -38,6 +38,11 @@ Array.prototype.remByValTwo = function(val1, val2) {
 };
 
 
+function showBlinkArrow(){
+
+}
+
+
 //малюємо квадрати в жовтому полі
 var drawSquares = function () {
     var yellowBox = $("#rightSideBefore")[0].getBoundingClientRect();
@@ -83,12 +88,14 @@ var drawSquares = function () {
 };
 
 
+
 //додаємо текст в месенджер
 var newMessage = function (text, result) {
     var messenger = document.getElementById("messenger");
     var isScrolledToBottom = messenger.scrollHeight - messenger.clientHeight - 300 <= messenger.scrollTop + 1;
     var newElement = document.createElement("p");
     newElement.innerHTML = text;
+    $(newElement).addClass('blink');
     messenger.appendChild(newElement);
 
     if(result) {
@@ -265,6 +272,7 @@ var sliderFunction = function (elem) {
 
 //кнопка "Обрати" і додавання балів
 $('.choice').on("click", function () {
+
     var card = $(this).closest(".card");
     // card.css("transform", "rotateY(180deg)");
     var messengerInfo = $(this).parent().find(".additionalInfo").html();
@@ -302,6 +310,29 @@ $(".selectMedia").on("click", function () {
     $("#logomob").html("<img id='logoIdMob' src='"+mediaImgSource+"'/>");
     hex = $(this).parent().find("img").attr("name");
     swapStyleSheet();
+    var style = document.createElement('style');
+    style.type = 'text/css';
+    var keyFrames = '\
+@-webkit-keyframes blink-animation {\
+    from {\
+        color: white;\
+    }\
+    to {\
+       color: red; \
+    }\
+}\
+@-moz-keyframes blink-animation {\
+   from {\
+        color: white;\
+    }\
+    to {\
+       color: red; \
+    }\
+}';
+
+
+    style.innerHTML = keyFrames.replace(/red/g, hex);
+    document.getElementsByTagName('head')[0].appendChild(style);
     $('h3 b#myMedia').html(media);
     $("#rightSideBefore").remove();
 });
