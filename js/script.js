@@ -466,7 +466,7 @@ $(".dependb4Q1").on("click", function () {
 
 //підказка в чат (костиль)
 $(".myHint").on("click", function () {
-    newMessage("<b style ='color:" + hex + "'>Підказка: краще атакувати загальну структуру, організацію, уряд, і не привязуватися до конкретних імен, які можуть дати відповідь, а то й піти до суду</b>");
+    newMessage("<b style ='color:black'>Підказка: краще атакувати загальну структуру, організацію, уряд, і не привязуватися до конкретних імен, які можуть дати відповідь, а то й піти до суду</b>");
 
     var allHints = $("button.myHint").addClass("hide");
     $(this).closest(".card").find(".choice").removeClass("hide");
