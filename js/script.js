@@ -108,13 +108,7 @@ var newMessage = function (text, result) {
         myResultContainer.appendChild(showResultButton);
         $(showResultButton)
             .attr("class", "showChoiceResult")
-            .css("color", function () {
-                if (hex) {
-                    return hex
-                } else {
-                    return "grey"
-                }
-            });
+            .css("color", 'white');
 
         //по кліку на кнопку показуємо їх, по повторному ховаємо
         $(showResultButton).on("click", function () {
@@ -132,7 +126,7 @@ var newMessage = function (text, result) {
         var myResultText = document.createElement("p");
         $(myResultText).css("color", function () {
             if (hex) {
-                return hex
+                return "white"
             } else {
                 return "grey"
             }
@@ -277,7 +271,7 @@ $('.choice').on("click", function () {
     // card.css("transform", "rotateY(180deg)");
     var messengerInfo = $(this).parent().find(".additionalInfo").html();
     var choicenResult = $(this).parent().find(".mainInfo").html();
-    var oldMessages = $("#messenger p").not('.contentButton p').css("color", "grey");
+    // var oldMessages = $("#messenger p").not('.contentButton p').css("color", "#C8C8C8");
     newMessage(messengerInfo, choicenResult);
     $(this).parent().find("p.mainInfo").css("display", "none");
     var points = $(this).parent().attr("value");
@@ -428,7 +422,7 @@ $("button.answer").on("click", function () {
         messengerInfo = $(this).parent().find("p.additionalInfoYes").html();
         choicenResult = $(this).parent().find("p.mainInfo").html();
         choicenResult = choicenResult + " (ТАК)";
-        $("#messenger p").not('.contentButton p').css("color", "grey");
+        // $("#messenger p").not('.contentButton p').css("color", "grey");
         newMessage(messengerInfo, choicenResult);
     }
 
@@ -529,6 +523,9 @@ $("button#play").on("click", function () {
 function swapStyleSheet() {
     $("#mediaLogo").css("background-color", hex);
     $("#messenger").css("border-color", hex);
+    var rgba = hex.replace(')', ', 0.9)').replace('rgb', 'rgba');
+    $("#messenger").css("background-color", rgba);
+
     $(".card").css("border-color", hex);
     $("#spiral").css("background-color", hex);
     $("button.answerYes, button.choice, button.next, button.error, button.myHint, button.answerNo, button.noThanks").css("border-color", hex);

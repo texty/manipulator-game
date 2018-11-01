@@ -17,6 +17,7 @@ body {
   width: 100%; }
 
 .greyColor {
+  color: grey;
   color: grey; }
 
 .whiteColor {
@@ -38,7 +39,7 @@ h1, h3 {
 
 #mygrid {
   display: grid;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 75% 25%;
   grid-template-rows: 10vh 90vh; }
   @media (max-width: 825px) {
     #mygrid {
@@ -400,7 +401,7 @@ h4 {
 
 #mediaLogo > img {
   display: block;
-  margin-left: auto;
+  margin-left: 5%;
   margin-right: auto; }
 
 #messenger {
@@ -409,8 +410,7 @@ h4 {
   grid-row: 2/3;
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: black;
-  border: 2px solid #6e9ae2; }
+  background-color: black; }
   @media (max-width: 825px) {
     #messenger {
       margin-top: 20px;
@@ -423,7 +423,7 @@ h4 {
   width: 90%;
   font-size: 20px;
   color: white;
-  margin-left: 5%;
+  margin-left: 10%;
   margin-top: 30px;
   -webkit-margin-after: 0; }
   @media (min-width: 2000px) {
@@ -437,7 +437,7 @@ h4 {
   width: 80%;
   color: white;
   font-size: 12px;
-  margin-left: 5%;
+  margin-left: 10%;
   -webkit-margin-before: 0; }
   @media (min-width: 2000px) {
     .contentButton > p {
@@ -449,7 +449,7 @@ h4 {
 
 button.showChoiceResult {
   font-family: 'Roboto Mono', monospace;
-  background-color: #000;
+  background-color: inherit;
   text-transform: lowercase !important;
   font-style: italic !important;
   cursor: pointer;
@@ -473,8 +473,7 @@ button.showChoiceResult {
   align-items: center;
   grid-column: 1/-1;
   grid-row: 3/4;
-  background-color: #6e9ae2;
-  justify-content: center; }
+  background-color: #6e9ae2; }
   @media (max-width: 825px) {
     #spiral {
       display: none; } }
@@ -486,8 +485,8 @@ button.showChoiceResult {
       float: right; } }
 
 .points {
+  margin-left: 10%;
   width: 40%;
-  text-align: right;
   vertical-align: middle;
   color: white; }
   @media (min-width: 2000px) {
@@ -686,6 +685,10 @@ button.answerNo, button.noThanks {
   right: 0;
   border: 2px solid #6e9ae2;
   color: #6e9ae2; }
+
+img.media {
+  height: 85px;
+  width: auto; }
 
 #resultContainer {
   display: none;
