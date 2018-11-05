@@ -7,17 +7,11 @@ body {
   overflow-x: hidden;
   overflow-y: hidden; }
 
-#donors {
-  width: 450px; }
-  @media (max-width: 450px) {
-    #donors {
-      width: 96vw; } }
-
-#donors > img {
-  width: 100%; }
+@media (max-width: 450px) {
+  #donors {
+    width: 96vw; } }
 
 .greyColor {
-  color: grey;
   color: grey; }
 
 .whiteColor {
