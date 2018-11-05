@@ -39,7 +39,7 @@ Array.prototype.remByValTwo = function(val1, val2) {
 
 
 function showBlinkArrow(){
-
+console.log("hi")
 }
 
 
@@ -86,7 +86,14 @@ var drawSquares = function () {
         $(".square").css("width", sqaureW).css("height", sqaureH);
 
 };
-
+var showBlinkHint = function() {
+    var messenger = document.getElementById("messenger");
+    var blinkHintMessage = document.createElement("div");
+    blinkHintMessage.setAttribute("id", "blinkHintmob");
+    blinkHintMessage.setAttribute("class", "blink");
+    blinkHintMessage.innerHTML = '<img style="align-self: center; width:20px; transform: rotate(90deg)" src="img/play-button.png"/><p> Дивись, що ти зробив!</p></div>'
+    messenger.appendChild(blinkHintMessage);
+};
 
 
 //додаємо текст в месенджер
@@ -95,7 +102,6 @@ var newMessage = function (text, result) {
     var isScrolledToBottom = messenger.scrollHeight - messenger.clientHeight - 300 <= messenger.scrollTop + 1;
     var newElement = document.createElement("p");
     newElement.innerHTML = text;
-    $(newElement).addClass('blink');
     messenger.appendChild(newElement);
 
     if(result) {
@@ -263,6 +269,15 @@ var sliderFunction = function (elem) {
     }
 };
 
+$(".showBlinkHint").on("click", function() {
+    showBlinkHint();
+    if(window.innerWidth > 1120) {
+        $('#blinkHint').addClass('blink').css("display", "grid");
+    }
+    if(window.innerWidth <= 1120){
+        $('#blinkHintmob').css("display", "grid");
+    }
+});
 
 //кнопка "Обрати" і додавання балів
 $('.choice').on("click", function () {
@@ -305,29 +320,31 @@ $(".selectMedia").on("click", function () {
     $("#logomob").html("<img id='logoIdMob' src='"+mediaImgSource+"'/>");
     hex = $(this).parent().find("img").attr("name");
     swapStyleSheet();
-    var style = document.createElement('style');
-    style.type = 'text/css';
-    var keyFrames = '\
-@-webkit-keyframes blink-animation {\
-    from {\
-        color: white;\
-    }\
-    to {\
-       color: red; \
-    }\
-}\
-@-moz-keyframes blink-animation {\
-   from {\
-        color: white;\
-    }\
-    to {\
-       color: red; \
-    }\
-}';
+    
+    //create  style elem to dynamically shange style (вже не потрібно, була опція, щоб змінювати колір на обраний юзером
+//     var style = document.createElement('style');
+//     style.type = 'text/css';
+//     var keyFrames = '\
+// @-webkit-keyframes blink-animation {\
+//     from {\
+//         color: white;\
+//     }\
+//     to {\
+//        color: red; \
+//     }\
+// }\
+// @-moz-keyframes blink-animation {\
+//    from {\
+//         color: white;\
+//     }\
+//     to {\
+//        color: red; \
+//     }\
+// }';
 
 
-    style.innerHTML = keyFrames.replace(/red/g, hex);
-    document.getElementsByTagName('head')[0].appendChild(style);
+    // style.innerHTML = keyFrames.replace(/red/g, hex);
+    // document.getElementsByTagName('head')[0].appendChild(style);
     $('h3 b#myMedia').html(media);
     $("#rightSideBefore").remove();
 });
@@ -409,6 +426,12 @@ $(".answer").on("click", function () {
 $(".noThanks").on("click", function () {
     var elem = this;
     sliderFunction(elem);
+});
+
+
+
+$('.hideBlinkHint').on("click", function() {
+    $('#blinkHint').removeClass('blink').css("top", "60vh").css("display", "none")
 });
 
 

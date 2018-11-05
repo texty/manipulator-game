@@ -123,6 +123,7 @@
         </div>
 
         <div id="messenger">
+
         </div>
 
 
@@ -137,8 +138,9 @@
     <div id="rightSideBefore"></div>
 
     <div id="cards">
-        <div style="position:absolute; top: 10vh; right: 2%">
-            <!--<img id="blink-blink"  class="hideMe" src="img/arrow_to_left.png"/>-->
+        <div id="blinkHint">
+           <p> Дивись, <br> що ти зробив!</p>
+            <img style="align-self: center; width:25px;" src="img/play-button.png"/>
         </div>
 
         <!--секція 1-->
@@ -222,7 +224,7 @@
                             <p class="additionalInfo"><b>+5040 аудиторії.</b>Періодично вас буде “кошмарити” податкова, але ви зможете все
                                 “порішати” </p>
                             <!--<img class="arrowRight" src="img/arrow.png"/>-->
-                            <button class="choice next">Обрати</button>
+                            <button class="choice hideBlinkHint next">Обрати</button>
                             <button class="noThanks">Гортати</button>                        </li>
                     </div>
 
@@ -238,7 +240,7 @@
                                 Мало того, після того, як ви затримали на три місяці виплату зарплат в конвертах своїм
                                 співробітникам, про вас погано написали інші ЗМІ.</p>
                             <!--<img class="arrowRight" src="img/arrow.png"/>-->
-                            <button class="choice next">Обрати</button>
+                            <button class="choice hideBlinkHint next">Обрати</button>
                             <button class="noThanks">Гортати</button>                        </li>
                     </div>
 
@@ -252,7 +254,7 @@
                             <p class="additionalInfo"><b>+10344 аудиторії.</b> Вітаємо, найкращий варіант! З одного боку, це легально, і на вас
                                 нічого не “навісять”, ха-ха. І відхреститися завжди можна, в разі чого.</p>
                             <!--<img class="arrowRight" src="img/arrow.png"/>-->
-                            <button class="choice next">Обрати</button>
+                            <button class="choice hideBlinkHint next">Обрати</button>
                             <button class="noThanks">Гортати</button>                        </li>
                     </div>
 
@@ -267,7 +269,7 @@
                                 контакти для найбільш допитливих з аудиторії.</p>
 
                             <!--<img class="arrowRight" src="img/arrow.png"/>-->
-                            <button class="choice next">Обрати</button>
+                            <button class="choice hideBlinkHint next">Обрати</button>
                             <button class="noThanks">Гортати</button>                        </li>
                     </div>
 
@@ -288,7 +290,7 @@
                             <p class="additionalInfo"><b>+1500 аудиторії.</b> Звучить, як удар батога. Це приверне увагу, крім того, народ любить коли його лякають, тож це хороший вибір</p>
                             <!--<img class="arrowRight" src="img/arrow.png"/>-->
 
-                            <button class="choice next selectMedia" onclick="showBlinkArrow()">Обрати</button>
+                            <button class="choice next showBlinkHint selectMedia" onclick="showBlinkArrow()">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -301,7 +303,7 @@
                             <img class="media" src="img/stop.jpg" alt="Стопхабар" name="rgb(202, 96, 77)"/>
                             <p class="additionalInfo"><b>+1000 аудиторії.</b> Непогано, антикорупційна риторика все ще працює</p>
                             <!--<img class="arrowRight" src="img/arrow.png"/>-->
-                            <button class="choice next selectMedia">Обрати</button>
+                            <button class="choice next showBlinkHint selectMedia">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
 
@@ -315,7 +317,7 @@
                             <img class="media" src="img/povir.jpg" alt="Повір" name="rgb(65, 188, 209)"/>
                             <p class="additionalInfo"><b>+500 аудиторії.</b> Нейтральна назва.</p>
                             <!--<img class="arrowRight" src="img/arrow.png"/>-->
-                            <button class="choice next selectMedia">Обрати</button>
+                            <button class="choice next showBlinkHint selectMedia">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -328,7 +330,7 @@
                             <img class="media" src="img/fakeone.jpg" alt="Паровоз" name="rgb(0, 95, 146)"/>
                             <p class="additionalInfo"><b>+1000 аудиторії.</b> Непогано, дивні назви привертають увагу.</p>
                             <!--<img class="arrowRight" src="img/arrow.png"/>-->
-                            <button class="choice next selectMedia">Обрати</button>
+                            <button class="choice next showBlinkHint selectMedia">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -931,7 +933,7 @@
 
                         </p>
                             <p class="additionalInfo"><b>+1034 аудиторії.</b>Ідеальне потрапляння, прямо в яблучко ненависті!</p>
-                            <button class="choice next">Обрати</button>
+                            <button class="choice hideBlinkHint next">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -941,7 +943,7 @@
                         <li id="b3Q2V2" class="b3Q2 parentForSlider hide" value="9">
                             <p class="mainInfo">Сирійські біженці жорстоко розправилися із молдавською дівчинкою</p>
                             <p class="additionalInfo"><b>+9 аудиторії,</b>фокусуйтеся більше на українських темах</p>
-                            <button class="choice next">Обрати</button>
+                            <button class="choice hideBlinkHint next">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -952,7 +954,7 @@
                             <p class="mainInfo"> У Києві п’яний нігерієць на джипі розгромив поліцейське авто</p>
                             <p class="additionalInfo"><b>+522 аудиторії,</b>Непогано, старайтесь далі!
                             </p>
-                            <button class="choice next">Обрати</button>
+                            <button class="choice hideBlinkHint next">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -963,7 +965,7 @@
                             <p class="mainInfo"> В Україні різко скоротили всі субсидії: соцмережі в шоці
                         </p>
                             <p class="additionalInfo"><b>+1034 аудиторії.</b>Більше ненависті до держави, це у нас люблять. Чудовий вибір!</p>
-                            <button class="choice next">Обрати</button>
+                            <button class="choice hideBlinkHint next">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -974,7 +976,7 @@
                             <p class="mainInfo">Сволота: в Україні масово травлять бездомних собак</p>
                             <p class="additionalInfo"><b>+723 аудиторії.</b> Hепогано! Ми бачимо, що ви стараєтесь
                             </p>
-                            <button class="choice next">Обрати</button>
+                            <button class="choice hideBlinkHint next">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -986,7 +988,7 @@
                         </p>
                             <p class="additionalInfo"><b>+1087 аудиторії.</b>Хороший вибір!
                             </p>
-                            <button class="choice next">Обрати</button>
+                            <button class="choice hideBlinkHint next">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -1009,7 +1011,7 @@
                         </p>
                             <p class="additionalInfo"><b>+1004 аудиторії.</b>Яскравий епітет у заголовку, який не має стосунку до реальної дійсності – це чудовий вибір
                             </p>
-                            <button class="choice next">Обрати</button>
+                            <button class="choice showBlinkHint next">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -1019,7 +1021,7 @@
                         <li id="b3Q1V2" class="b3Q1 parentForSlider hide" value="234">
                             <p class="mainInfo">Свідки потопу у Кримську: мертве місто, виття собак, гори трупів на узбіччях</p>
                             <p class="additionalInfo"><b>+234 аудиторії.</b>Так собі, нашу цільову аудиторію не дуже цікавлять проблеми якоїсь дупи світу. </p>
-                            <button class="choice next">Обрати</button>
+                            <button class="choice showBlinkHint next">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -1031,7 +1033,7 @@
                             <p class="mainInfo"> У Києві агресивні ворони нападають на перехожих та пробивають голови
                         </p>
                             <p class="additionalInfo"><b>+723 аудиторії.</b>Непогано, але краще щось всеукраїнське</p>
-                            <button class="choice next">Обрати</button>
+                            <button class="choice showBlinkHint next">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -1044,7 +1046,7 @@
                         </p>
                             <p class="additionalInfo"><b>+545 аудиторії.</b> Так собі, кому вони треба, ці переселенці, наступного разу обирайте щось більш пов’язане з інтересами пересічного громадянина
                             </p>
-                            <button class="choice next">Обрати</button>
+                            <button class="choice showBlinkHint next">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -1055,7 +1057,7 @@
                             <p class="mainInfo">Українська залізниця розвалюється: вже завтра можлива аварія</p>
                             <p class="additionalInfo"><b>+1023 аудиторії.</b> Чудовий вибір!
                             </p>
-                            <button class="choice next">Обрати</button>
+                            <button class="choice showBlinkHint next">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -1067,7 +1069,7 @@
                         </p>
                             <p class="additionalInfo"><b>-1000 аудиторії.</b>Ну ви й зануда! Так аудиторію не збереш, народу подобається читати депресняк!
                             </p>
-                            <button class="choice next">Обрати</button>
+                            <button class="choice showBlinkHint next">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -1389,7 +1391,7 @@
                             </p>
                             <p class="additionalInfo"><b>+340 аудиторії.</b>Непогано! Якщо відразу підколоти одну зі сторін  - це може розпалити срач.
                             </p>
-                            <button class="choice next">Обрати</button>
+                            <button class="choice hideBlinkHint next">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -1402,7 +1404,7 @@
                             </p>
                             <p class="additionalInfo"><b>-120 аудиторії.</b>Ні, так не спрацює. Ви шо, граєтесь в стандарти об’єктивності? Такі ігри нікому не цікаві.
                             </p>
-                            <button class="choice next">Обрати</button>
+                            <button class="choice hideBlinkHint next">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -1422,7 +1424,7 @@
                             <p class="mainInfo">Кому заважає проспект Бажана та радянська мозаїка? Декомунізація: кияни проти!</p>
                             <p class="additionalInfo"><b>+110 аудиторії.</b>Добре! Відразу драматизуємо!
                             </p>
-                            <button class="choice next">Обрати</button>
+                            <button class="choice hideBlinkHint next">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -1434,7 +1436,7 @@
                             <p class="mainInfo">Де слід зупинитися в декомунізації? – думки сторін</p>
                             <p class="additionalInfo"><b>-230 аудиторії.</b>Ні, ні, ні! Занадто нейтрально! Треба перцю!!!
                             </p>
-                            <button class="choice next">Обрати</button>
+                            <button class="choice hideBlinkHint next">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -1457,7 +1459,7 @@
                             <p class="additionalInfo"><b>+560 аудиторії.</b> О! Те що треба! На святе в нас посягати не можна! Зараз понесеться!
 
                             </p>
-                            <button class="choice next">Обрати</button>
+                            <button class="choice hideBlinkHint next">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -1470,7 +1472,7 @@
                             </p>
                             <p class="additionalInfo"><b>-110 аудиторії.</b>Дуже нейтрально! Хто таке коментуватиме і поширюватиме в соцмережах?
                             </p>
-                            <button class="choice next">Обрати</button>
+                            <button class="choice hideBlinkHint next">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -1491,7 +1493,7 @@
                             </p>
                             <p class="additionalInfo"><b>+560 аудиторії.</b>Дуже добре! Звучить нейтрально, але відразу б’є по емоціях!
                             </p>
-                            <button class="choice next">Обрати</button>
+                            <button class="choice hideBlinkHint next">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -1502,7 +1504,7 @@
                             <p class="mainInfo">Мовна ситуація в Україні: між конфліктом і консенсусом </p>
                             <p class="additionalInfo"><b>-20 читачів.</b>Дуже нудно! Таке нікого не накрутить!
                             </p>
-                            <button class="choice next">Обрати</button>
+                            <button class="choice hideBlinkHint next">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -1535,7 +1537,7 @@
                         <li id="b5Q1V1" class="b5Q1 parentForSlider show" value="1008">
                             <p class="mainInfo">Мова</p>
                             <p class="additionalInfo"><b>+1008 аудиторії.</b>Стара добра гармошка-балалайка</p>
-                            <button class="choice next step" value="language">Обрати</button>
+                            <button class="choice showBlinkHint next step" value="language">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -1567,7 +1569,7 @@
                             <p class="mainInfo">Державні свята</p>
                             <p class="additionalInfo"><b>+808 аудиторії.</b>Хороша тема, практично безпрограшна
                             </p>
-                            <button class="choice next step" value="holiday">Обрати</button>
+                            <button class="choice next showBlinkHint step" value="holiday">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -1576,7 +1578,7 @@
                         <li id="b5Q1V5" class="b5Q1 parentForSlider hide" value="550">
                             <p class="mainInfo">Декомунізація</p>
                             <p class="additionalInfo"><b>+550 читачів.</b> Добре! Для багатьох все ще гаряча тема! </p>
-                            <button class="choice next step" value="ussr">Обрати</button>
+                            <button class="choice next showBlinkHint step" value="ussr">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>
@@ -1587,7 +1589,7 @@
                         <li id="b5Q1V6" class="b5Q1 parentForSlider hide" value="256">
                             <p class="mainInfo">Євробляхи</p>
                             <p class="additionalInfo"><b>+256 читачів!</b>Тема вже трохи вщухла, але спробуйте роздмухати</p>
-                            <button class="choice next step" value="automobiles">Обрати</button>
+                            <button class="choice next showBlinkHint step" value="automobiles">Обрати</button>
                             <button class="noThanks">Гортати</button>
                         </li>
                     </div>

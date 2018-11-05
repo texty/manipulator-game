@@ -533,6 +533,37 @@ button.showChoiceResult {
       grid-column: 1/-1;
       grid-row: 2/3; } }
 
+#blinkHint {
+  position: absolute;
+  top: 20vh;
+  right: 2%;
+  display: none;
+  grid-gap: 10px;
+  grid-template-columns: auto auto; }
+  @media (max-width: 1120px) {
+    #blinkHint {
+      display: none !important; } }
+
+#blinkHint > p {
+  font-size: 13px;
+  color: white; }
+
+#blinkHintmob {
+  width: max-content;
+  position: relative;
+  margin-top: 10px;
+  margin-left: 15px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: auto auto; }
+  @media (min-width: 1121px) {
+    #blinkHintmob {
+      display: none !important; } }
+
+#blinkHintmob > p {
+  font-size: 14px;
+  color: white; }
+
 .cardContainer {
   position: relative;
   margin-right: 20%;
@@ -686,6 +717,9 @@ button.answerNo, button.noThanks {
 img.media {
   height: 85px;
   width: auto; }
+  @media (min-width: 2000px) {
+    img.media {
+      height: 150px; } }
 
 #resultContainer {
   display: none;
@@ -907,7 +941,20 @@ th, td {
   animation: blink-animation 0.3s steps(5, start);
   animation-iteration-count: 3; }
 
+@keyframes blink-animation {
+  to {
+    opacity: 0; } }
+@-webkit-keyframes blink-animation {
+  to {
+    opacity: 0; } }
 .hideMe {
   display: none; }
+
+.arrow-3 {
+  height: 0px;
+  width: 0px;
+  border: 8px solid;
+  border-color: #b30a00 #b30a00 transparent transparent;
+  transform: rotate(45deg); }
 
 /*# sourceMappingURL=application.css.map */
