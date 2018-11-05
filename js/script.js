@@ -271,7 +271,8 @@ $('.choice').on("click", function () {
     // card.css("transform", "rotateY(180deg)");
     var messengerInfo = $(this).parent().find(".additionalInfo").html();
     var choicenResult = $(this).parent().find(".mainInfo").html();
-    // var oldMessages = $("#messenger p").not('.contentButton p').css("color", "#C8C8C8");
+    $("#messenger p").not('.contentButton p').css("opacity", "0.5");
+    $('.showChoiceResult').css("opacity", "0.5");
     newMessage(messengerInfo, choicenResult);
     $(this).parent().find("p.mainInfo").css("display", "none");
     var points = $(this).parent().attr("value");
@@ -416,6 +417,8 @@ $("button.answer").on("click", function () {
     // sliderFunction(elem);
     $(elem).parent().find(".nextSlide").removeClass("hide").addClass("show");
     $(this).parent().find("p.mainInfo").css("display", "none");
+    $("#messenger p").not('.contentButton p').css("opacity", "0.5");
+    $('.showChoiceResult').css("opacity", "0.5");
     var messengerInfo;
     var choicenResult;
     if ($(this).hasClass("answerYes")) {
