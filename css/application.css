@@ -766,7 +766,7 @@ button.answerYes, button.choice, button.next, button.error, button.myHint, butto
   @media (max-width: 825px) {
     button.answerYes, button.choice, button.next, button.error, button.myHint, button.answerNo, button.noThanks {
       position: absolute;
-      bottom: 0; } }
+      bottom: 10px; } }
 
 button {
   cursor: pointer; }
