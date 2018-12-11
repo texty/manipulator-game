@@ -1,25 +1,35 @@
-var  width;
-var  height;
+var width;
+
+var ww = screen.width / 10;
+
+if (ww > 120){
+    width = ww
+} else {
+    width = 120
+}
+
+
+var height = width;
 var num_axes = 4,
     tick_axis = 1,
     start = 0,
     end = 3,
     testValue = 2;
 
-if (window.innerWidth >= 2000){
-    width = 200;
-    height = 200;
-
-}
-if(window.innerWidth === 768 && window.innerHeight === 1024){
-    width = 140;
-    height = 140;
-}
-else {
-    width = 120;
-    height = 120;
-       
-}
+// if (screen.width >= 1500){
+//     width = 200;
+//     height = 200;
+//
+// }
+// if(screen.width === 768 && screen.width === 1024){
+//     width = 140;
+//     height = 140;
+// }
+// else {
+//     width = 120;
+//     height = 120;
+//
+// }
 
     var theta = function (r) {
         return -2 * Math.PI * r;
@@ -38,7 +48,8 @@ else {
         .range([0, 180]);
 
     var chart = d3.select("#chart")
-        .style("width", width + "px");
+        // .style("width", width + "px")
+        ;
 
     var svg = d3.select("#chart").append("svg")
         .attr("width", width)
