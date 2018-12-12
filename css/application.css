@@ -1024,4 +1024,7 @@ th, td {
   border-color: #b30a00 #b30a00 transparent transparent;
   transform: rotate(45deg); }
 
+.additionalInfo {
+  background-color: yellow; }
+
 /*# sourceMappingURL=application.css.map */

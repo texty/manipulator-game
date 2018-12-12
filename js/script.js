@@ -456,7 +456,7 @@ $("button.answer").on("click", function () {
         messengerInfo = $(this).parent().find("p.additionalInfoNo").html();
         choicenResult = $(this).parent().find("p.mainInfo").html();
         choicenResult = choicenResult + " (HI)";
-        $("#messenger p").not('.contentButton p').css("color", "grey");
+        $("#messenger p").not('.contentButton p').css("opacity", "0.5");
         newMessage(messengerInfo, choicenResult);
     }
 
@@ -476,7 +476,7 @@ $(".nextSlide").on("click", function () {
 //коли треба, аби при натисканні вилізло повідовлення в чат, але можливість потім обирати залишилась
 $(".error").on("click", function () {
     var messengerInfo = $(this).parent().find(".additionalInfo").html();
-    var oldMessages = $("#messenger p").css("color", "grey");
+    var oldMessages = $("#messenger p").css("opacity", "0.5");
     newMessage(messengerInfo);
 });
 
