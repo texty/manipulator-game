@@ -56,7 +56,7 @@
 
 <div id="myModal">
 
-    <div style="grid-column:1/-1; width:max-content; position:absolute; top:10px; left:50%; transform: translate(-50%, 0);" id="donors">
+    <div style="pointer-events:none; grid-column:1/-1; width:max-content; position:absolute; top:10px; left:50%; transform: translate(-50%, 0);" id="donors">
         <img style="vertical-align: middle;  width:150px; max-width: 25vw; display: inline; margin-right: 20px;" src="img/transition_lg_mfa.gif"/>
         <img style="vertical-align: middle;  width:150px; max-width: 25vw; display: inline; margin-right: 20px;" src="img/logo_chech.png"/>
         <img style="vertical-align: middle;  width:150px; max-width: 25vw; display: inline; margin-right: 0;" src="img/logo_white.png"/>
@@ -100,7 +100,7 @@
         <h4>Cтвори найгірше ЗМІ і стань популярним</h4>
 
     </div>
-    <button id="play">Грати</button>
+    <button id="play">До гри</button>
     <p class="note"><span style="background-color: yellow;">Будь-які збіги з рельними ЗМІ є абсолютно випадковими</span></p>
 
 </div>
@@ -145,14 +145,41 @@
     <!--Модальне вікно з інструкцією-->
     <div id="innerModule">
         <div id="innerModuleContent">
-            <div>
-                <a id="go" title="Закрити вікно">&times;</a>
-            </div>
+            <!--<div>-->
+                <!--<a id="go" title="Закрити вікно">&times;</a>-->
+            <!--</div>-->
             <p>У нашій грі за 40-50 ходів ви побачите, до яких маніпуляцій вдаються не надто сумлінні  журналісти, щоб збільшити аудиторію. З кожним кроком ви відкриватимете новий трюк: оформити видання на бабцю, засипати «зрадою», репостити дописи з соцмереж, підписувати героїв як «Вася П.», «Катерина І.», видавати пересічних громадян за експертів, вигадувати фейки, додавати в заголовки якнайбільше емоцій. Кожен із цих ходів приносить певну кількість балів. На екрані відображається кількість читачів, залежно від того, наскільки вдалим виявився хід.</p>
             <p>Ласкаво просимо у світ маніпуляцій! Покажіть, на  що здатні ВИ!</p>
+            <div style="position:relative; width:100%; display:flex">
+                <img src="img/ar.svg" id= "PlayMe"/>
+            </div>
         </div>
     </div><!-- and of inner Module -->
 
+
+    <div class="social-current">
+        <div class="facebook">
+            <a class='share-btn'
+               href="https://www.facebook.com/sharer/sharer.php?u=http://texty.org.ua/d/manipulator-game/">
+                <svg class="cover" viewBox="0 0 448 512">
+                    <path d="M448 80v352c0 26.5-21.5 48-48 48h-85.3V302.8h60.6l8.7-67.6h-69.3V192c0-19.6 5.4-32.9 33.5-32.9H384V98.7c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9H184v67.6h60.9V480H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48z"/>
+                </svg>
+            </a>
+        </div>
+        <div class="twitter">
+            <a class='share-btn' href="https://twitter.com/intent/tweet?text=http://texty.org.ua/d/manipulator-game/">
+                <svg viewBox="0 0 448 512">
+                    <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-48.9 158.8c.2 2.8.2 5.7.2 8.5 0 86.7-66 186.6-186.6 186.6-37.2 0-71.7-10.8-100.7-29.4 5.3.6 10.4.8 15.8.8 30.7 0 58.9-10.4 81.4-28-28.8-.6-53-19.5-61.3-45.5 10.1 1.5 19.2 1.5 29.6-1.2-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3a65.447 65.447 0 0 1-29.2-54.6c0-12.2 3.2-23.4 8.9-33.1 32.3 39.8 80.8 65.8 135.2 68.6-9.3-44.5 24-80.6 64-80.6 18.9 0 35.9 7.9 47.9 20.7 14.8-2.8 29-8.3 41.6-15.8-4.9 15.2-15.2 28-28.8 36.1 13.2-1.4 26-5.1 37.8-10.2-8.9 13.1-20.1 24.7-32.9 34z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <div id="credits">
+        <a href="http://texty.org.ua" target="_blank" class="partners">ТЕКСТИ</a>
+        <a href="https://imi.org.ua/" target="_blank" class="partners">ІМІ</a>
+
+    </div>
 
     <div id="cards">
 
@@ -1902,7 +1929,7 @@
         </div>
 
         <div class="social-icons">
-            <div id="facebook">
+            <div class="facebook">
                 <a class='share-btn'
                    href="">
                     <svg class="cover" viewBox="0 0 448 512">
@@ -1910,7 +1937,7 @@
                     </svg>
                 </a>
             </div>
-            <div id="twitter">
+            <div class="twitter">
                 <a class='share-btn' href="">
                     <svg viewBox="0 0 448 512">
                         <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-48.9 158.8c.2 2.8.2 5.7.2 8.5 0 86.7-66 186.6-186.6 186.6-37.2 0-71.7-10.8-100.7-29.4 5.3.6 10.4.8 15.8.8 30.7 0 58.9-10.4 81.4-28-28.8-.6-53-19.5-61.3-45.5 10.1 1.5 19.2 1.5 29.6-1.2-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3a65.447 65.447 0 0 1-29.2-54.6c0-12.2 3.2-23.4 8.9-33.1 32.3 39.8 80.8 65.8 135.2 68.6-9.3-44.5 24-80.6 64-80.6 18.9 0 35.9 7.9 47.9 20.7 14.8-2.8 29-8.3 41.6-15.8-4.9 15.2-15.2 28-28.8 36.1 13.2-1.4 26-5.1 37.8-10.2-8.9 13.1-20.1 24.7-32.9 34z"/>
@@ -2030,6 +2057,13 @@ $("#go").on("click", function(){
 
 })
 
+    $("#PlayMe")
+            .on("click", function() {
+                $("#innerModule").remove();
+                $(".section").css("opacity", "1");
+                $("#spiralmob").css("opacity", "1");
+                $("#spiralmob h1").css("display", "block");
+            })
 
 
 </script>
