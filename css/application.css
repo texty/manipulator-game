@@ -428,6 +428,9 @@ h4 {
     @media (max-width: 700px) {
       #innerModule #innerModuleContent {
         width: 100%; } }
+    @media (min-width: 1500px) {
+      #innerModule #innerModuleContent {
+        font-size: 16px; } }
     #innerModule #innerModuleContent div {
       width: 20px;
       height: 20px;
