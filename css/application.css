@@ -20,6 +20,12 @@ body {
   @media (max-width: 825px) {
     .social-current {
       display: none; } }
+  .social-current .facebook > a > svg {
+    fill: white;
+    opacity: 0.8; }
+  .social-current .twitter > a > svg {
+    fill: white;
+    opacity: 0.8; }
 
 #credits {
   position: absolute;
@@ -34,14 +40,15 @@ body {
       display: none; } }
 
 a.partners {
-  color: yellow;
+  color: white;
+  opacity: 0.7;
   font-size: 18px;
   margin-right: 20px;
   cursor: pointer !important;
   text-decoration: none; }
 
 a.partners:hover {
-  color: white; }
+  color: yellow; }
 
 @media (max-width: 450px) {
   #donors {
