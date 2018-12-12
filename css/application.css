@@ -418,7 +418,7 @@ h4 {
     margin: auto;
     background-color: black;
     color: lightgrey; }
-    @media (max-width: 825px) {
+    @media (max-width: 700px) {
       #innerModule #innerModuleContent {
         width: 100%; } }
     #innerModule #innerModuleContent div {
