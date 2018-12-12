@@ -782,7 +782,7 @@ button.answerNo, button.noThanks {
   color: #6e9ae2; }
 
 img.media {
-  height: 80%;
+  height: 85px;
   width: auto; }
   @media (min-width: 2000px) {
     img.media {
