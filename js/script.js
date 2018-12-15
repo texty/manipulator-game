@@ -597,6 +597,7 @@ var allClassList = $(".parentForSlider").map(function () {
     return $(this).attr("class").split(' ')[0];
 }).get();
 allClassList = allClassList.filter(onlyUnique);
+debugger;
 listOfMinValues = [];
 listOfMaxValues = [];
 for (var i = 0; i < allClassList.length; i++) {
@@ -625,7 +626,7 @@ console.log(resultInterval);
 
 //верхня межа mainDezinformer
 var mainDezinformer = sumOfMax;
-console.log("дезинформатор" + mainDezinformer);
+console.log("дезінформатор" + mainDezinformer);
 
 //верхня межа vandal
 var vandal = sumOfMin + (resultInterval * 4);
@@ -646,7 +647,7 @@ console.log(sissy);
 
 $(".toResult").on("click", function() {
         if(currentTotalPoints > vandal) {
-            $("#rank").html("ГОЛОВНИЙ ДЕЗИНФОРМАТОР КРАЇНИ");
+            $("#rank").html("ГОЛОВНИЙ ДЕЗІНФОРМАТОР КРАЇНИ");
             $("#face").attr("src", "img/dezinfo.png");
             $("#facebook")
                 .find("a.share-btn")
